@@ -11,13 +11,33 @@ RAW_DIR = osjoin(DATA_DIR, 'raw')
 DERIVED_DIR = osjoin(DATA_DIR, 'derived')
 FIG_DIR = osjoin(PROJ_HOME, 'figs')
 
+###########################################################
 # DATA FILES
+###########################################################
 AGG_CODED_SENTENCES = osjoin(DERIVED_DIR, 'coded_fulltext_sentences.csv')
+PERCENT_AGREEMENT = osjoin(DERIVED_DIR, 'percent_agreement.csv')
+QUERY_COUNTS = osjoin(RAW_DIR, '20200511_query_counts.csv')
 
+###########################################################
+# FIGURES
+###########################################################
+
+# Validity
+PERCENT_AGREEMENT_PLOT = osjoin(FIG_DIR, 'validity', 'percent_{measure}.pdf')
+OVERALL_VALIDITY_PLOT = osjoin(FIG_DIR, 'validity', 'overall_validity.pdf')
+QUERY_COUNT_BAR_PLOT = osjoin(FIG_DIR, 'validity', 'query_bar_plot.pdf')
+
+###########################################################
+# PARAMETERS
+###########################################################
+MEASURE_TYPES = ['agreement', 'validity']
 
 rule all:
     input:
-        AGG_CODED_SENTENCES
+        AGG_CODED_SENTENCES,
+        expand(PERCENT_AGREEMENT_PLOT, measure = MEASURE_TYPES),
+        OVERALL_VALIDITY_PLOT,
+        QUERY_COUNT_BAR_PLOT
 
 rule aggregate_coded_sentences:
     params: osjoin(DATA_DIR, 'coded'),
@@ -25,3 +45,33 @@ rule aggregate_coded_sentences:
     shell:
         "Rscript scripts/dataprocessing/aggregate_coded_sentences.R \
         --input {params} --output {output}"
+
+rule calculate_percent_agreement:
+    input: rules.aggregate_coded_sentences.output,
+    output: PERCENT_AGREEMENT
+    shell:
+        "Rscript scripts/dataprocessing/calculate_percent_agreement.R \
+        --input {input} --output {output}"
+
+rule plot_percent_agreement:
+    input: rules.calculate_percent_agreement.output
+    output: PERCENT_AGREEMENT_PLOT
+    shell:
+        "Rscript scripts/figures/percent_agreement.R \
+        --input {input} --output {output} --type {wildcards.measure}"
+
+rule plot_overall_validity:
+    input: rules.calculate_percent_agreement.output
+    params: QUERY_COUNTS
+    output: OVERALL_VALIDITY_PLOT
+    shell:
+        "Rscript scripts/figures/overall_validity.R \
+        --input {input} --output {output} --counts {params}"
+
+rule plot_query_count:
+    input: rules.calculate_percent_agreement.output
+    params: QUERY_COUNTS
+    output: QUERY_COUNT_BAR_PLOT
+    shell:
+        "Rscript scripts/figures/query_count_bar.R \
+        --input {input} --output {output} --counts {params}"
