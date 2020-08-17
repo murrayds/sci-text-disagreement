@@ -7,6 +7,8 @@ data/derived/*
 # Other data, maybe update in future
 data/*
 
+# Figures
+figs/*
 
 # History files
 .Rhistory
