@@ -1,3 +1,10 @@
+# That pesky .DS_STORE file
+*.DS_STORE
+
+# Derived data
+data/derived/*
+
+
 # History files
 .Rhistory
 .Rapp.history

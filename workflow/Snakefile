@@ -1,0 +1,27 @@
+#############
+# Libraries #
+#############
+from os.path import join as osjoin
+import pandas as pd
+
+# store the local path to the dropbox folder in the 'PROJ_HOME_DIR' file.
+PROJ_HOME = open('PROJ_HOME_DIR').read().strip()
+DATA_DIR = osjoin(PROJ_HOME, 'data')
+RAW_DIR = osjoin(DATA_DIR, 'raw')
+DERIVED_DIR = osjoin(DATA_DIR, 'derived')
+FIG_DIR = osjoin(PROJ_HOME, 'figs')
+
+# DATA FILES
+AGG_CODED_SENTENCES = osjoin(DERIVED_DIR, 'coded_fulltext_sentences.csv')
+
+
+rule all:
+    input:
+        AGG_CODED_SENTENCES
+
+rule aggregate_coded_sentences:
+    params: osjoin(DATA_DIR, 'coded'),
+    output: AGG_CODED_SENTENCES,
+    shell:
+        "Rscript scripts/dataprocessing/aggregate_coded_sentences.R \
+        --input {params} --output {output}"
