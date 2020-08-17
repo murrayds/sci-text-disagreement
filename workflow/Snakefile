@@ -27,17 +27,27 @@ PERCENT_AGREEMENT_PLOT = osjoin(FIG_DIR, 'validity', 'percent_{measure}.pdf')
 OVERALL_VALIDITY_PLOT = osjoin(FIG_DIR, 'validity', 'overall_validity.pdf')
 QUERY_COUNT_BAR_PLOT = osjoin(FIG_DIR, 'validity', 'query_bar_plot.pdf')
 
+# Representation
+QUERY_REPRESENTATION_PLOT = osjoin(FIG_DIR, 'representation', '{query}_query_representation.pdf')
+CITANCE_BY_FIELD_PLOT = osjoin(FIG_DIR, 'representation', 'citances_by_field.pdf')
+
 ###########################################################
 # PARAMETERS
 ###########################################################
 MEASURE_TYPES = ['agreement', 'validity']
+QUERY_TYPES = ['all', 'signal_name', 'filter_name']
 
+###########################################################
+# TARGET RULE
+###########################################################
 rule all:
     input:
         AGG_CODED_SENTENCES,
         expand(PERCENT_AGREEMENT_PLOT, measure = MEASURE_TYPES),
         OVERALL_VALIDITY_PLOT,
-        QUERY_COUNT_BAR_PLOT
+        QUERY_COUNT_BAR_PLOT,
+        expand(QUERY_REPRESENTATION_PLOT, query = QUERY_TYPES),
+        CITANCE_BY_FIELD_PLOT
 
 rule aggregate_coded_sentences:
     params: osjoin(DATA_DIR, 'coded'),
@@ -69,9 +79,15 @@ rule plot_overall_validity:
         --input {input} --output {output} --counts {params}"
 
 rule plot_query_count:
-    input: rules.calculate_percent_agreement.output
     params: QUERY_COUNTS
-    output: QUERY_COUNT_BAR_PLOT
+    output: QUERY_REPRESENTATION_PLOT
     shell:
-        "Rscript scripts/figures/query_count_bar.R \
-        --input {input} --output {output} --counts {params}"
+        "Rscript scripts/figures/query_representation.R \
+        --input {params} --output {output} --type {wildcards.query}"
+
+rule plot_citance_count_by_field:
+    params: QUERY_COUNTS
+    output: CITANCE_BY_FIELD_PLOT
+    shell:
+        "Rscript scripts/figures/citance_count_by_field.R \
+        --input {params} --output {output}"
