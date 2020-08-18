@@ -5,6 +5,7 @@
 #
 # Plots a barchoart of the citance count by field
 #
+source("scripts/figures/themes.R")
 
 FIG.HEIGHT <- 2.5
 FIG.WIDTH <- 7
@@ -68,14 +69,12 @@ plot <- plotdata %>%
             y = 150000, color = "white", size = 3.5) +
   geom_text(aes(label = key, y = total + 300000),
             color = "black", size = 4, fontface = "bold") +
-  theme_minimal() +
+  theme_dakota() +
   theme(
-    text = element_text(family = "Helvetica", size = 15),
     axis.title.x = element_blank(),
     axis.text.x = element_blank(),
     panel.grid.major.x = element_blank(),
     panel.grid.minor.y = element_blank(),
-    plot.title = element_text(size = 15, face = "bold")
   ) +
   ylab("# Citances") +
   ggtitle("Distribution across fields")

@@ -5,6 +5,7 @@
 #
 # Plot a heatmap of the percent agreement
 #
+source("scripts/figures/themes.R")
 
 FIG.WIDTH = 5
 FIG.HEIGHT = 6
@@ -64,9 +65,8 @@ plot <- agreement %>%
                               labels = c("0", "50", "100")) +
   scale_x_discrete(position = "top") +
   guides(color = F) +
-  theme_minimal() +
+  theme_dakota() +
   theme(
-    text = element_text(family = "Helvetica", size = 12),
     axis.text.x = element_text(angle = -30, hjust = 1),
     legend.title = element_text(face = "bold", vjust = 0.5),
     panel.grid = element_blank(),

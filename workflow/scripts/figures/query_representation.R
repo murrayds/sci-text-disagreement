@@ -6,6 +6,7 @@
 # Plot the relative reprasentation of the share of disagreement
 # across fields
 #
+source("scripts/figures/themes.R")
 
 library(dplyr)
 library(ggplot2)
@@ -116,9 +117,8 @@ plot <- plotdata %>%
     values = c(1, 16)
   ) +
   coord_cartesian(clip = F) +
-  theme_minimal() +
+  theme_dakota() +
   theme(
-    text = element_text(family = "Helvetica", size = 12),
     axis.title.y = element_blank(),
     panel.grid.minor.x = element_blank(),
     panel.grid.minor.y = element_blank(),
@@ -128,8 +128,6 @@ plot <- plotdata %>%
     legend.position = "none",
     legend.title = element_blank(),
     legend.text = element_text(face = "bold", size = 12),
-    strip.text = element_text(face = "bold"),
-    plot.title = element_text(size = 14, face = "bold")
   ) +
   xlab("% Change from expected proportion") +
   ggtitle(plot.title)

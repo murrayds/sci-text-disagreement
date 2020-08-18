@@ -6,6 +6,7 @@
 # Plot a vertical, and very thin barchart that will sit
 # next to the representation plot
 #
+source("scripts/figures/themes.R")
 
 FIG.WIDTH = 1.5
 FIG.HEIGHT = 11
@@ -77,7 +78,6 @@ plot <- plotdata %>%
   guides(fill = F) +
   theme_minimal() +
   theme(
-    text = element_text(family = "Helvetica", size = 12.5),
     axis.title.y = element_blank(),
     panel.grid = element_blank(),
     axis.text.y = element_blank(),

@@ -5,6 +5,7 @@
 #
 # Plot a dot plot of overall agreement and validity
 #
+source("scripts/figures/themes.R")
 
 FIG.WIDTH = 4
 FIG.HEIGHT = 11
@@ -77,14 +78,10 @@ plot <- agreement %>%
                          breaks = c(2, 4, 6),
                          labels = function(x) { parse(text=paste0("10^", x)) },
                          limits = c(1, 7)) +
-    theme_minimal() +
+    theme_dakota() +
     theme(
-      text = element_text(family = "Helvetica", size = 12.5),
       axis.title.y = element_blank(),
       axis.text.x = element_text(hjust = 1),
-      panel.grid.minor = element_blank(),
-      legend.title = element_text(size = 12, face = "bold"),
-      legend.text = element_text(size = 12),
       legend.position = c(0.3, 0.85),
       legend.background = element_rect(size = 0.5)
     ) +
