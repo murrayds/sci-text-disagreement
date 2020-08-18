@@ -6,10 +6,16 @@
 # Plot a fieldmap reference
 #
 source("scripts/figures/themes.R")
+source("scripts/common.R")
 
 FIG.HEIGHT = 5
 FIG.WIDTH = 7
+
+# Sourced from themes.R
 colors <- field_colors()
+
+# Sourced from scripts.R
+labs <- field_labels()
 
 library(dplyr)
 library(ggplot2)
@@ -31,29 +37,16 @@ option_list = list(
 ) # end option_list
 opt = parse_args(OptionParser(option_list=option_list))
 
-
 # Load the map file
-map <- read_delim(opt$input, col_types = cols(), delim = "\t") %>%
+map <- read_csv(opt$input, col_types = cols()) %>%
   mutate(
-    cluster = factor(cluster, labels = c(labels = c("Soc & Hum", "Bio & Health", "Phys & Engr", "Life & Earth", "Math & Comp")))
-  ) %>%
-  rowwise() %>%
-  mutate(
-    journals = unlist(strsplit(cleanFun(description), ":"))[4],
-    topics = unlist(strsplit(cleanFun(description), ":"))[5]
+    cluster = factor(cluster, labels = labs)
   )
 
 # Select labels for the plots
 plotlabs <- map %>%
   group_by(cluster) %>%
-  top_n(3, `weight<No. sentences>`) %>%
-  rowwise() %>%
-  mutate(
-    select.journal = unlist(strsplit(journals, ";"))[1],
-    select.journal <- gsub("journal", "j.", select.journal, fixed = T),
-    select.journal <- gsub("review", "rev.", select.journal, fixed = T),
-    lab = paste0(strwrap(select.journal, width = 20), collapse = "\n")
-  )
+  top_n(3, `weight<No. sentences>`)
 
 # Construct the plot
 plot <- map %>%
@@ -62,6 +55,7 @@ plot <- map %>%
              fill = cluster)
   ) +
   geom_point(shape = 21, alpha = 0.75) +
+  # Add journal labels to meso-fields
   ggrepel::geom_label_repel(
     data = plotlabs,
     aes(label = lab),

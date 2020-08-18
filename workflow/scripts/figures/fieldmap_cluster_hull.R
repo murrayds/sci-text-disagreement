@@ -7,10 +7,12 @@
 # aroung the selected cluster
 #
 source("scripts/figures/themes.R")
+source("scripts/common.R")
 
 FIG.HEIGHT = 5
 FIG.WIDTH = 7
-colors <- field_colors()
+colors <- field_colors() # sourced from themes.R
+labs <- field_labels() # sourced from common.R
 
 library(dplyr)
 library(ggplot2)
@@ -32,9 +34,9 @@ opt = parse_args(OptionParser(option_list=option_list))
 clu <- gsub("-", " & ", opt$cluster, fixed = T)
 
 # Load the map file
-map <- read_delim(opt$input, col_types = cols(), delim = "\t") %>%
+map <- read_csv(opt$input, col_types = cols()) %>%
   mutate(
-    cluster = factor(cluster, labels = c(labels = c("Soc & Hum", "Bio & Health", "Phys & Engr", "Life & Earth", "Math & Comp")))
+    cluster = factor(cluster, labels = labs)
   )
 
 hull <- map %>%
@@ -47,25 +49,24 @@ levels <- unique(hull$cluster)
 # Build the plot
 plot <- map %>%
   ungroup() %>%
-  mutate(
-    score = `weight<Share results 00: valid queries>` /
-             mean(`weight<Share results 00: valid queries>`, na.rm = T),
-  ) %>%
   ggplot(aes(x = x, y = y,
              size = `weight<No. results 00: valid queries>`,
-             fill = score)
+             fill = log2(score.all))
   ) +
   geom_polygon(data = hull %>% filter(cluster == clu), alpha = 0.3,
                color = colors[which(levels == clu)],
                fill = colors[which(levels == clu)],
                size = 1) +
   geom_point(shape = 21, alpha = 0.9) +
-  scale_color_manual(values = c("#fdcb6e", "#d63031", "#0984e3", "#00b894", "#6c5ce7")) +
+  scale_color_manual(values = colors) +
   scale_size_area(max_size = 15, breaks = c(0, 4000, 8000)) +
-  scale_fill_gradient2(low = "dodgerblue4", mid = "white", high = "firebrick", midpoint = 1,
-                       limits = c(0, 4),
-                       breaks = c(0, 1, 2, 3, 4),
-                       labels = c("0x", "Avg", "2x", "3x", "4x")
+  scale_fill_gradient2(low = gradient.low(),
+                       mid = gradient.mid(),
+                       high = gradient.high(),
+                       midpoint = 0,
+                       limits = c(-2, 2),
+                       breaks = c(-2, -1, 0, 1, 2),
+                       labels = c("1/4x-", "1/2x", "Avg", "2x", "4x+")
   ) +
   guides(size = F, color = F, fill = F) +
   theme_fieldmap()

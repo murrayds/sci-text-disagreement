@@ -19,6 +19,7 @@ PERCENT_AGREEMENT = osjoin(DERIVED_DIR, 'percent_agreement.csv')
 QUERY_COUNTS = osjoin(RAW_DIR, '20200511_query_counts.csv')
 
 FIELDMAP_DATA = osjoin(RAW_DIR, 'mapdata_fixed.txt')
+FIELDMAP_PROCESSED = osjoin(DERIVED_DIR, 'mapdata_processed.csv')
 
 ###########################################################
 # FIGURES
@@ -36,6 +37,8 @@ CITANCE_BY_FIELD_PLOT = osjoin(FIG_DIR, 'representation', 'citances_by_field.pdf
 # VosViewer-style maps
 FIELDMAP_CONVEX_HULL_PLOT = osjoin(FIG_DIR, 'fieldmap', 'hull', '{cluster}_convex_hull.pdf')
 FIELDMAP_REFERENCE_PLOT = osjoin(FIG_DIR, 'fieldmap', 'reference_fieldmap.pdf')
+
+FIELDBAR_MESO_TOP = osjoin(FIG_DIR, 'fieldmap', "top_meso_fields.pdf")
 
 ###########################################################
 # PARAMETERS
@@ -56,8 +59,11 @@ rule all:
         QUERY_COUNT_BAR_PLOT,
         expand(QUERY_REPRESENTATION_PLOT, query = QUERY_TYPES),
         CITANCE_BY_FIELD_PLOT,
+        FIELDMAP_PROCESSED,
         FIELDMAP_REFERENCE_PLOT,
-        expand(FIELDMAP_CONVEX_HULL_PLOT, cluster = CLUSTERS)
+        expand(FIELDMAP_CONVEX_HULL_PLOT, cluster = CLUSTERS),
+        FIELDBAR_MESO_TOP
+
 
 rule aggregate_coded_sentences:
     params: osjoin(DATA_DIR, 'coded'),
@@ -102,17 +108,30 @@ rule plot_citance_count_by_field:
         "Rscript scripts/figures/citance_count_by_field.R \
         --input {params} --output {output}"
 
-rule plot_fieldmap_reference:
+rule process_fieldmap_data:
     params: FIELDMAP_DATA
+    output: FIELDMAP_PROCESSED
+    shell:
+        "Rscript scripts/dataprocessing/process_vosviewer_mapdata.R \
+        --input {params} --output {output}"
+
+rule plot_fieldmap_reference:
+    input: rules.process_fieldmap_data.output
     output: FIELDMAP_REFERENCE_PLOT
     shell:
         "Rscript scripts/figures/fieldmap_reference.R \
-        --input {params} --output {output}"
-
+        --input {input} --output {output}"
 
 rule plot_fieldmap_convex_hull:
-    params: FIELDMAP_DATA
+    input: rules.process_fieldmap_data.output
     output: FIELDMAP_CONVEX_HULL_PLOT
     shell:
         "Rscript scripts/figures/fieldmap_cluster_hull.R \
-        --input {params} --output {output} --cluster \'{wildcards.cluster}\'"
+        --input {input} --output {output} --cluster \'{wildcards.cluster}\'"
+
+rule plot_fieldbar_meso_top:
+    input: rules.process_fieldmap_data.output
+    output: FIELDBAR_MESO_TOP
+    shell:
+        "Rscript scripts/figures/fieldbar_meso_top.R \
+        --input {input} --output {output} --threshold 10000"

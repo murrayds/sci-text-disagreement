@@ -6,8 +6,9 @@ theme_dakota <- function() {
     legend.title = element_text(face = "bold"),
     axis.title = element_text(face = "bold"),
     legend.background = element_rect(size = 0.5),
+    legend.text = element_text(face = "bold"),
     panel.grid.minor = element_blank(),
-    strip.text = element_text(face = "bold"),
+    strip.text = element_text(face = "bold", size = 14),
     plot.title = element_text(size = 14, face = "bold")
   )
 }
