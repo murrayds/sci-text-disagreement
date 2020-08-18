@@ -21,6 +21,8 @@ QUERY_COUNTS = osjoin(RAW_DIR, '20200511_query_counts.csv')
 FIELDMAP_DATA = osjoin(RAW_DIR, 'mapdata_fixed.txt')
 FIELDMAP_PROCESSED = osjoin(DERIVED_DIR, 'mapdata_processed.csv')
 
+GENDER_DISAGREEMENT = osjoin(RAW_DIR, '20200610_gender_fields_intext_counts.csv')
+
 ###########################################################
 # FIGURES
 ###########################################################
@@ -44,6 +46,9 @@ FIELDBAR_MESO_TOP = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_top_meso_fie
 
 HEATMAP_MESO_BIG = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso_big.pdf')
 HEATMAP_MESO_SMALL = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso_small.pdf')
+
+# Gender
+GENDER_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'gender', 'gender_disagreement.pdf')
 
 ###########################################################
 # PARAMETERS
@@ -71,7 +76,8 @@ rule all:
         expand(FIELDMAP_MAIN, score = SCORES),
         expand(FIELDMAP_QUERIES, score = SCORES),
         expand(HEATMAP_MESO_BIG, score = SCORES),
-        expand(HEATMAP_MESO_SMALL, score = SCORES)
+        expand(HEATMAP_MESO_SMALL, score = SCORES),
+        GENDER_BAR_DISAGREEMENT
 
 rule aggregate_coded_sentences:
     params: osjoin(DATA_DIR, 'coded'),
@@ -175,3 +181,10 @@ rule plot_heatmap_small:
         "Rscript scripts/figures/heatmap_meso_small.R \
         --input {input} --output {output} --score {wildcards.score} \
         --threshold 100000"
+
+rule plot_gender_disagreement:
+    input: GENDER_DISAGREEMENT
+    output: GENDER_BAR_DISAGREEMENT
+    shell:
+        "Rscript scripts/figures/disagreement_gender.R \
+        --input {input} --output {output}"

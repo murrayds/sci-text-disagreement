@@ -8,7 +8,7 @@ theme_dakota <- function() {
     legend.background = element_blank(),
     legend.text = element_text(face = "bold"),
     panel.grid.minor = element_blank(),
-    strip.text = element_text(face = "bold", size = 14),
+    strip.text = element_text(face = "bold"),
     plot.title = element_text(size = 14, face = "bold")
   )
 }
@@ -60,6 +60,17 @@ gradient.mid <- function() {
 # Colors of fields
 field_colors <- function() {
   c("#fdcb6e",
+    "#d63031",
+    "#00b894",
+    "#0984e3",
+    "#6c5ce7")
+}
+
+# For the cases when the "All" field is included, such as
+# for many of the bar plots
+field_long_colors <- function() {
+  c("lightgrey",
+    "#fdcb6e",
     "#d63031",
     "#00b894",
     "#0984e3",

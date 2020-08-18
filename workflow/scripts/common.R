@@ -22,6 +22,27 @@ field_levels <- function() {
   )
 }
 
+# Long field levels, to be used in many bar plots
+field_long_levels <- function() {
+  c("All",
+    "Social sciences and humanities",
+    "Biomedical and health sciences",
+    "Life and earth sciences",
+    "Physical sciences and engineering",
+    "Mathematics and computer science")
+}
+
+# Long field labels
+field_long_labels <- function() {
+  c("All",
+    "Soc & Hum",
+    "Bio & Health",
+    "Life & Earth",
+    "Phys & Engr",
+    "Math & Comp"
+  )
+}
+
 # Set the names of the columns to use
 query_columns <- function() {
    c("weight<Share results 56: no consensus + studies>",
