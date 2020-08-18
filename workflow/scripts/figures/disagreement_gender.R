@@ -1,9 +1,9 @@
 #
-# citance_count_by_field.R
+# disagreement_gender.R
 #
 # author: Dakota Murray
 #
-# Plots a barchoart of the citance count by field
+# Plots a barchoart of the gender differences in disagreement
 #
 source("scripts/figures/themes.R")
 source("scripts/common.R")
