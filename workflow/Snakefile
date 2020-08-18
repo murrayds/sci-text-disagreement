@@ -1,0 +1,274 @@
+#############
+# Libraries #
+#############
+from os.path import join as osjoin
+import pandas as pd
+
+# store the local path to the dropbox folder in the 'PROJ_HOME_DIR' file.
+PROJ_HOME = open('PROJ_HOME_DIR').read().strip()
+DATA_DIR = osjoin(PROJ_HOME, 'data')
+RAW_DIR = osjoin(DATA_DIR, 'raw')
+DERIVED_DIR = osjoin(DATA_DIR, 'derived')
+FIG_DIR = osjoin(PROJ_HOME, 'figs')
+
+###########################################################
+# DATA FILES
+###########################################################
+AGG_CODED_SENTENCES = osjoin(DERIVED_DIR, 'coded_fulltext_sentences.csv')
+PERCENT_AGREEMENT = osjoin(DERIVED_DIR, 'percent_agreement.csv')
+QUERY_COUNTS = osjoin(RAW_DIR, '20200511_query_counts.csv')
+
+FIELDMAP_DATA = osjoin(RAW_DIR, 'mapdata_fixed.txt')
+FIELDMAP_PROCESSED = osjoin(DERIVED_DIR, 'mapdata_processed.csv')
+
+GENDER_DISAGREEMENT = osjoin(RAW_DIR, '20200610_gender_fields_intext_counts.csv')
+
+SELFCITE_DISAGREEMENT = osjoin(RAW_DIR, '20200610_self_citation.csv')
+QUERY_TEMPORAL = osjoin(RAW_DIR, '20200610_temporal_queries.csv')
+
+FIELD_DISAGREEMENT_TEMPORAL = osjoin(RAW_DIR, '20200610_temporal_fields.csv')
+
+TEXT_PROGRESSION = osjoin(RAW_DIR, '20200610_text_progression.csv')
+
+AGE_DISAGREEMENT = osjoin(RAW_DIR, '20200610_citation_window_disagreement.csv')
+
+###########################################################
+# FIGURES
+###########################################################
+
+# Validity
+PERCENT_AGREEMENT_PLOT = osjoin(FIG_DIR, 'validity', 'percent_{measure}.pdf')
+OVERALL_VALIDITY_PLOT = osjoin(FIG_DIR, 'validity', 'overall_validity.pdf')
+QUERY_COUNT_BAR_PLOT = osjoin(FIG_DIR, 'validity', 'query_bar_plot.pdf')
+
+# Representation
+QUERY_REPRESENTATION_PLOT = osjoin(FIG_DIR, 'representation', '{query}_query_representation.pdf')
+CITANCE_BY_FIELD_PLOT = osjoin(FIG_DIR, 'representation', 'citances_by_field.pdf')
+
+# VosViewer-style maps
+FIELDMAP_CONVEX_HULL_PLOT = osjoin(FIG_DIR, 'fieldmap', '{score}', 'hull', '{cluster}_{score}_convex_hull.pdf')
+FIELDMAP_REFERENCE_PLOT = osjoin(FIG_DIR, 'fieldmap', 'reference_fieldmap.pdf')
+FIELDMAP_MAIN = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_fieldmap.pdf')
+FIELDMAP_QUERIES = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_fieldmap_queries.pdf')
+
+FIELDBAR_MESO_TOP = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_top_meso_fields.pdf')
+
+HEATMAP_MESO_BIG = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso_big.pdf')
+HEATMAP_MESO_SMALL = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso_small.pdf')
+
+# Gender
+GENDER_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'gender', 'gender_disagreement.pdf')
+
+SELFCITE_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'selfcite', "selfcite_disagreement.pdf")
+SELFCITE_BAR_DISAGREEMENT_FACET = osjoin(FIG_DIR, 'selfcite', 'selfcite_disagreement_faceted.pdf')
+
+QUERY_TERMPORAL_PLOT = osjoin(FIG_DIR, 'temporal', 'query_temporal.pdf')
+FIELD_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement.pdf')
+FIELD_DISAGREEMENT_TEMPORAL_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement_over_time.pdf')
+
+TEXT_PROGRESSION_PLOT = osjoin(FIG_DIR, 'progression', 'field_text_progression.pdf')
+
+AGE_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'age', 'age_disagreement.pdf')
+AGE_DISAGREEMENT_FACETED_PLOT = osjoin(FIG_DIR, 'age', 'age_disagreement_faceted.pdf')
+
+###########################################################
+# PARAMETERS
+###########################################################
+MEASURE_TYPES = ['agreement', 'validity']
+QUERY_TYPES = ['all', 'signal_name', 'filter_name']
+CLUSTERS = ["Soc-Hum", "Bio-Health", "Phys-Engr", "Life-Earth", "Math-Comp"]
+SCORES = ['score.all', 'score.field']
+
+###########################################################
+# TARGET RULE
+###########################################################
+rule all:
+    input:
+        AGG_CODED_SENTENCES,
+        expand(PERCENT_AGREEMENT_PLOT, measure = MEASURE_TYPES),
+        OVERALL_VALIDITY_PLOT,
+        QUERY_COUNT_BAR_PLOT,
+        expand(QUERY_REPRESENTATION_PLOT, query = QUERY_TYPES),
+        CITANCE_BY_FIELD_PLOT,
+        FIELDMAP_PROCESSED,
+        FIELDMAP_REFERENCE_PLOT,
+        expand(FIELDMAP_CONVEX_HULL_PLOT, cluster = CLUSTERS, score = SCORES),
+        expand(FIELDBAR_MESO_TOP, score = SCORES),
+        expand(FIELDMAP_MAIN, score = SCORES),
+        expand(FIELDMAP_QUERIES, score = SCORES),
+        expand(HEATMAP_MESO_BIG, score = SCORES),
+        expand(HEATMAP_MESO_SMALL, score = SCORES),
+        GENDER_BAR_DISAGREEMENT,
+        SELFCITE_BAR_DISAGREEMENT,
+        SELFCITE_BAR_DISAGREEMENT_FACET,
+        QUERY_TERMPORAL_PLOT,
+        FIELD_DISAGREEMENT_PLOT,
+        FIELD_DISAGREEMENT_TEMPORAL_PLOT,
+        TEXT_PROGRESSION_PLOT,
+        AGE_DISAGREEMENT_PLOT,
+        AGE_DISAGREEMENT_FACETED_PLOT
+
+rule aggregate_coded_sentences:
+    params: osjoin(DATA_DIR, 'coded'),
+    output: AGG_CODED_SENTENCES,
+    shell:
+        "Rscript scripts/dataprocessing/aggregate_coded_sentences.R \
+        --input {params} --output {output}"
+
+rule calculate_percent_agreement:
+    input: rules.aggregate_coded_sentences.output,
+    output: PERCENT_AGREEMENT
+    shell:
+        "Rscript scripts/dataprocessing/calculate_percent_agreement.R \
+        --input {input} --output {output}"
+
+rule plot_percent_agreement:
+    input: rules.calculate_percent_agreement.output
+    output: PERCENT_AGREEMENT_PLOT
+    shell:
+        "Rscript scripts/figures/percent_agreement.R \
+        --input {input} --output {output} --type {wildcards.measure}"
+
+rule plot_overall_validity:
+    input: rules.calculate_percent_agreement.output
+    params: QUERY_COUNTS
+    output: OVERALL_VALIDITY_PLOT
+    shell:
+        "Rscript scripts/figures/overall_validity.R \
+        --input {input} --output {output} --counts {params}"
+
+rule plot_query_count:
+    params: QUERY_COUNTS
+    output: QUERY_REPRESENTATION_PLOT
+    shell:
+        "Rscript scripts/figures/query_representation.R \
+        --input {params} --output {output} --type {wildcards.query}"
+
+rule plot_citance_count_by_field:
+    params: QUERY_COUNTS
+    output: CITANCE_BY_FIELD_PLOT
+    shell:
+        "Rscript scripts/figures/citance_count_by_field.R \
+        --input {params} --output {output}"
+
+rule process_fieldmap_data:
+    params: FIELDMAP_DATA
+    output: FIELDMAP_PROCESSED
+    shell:
+        "Rscript scripts/dataprocessing/process_vosviewer_mapdata.R \
+        --input {params} --output {output}"
+
+rule plot_fieldmap_reference:
+    input: rules.process_fieldmap_data.output
+    output: FIELDMAP_REFERENCE_PLOT
+    shell:
+        "Rscript scripts/figures/fieldmap_reference.R \
+        --input {input} --output {output}"
+
+rule plot_fieldmap_convex_hull:
+    input: rules.process_fieldmap_data.output
+    output: FIELDMAP_CONVEX_HULL_PLOT
+    shell:
+        "Rscript scripts/figures/fieldmap_cluster_hull.R \
+        --input {input} --output {output} --cluster \'{wildcards.cluster}\' \
+        --score {wildcards.score}"
+
+rule plot_fieldbar_meso_top:
+    input: rules.process_fieldmap_data.output
+    output: FIELDBAR_MESO_TOP
+    shell:
+        "Rscript scripts/figures/fieldbar_meso_top.R \
+        --input {input} --output {output} --threshold 100000 \
+        --score {wildcards.score}"
+
+rule plot_fieldmap:
+    input: rules.process_fieldmap_data.output
+    output: FIELDMAP_MAIN
+    shell:
+        "Rscript scripts/figures/fieldmap_main.R \
+        --input {input} --output {output} --threshold 100000 \
+        --score {wildcards.score}"
+
+rule plot_fieldmap_queries:
+    input: rules.process_fieldmap_data.output
+    output: FIELDMAP_QUERIES
+    shell:
+        "Rscript scripts/figures/fieldmap_queries.R \
+        --input {input} --output {output} --score {wildcards.score}"
+
+rule plot_heatmap_big:
+    input: rules.process_fieldmap_data.output
+    output: HEATMAP_MESO_BIG
+    shell:
+        "Rscript scripts/figures/heatmap_meso_big.R \
+        --input {input} --output {output} --score {wildcards.score}"
+
+rule plot_heatmap_small:
+    input: rules.process_fieldmap_data.output
+    output: HEATMAP_MESO_SMALL
+    shell:
+        "Rscript scripts/figures/heatmap_meso_small.R \
+        --input {input} --output {output} --score {wildcards.score} \
+        --threshold 100000"
+
+rule plot_gender_disagreement:
+    input: GENDER_DISAGREEMENT
+    output: GENDER_BAR_DISAGREEMENT
+    shell:
+        "Rscript scripts/figures/disagreement_gender.R \
+        --input {input} --output {output}"
+
+rule plot_selfcite_disagreement:
+    input: SELFCITE_DISAGREEMENT
+    output: SELFCITE_BAR_DISAGREEMENT
+    shell:
+        "Rscript scripts/figures/disagreement_selfcitation.R \
+        --input {input} --output {output} --facet none"
+
+rule plot_selfcite_disagreement_faceted:
+    input: SELFCITE_DISAGREEMENT
+    output: SELFCITE_BAR_DISAGREEMENT_FACET
+    shell:
+        "Rscript scripts/figures/disagreement_selfcitation.R \
+        --input {input} --output {output} --facet filter"
+
+rule plot_query_temporal:
+    input: QUERY_TEMPORAL
+    output: QUERY_TERMPORAL_PLOT
+    shell:
+        "Rscript scripts/figures/query_temporal.R \
+        --input {input} --output {output}"
+
+rule plot_field_disagreement:
+    output: FIELD_DISAGREEMENT_PLOT
+    shell:
+        "Rscript scripts/figures/disagreement_field.R \
+        --output {output}"
+
+rule plot_field_disagreement_over_time:
+    input: FIELD_DISAGREEMENT_TEMPORAL
+    output: FIELD_DISAGREEMENT_TEMPORAL_PLOT
+    shell:
+        "Rscript scripts/figures/disagreement_field_temporal.R \
+        --input {input} --output {output}"
+
+rule plot_disagreement_progression:
+    input: TEXT_PROGRESSION,
+    output: TEXT_PROGRESSION_PLOT
+    shell:
+        "Rscript scripts/figures/disagreement_text_progression.R \
+        --input {input} --output {output}"
+
+rule plot_disagreement_age:
+    input: AGE_DISAGREEMENT
+    output: AGE_DISAGREEMENT_PLOT
+    shell:
+        "Rscript scripts/figures/disagreement_age.R \
+        --input {input} --output {output} --facet none"
+
+rule plot_disagreement_age_faceted:
+    input: AGE_DISAGREEMENT
+    output: AGE_DISAGREEMENT_FACETED_PLOT
+    shell:
+        "Rscript scripts/figures/disagreement_age.R \
+        --input {input} --output {output} --facet filter"
