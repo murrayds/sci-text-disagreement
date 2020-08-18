@@ -64,6 +64,8 @@ QUERY_TERMPORAL_PLOT = osjoin(FIG_DIR, 'temporal', 'query_temporal.pdf')
 FIELD_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement.pdf')
 FIELD_DISAGREEMENT_TEMPORAL_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement_over_time.pdf')
 
+TEXT_PROGRESSION_PLOT = osjoin(FIG_DIR, 'progression', 'field_text_progression.pdf')
+
 ###########################################################
 # PARAMETERS
 ###########################################################
@@ -96,7 +98,8 @@ rule all:
         SELFCITE_BAR_DISAGREEMENT_FACET,
         QUERY_TERMPORAL_PLOT,
         FIELD_DISAGREEMENT_PLOT,
-        FIELD_DISAGREEMENT_TEMPORAL_PLOT
+        FIELD_DISAGREEMENT_TEMPORAL_PLOT,
+        TEXT_PROGRESSION_PLOT
 
 
 rule aggregate_coded_sentences:
@@ -242,4 +245,11 @@ rule plot_field_disagreement_over_time:
     output: FIELD_DISAGREEMENT_TEMPORAL_PLOT
     shell:
         "Rscript scripts/figures/disagreement_field_temporal.R \
+        --input {input} --output {output}"
+
+rule plot_disagreement_progression:
+    input: TEXT_PROGRESSION,
+    output: TEXT_PROGRESSION_PLOT
+    shell:
+        "Rscript scripts/figures/disagreement_text_progression.R \
         --input {input} --output {output}"
