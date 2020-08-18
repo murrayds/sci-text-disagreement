@@ -70,15 +70,7 @@ plot <- map %>%
   ) +
   geom_point(shape = 21, alpha = 0.9) +
   scale_size_area(max_size = 15, breaks = c(0, 4000, 8000)) +
-  scale_fill_gradient2(low = gradient.low(),
-                       mid = gradient.mid(),
-                       high = gradient.high(),
-                       midpoint = 0,
-                       name = "Log2\nratio",
-                       limits = c(-2, 2),
-                       breaks = c(-2, -1, 0, 1, 2),
-                       labels = c("1/4x-", "1/2x", "Avg", "2x", "4x+")
-  ) +
+  fieldmap_gradient() +
   guides(size = F, color = F) +
   ggrepel::geom_label_repel(
     data = plotlabs,

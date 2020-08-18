@@ -60,3 +60,15 @@ cluster2color <- function(clu) {
          "Life & Earth" = "#00b894",
          "Math & Comp" = "#6c5ce7")
 }
+
+fieldmap_gradient <- function() {
+  require(ggplot2)
+  scale_fill_gradient2(low = gradient.low(),
+                       mid = gradient.mid(),
+                       high = gradient.high(),
+                       midpoint = 0,
+                       limits = c(-2, 2),
+                       breaks = c(-2, -1, 0, 1, 2),
+                       labels = c("1/4x-", "1/2x", "Avg", "2x", "4x+")
+  )
+}
