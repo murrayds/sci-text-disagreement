@@ -24,6 +24,7 @@ theme_fieldmap <- function() {
     legend.position = "bottom",
     legend.title = element_text(size = 14, face = "bold"),
     legend.text = element_text(size = 12, face = "bold"),
+    legend.background = element_blank(),
     legend.key.width = unit(2, "cm")
   )
 }
@@ -69,6 +70,7 @@ fieldmap_gradient <- function() {
                        midpoint = 0,
                        limits = c(-2, 2),
                        breaks = c(-2, -1, 0, 1, 2),
-                       labels = c("1/4x-", "1/2x", "Avg", "2x", "4x+")
+                       labels = c("1/4x-", "1/2x", "Avg", "2x", "4x+"),
+                       name = "Log2\nratio",
   )
 }

@@ -71,7 +71,6 @@ plot <- map %>%
   geom_point(shape = 21, alpha = 0.9) +
   scale_size_area(max_size = 15, breaks = c(0, 4000, 8000)) +
   fieldmap_gradient() +
-  guides(size = F, color = F) +
   ggrepel::geom_label_repel(
     data = plotlabs,
     aes(label = number),
@@ -80,7 +79,7 @@ plot <- map %>%
     fill =  sapply(plotlabs$cluster, cluster2color),
     min.segment.length = 0.1
   ) +
-  guides(fill = F) +
+  guides(size = F, color = F) +
   theme_fieldmap() +
   theme(
     legend.position = "right",
