@@ -21,18 +21,3 @@ field_levels <- function() {
     "Math & Comp"
   )
 }
-
-# The bottom-end of the ratio gradient for fieldmap
-gradient.low <- function() {
-  "dodgerblue4"
-}
-
-# The high-end of the gradient to use for the fieldmap
-gradient.high <- function() {
-  "firebrick"
-}
-
-# The middle-color for the gradient
-gradient.mid <- function() {
-  "white"
-}

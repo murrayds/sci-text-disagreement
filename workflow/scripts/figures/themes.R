@@ -28,6 +28,26 @@ theme_fieldmap <- function() {
   )
 }
 
-field_colors <- function() {
-  c("#fdcb6e", "#d63031", "#0984e3", "#00b894", "#6c5ce7")
+# The bottom-end of the ratio gradient for fieldmap
+gradient.low <- function() {
+  "dodgerblue4"
+}
+
+# The high-end of the gradient to use for the fieldmap
+gradient.high <- function() {
+  "firebrick"
+}
+
+# The middle-color for the gradient
+gradient.mid <- function() {
+  "white"
+}
+
+cluster2color <- function(clu) {
+  switch(as.character(clu),
+         "Soc & Hum" = "#fdcb6e",
+         "Bio & Health" = "#d63031",
+         "Phys & Engr" = "#0984e3",
+         "Life & Earth" = "#00b894",
+         "Math & Comp" = "#6c5ce7")
 }
