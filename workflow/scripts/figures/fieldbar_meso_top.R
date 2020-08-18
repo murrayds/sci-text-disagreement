@@ -77,9 +77,11 @@ plot <- plotdata %>%
   facet_wrap(~cluster, ncol = 1) +
   scale_x_discrete(expand = c(0, 0)) +
   scale_y_continuous(
-    limits = c(-2.2, 4),
-    breaks = c(0, 1, 2, 3, 4),
-    labels = c("0x", "Avg", "2x", "3x", "4x")) +
+    expand = c(0.2, 0),
+    limits = c(-2.2, NA),
+    breaks = 1:ceiling(max(plotdata$score)),
+    labels = c("0x", "Avg", paste0(3:ceiling(max(plotdata$score)), "x"))
+  ) +
   scale_fill_manual(values = colors) +
   coord_flip() +
   guides(fill = F) +

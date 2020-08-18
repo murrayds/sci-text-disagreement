@@ -42,7 +42,7 @@ map <- map %>%
     select.journal = gsub("review", "rev.", select.journal, fixed = T),
     select.journal = gsub("proceedings", "proc.", select.journal, fixed = T),
     # Generate the final label
-    lab = paste0(strwrap(select.journal, width = 36), collapse = "\n")
+    lab = paste0(strwrap(select.journal, width = 34), collapse = "\n")
 )
 
 # Now calculate the main scores
