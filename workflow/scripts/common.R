@@ -63,3 +63,12 @@ query_levels <- function() {
     "questionable + methods"
     )
 }
+
+clean_mapdata_query_name <- function(query) {
+  query = gsub("weight<Share results", "", query, fixed = T)
+  query = gsub("[0-9]+", "", query)
+  query = gsub("[:>]+", "", query)
+  query = trimws(query)
+  query = gsub(" + standalone", "", query, fixed = T)
+  return(query)
+}

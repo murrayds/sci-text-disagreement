@@ -22,7 +22,7 @@ suppressPackageStartupMessages(require(optparse))
 option_list = list(
   make_option(c("--input"), action="store", default=NA, type="character",
               help="Path to file containing vosviewer map data of disagreement"),
-  make_option(c("--score"), action="store", default=NA, type="integer",
+  make_option(c("--score"), action="store", default=NA, type="character",
               help="The scoring approach to use, either `score.all` or
                     `score.field`"),
   make_option(c("--threshold"), action="store", default=NA, type="integer",

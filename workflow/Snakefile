@@ -42,6 +42,9 @@ FIELDMAP_QUERIES = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_fieldmap_quer
 
 FIELDBAR_MESO_TOP = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_top_meso_fields.pdf')
 
+HEATMAP_MESO_BIG = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso_big.pdf')
+HEATMAP_MESO_SMALL = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso_small.pdf')
+
 ###########################################################
 # PARAMETERS
 ###########################################################
@@ -66,8 +69,9 @@ rule all:
         expand(FIELDMAP_CONVEX_HULL_PLOT, cluster = CLUSTERS, score = SCORES),
         expand(FIELDBAR_MESO_TOP, score = SCORES),
         expand(FIELDMAP_MAIN, score = SCORES),
-        expand(FIELDMAP_QUERIES, score = SCORES)
-
+        expand(FIELDMAP_QUERIES, score = SCORES),
+        expand(HEATMAP_MESO_BIG, score = SCORES),
+        expand(HEATMAP_MESO_SMALL, score = SCORES)
 
 rule aggregate_coded_sentences:
     params: osjoin(DATA_DIR, 'coded'),
@@ -156,3 +160,18 @@ rule plot_fieldmap_queries:
     shell:
         "Rscript scripts/figures/fieldmap_queries.R \
         --input {input} --output {output} --score {wildcards.score}"
+
+rule plot_heatmap_big:
+    input: rules.process_fieldmap_data.output
+    output: HEATMAP_MESO_BIG
+    shell:
+        "Rscript scripts/figures/heatmap_meso_big.R \
+        --input {input} --output {output} --score {wildcards.score}"
+
+rule plot_heatmap_small:
+    input: rules.process_fieldmap_data.output
+    output: HEATMAP_MESO_SMALL
+    shell:
+        "Rscript scripts/figures/heatmap_meso_small.R \
+        --input {input} --output {output} --score {wildcards.score} \
+        --threshold 100000"

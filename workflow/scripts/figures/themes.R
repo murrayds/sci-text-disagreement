@@ -5,7 +5,7 @@ theme_dakota <- function() {
     text = element_text(family = "Helvetica", size = 12),
     legend.title = element_text(face = "bold"),
     axis.title = element_text(face = "bold"),
-    legend.background = element_rect(size = 0.5),
+    legend.background = element_blank(),
     legend.text = element_text(face = "bold"),
     panel.grid.minor = element_blank(),
     strip.text = element_text(face = "bold", size = 14),
@@ -21,11 +21,24 @@ theme_fieldmap <- function() {
     panel.grid.minor = element_blank(),
     axis.title = element_blank(),
     axis.text = element_blank(),
-    legend.position = "bottom",
     legend.title = element_text(size = 14, face = "bold"),
     legend.text = element_text(size = 12, face = "bold"),
     legend.background = element_blank(),
     legend.key.width = unit(2, "cm")
+  )
+}
+
+theme_heatmap <- function() {
+  require(ggplot2)
+  theme_dakota() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 0, vjust = 0.5, size = 14),
+    panel.grid = element_blank(),
+    axis.title = element_blank(),
+    axis.text.y = element_text(size = 16, face = "bold"),
+    legend.text = element_text(size = 14),
+    legend.key.width = unit(0.5, "cm"),
+    legend.key.height = unit(1, "cm")
   )
 }
 
@@ -62,6 +75,7 @@ cluster2color <- function(clu) {
          "Math & Comp" = "#6c5ce7")
 }
 
+# Color gradient to be used when plotting all field maps
 fieldmap_gradient <- function() {
   require(ggplot2)
   scale_fill_gradient2(low = gradient.low(),
@@ -73,4 +87,36 @@ fieldmap_gradient <- function() {
                        labels = c("1/4x-", "1/2x", "Avg", "2x", "4x+"),
                        name = "Log2\nratio",
   )
+}
+
+# Color gradient to be used when plotting the heatmap,
+# should be identical to the fill gradient
+heatmap_color_gradient <- function() {
+  require(ggplot2)
+  scale_color_gradient2(low = gradient.low(),
+                       mid = gradient.mid(),
+                       high = gradient.high(),
+                       midpoint = 0,
+                       limits = c(-2, 2),
+                       breaks = c(-2, -1, 0, 1, 2),
+                       labels = c("1/4x-", "1/2x", "Avg", "2x", "4x+"),
+                       name = "Log2\nratio"
+  )
+}
+
+# Vertical lines used to separate "blocks" of queries in the
+# heatmaps
+heatmap_query_separators <- function(plot, sep.size, col) {
+  require(ggplot2)
+  plot <- plot +
+    geom_vline(xintercept = 2.5, size = sep.size, color = col) +
+    geom_vline(xintercept = 4.5, size = sep.size, color = col) +
+    geom_vline(xintercept = 5.5, size = sep.size, color = col) +
+    geom_vline(xintercept = 10.5, size = sep.size, color = col) +
+    geom_vline(xintercept = 15.5, size = sep.size, color = col) +
+    geom_vline(xintercept = 19.5, size = sep.size, color = col) +
+    geom_vline(xintercept = 21.5, size = sep.size, color = col) +
+    geom_vline(xintercept = 22.5, size = sep.size, color = col) +
+    geom_vline(xintercept = 23.5, size = sep.size, color = col)
+  return(plot)
 }
