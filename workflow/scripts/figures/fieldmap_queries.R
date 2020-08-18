@@ -36,55 +36,51 @@ map <- read_csv(opt$input, col_types = cols()) %>%
     cluster = factor(cluster, levels = field_levels())
   )
 
-# build the plot
-plot <- map %>%
+# build the plotdata
+plotdata <- map %>%
   gather(key, value, query_columns()) %>%
   mutate(
     weight.name = gsub("weight<Share results", "weight<No. results", key, fixed = T),
-    key = gsub("weight<Share results", "", key, fixed = T),
-    key = gsub("[0-9]+", "", key),
-    key = gsub("[:>]+", "", key),
-    key = trimws(key),
-    key = gsub(" + standalone", "", key, fixed = T),
+    key = clean_mapdata_query_name(key),
     key = factor(key, levels = query_levels()),
     value = ifelse(is.na(value), 0, value)
-  ) %>%
-  group_by(key) %>%
-  mutate(
-    value = ifelse(is.na(value), 0, value),
-    score.all = value / mean(value)
   ) %>%
   group_by(key, cluster) %>%
   mutate(
     score.field = value / mean(value)
+  ) %>%
+  group_by(key) %>%
+  mutate(
+    score.all = value / mean(value)
   ) %>%
   rename(score = opt$score) %>%
   filter(!is.na(key)) %>%
   rowwise() %>%
   mutate(
     score = ifelse(is.na(score), 0, score),
-    score = ifelse(log2(score) > 4, 4, score),
+    score = ifelse(score < 0.25, 0.25, score),
+    score = ifelse(score > 4, 4, score),
     weight = get(weight.name),
-  ) %>%
+    weight = ifelse(weight == 0, 1, weight)
+  )
+
+print(plotdata %>% filter(key == "no consensus + ideas") %>% select(score, id))
+# Build the plot
+plot <- plotdata %>%
   ggplot(aes(x = x, y = y,
              size = log10(weight),
-             alpha = ifelse(is.na(score), "empty", "full"),
              fill = log2(score))
   ) +
   geom_point(shape = 21, stroke = 0.15) +
-  scale_alpha_manual(values = c(1, 1)) +
   facet_wrap(~key, ncol = 4) +
   scale_size_area(max_size = 5) +
   fieldmap_gradient() +
   guides(alpha = F, size = F) +
   theme_fieldmap() +
   theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(),
-    axis.title = element_blank(),
-    axis.text = element_blank(),
     legend.position = "bottom",
     legend.key.width = unit(2, "cm")
   )
 
+# Save the plot
 ggsave(opt$output, plot, height = FIG.HEIGHT, width = FIG.WIDTH)
