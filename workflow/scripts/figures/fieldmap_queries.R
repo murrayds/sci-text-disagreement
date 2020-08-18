@@ -38,7 +38,7 @@ map <- read_csv(opt$input, col_types = cols()) %>%
 
 # build the plot
 plot <- map %>%
-  gather(key, value, columns) %>%
+  gather(key, value, query_columns()) %>%
   mutate(
     weight.name = gsub("weight<Share results", "weight<No. results", key, fixed = T),
     key = gsub("weight<Share results", "", key, fixed = T),
@@ -46,7 +46,7 @@ plot <- map %>%
     key = gsub("[:>]+", "", key),
     key = trimws(key),
     key = gsub(" + standalone", "", key, fixed = T),
-    key = factor(key, levels = levs),
+    key = factor(key, levels = query_levels()),
     value = ifelse(is.na(value), 0, value)
   ) %>%
   group_by(key) %>%
