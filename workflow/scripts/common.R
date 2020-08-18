@@ -85,6 +85,15 @@ query_levels <- function() {
     )
 }
 
+#
+filter_term_levels <- function() {
+  c("overall", "standalone", "studies", "ideas", "methods", "results")
+}
+
+filter_term_labels <- function() {
+  labels = c("Overall", "_standalone_", "+studies", "+ideas", "+methods", "+results")
+}
+
 clean_mapdata_query_name <- function(query) {
   query = gsub("weight<Share results", "", query, fixed = T)
   query = gsub("[0-9]+", "", query)
