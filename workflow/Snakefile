@@ -24,6 +24,7 @@ FIELDMAP_PROCESSED = osjoin(DERIVED_DIR, 'mapdata_processed.csv')
 GENDER_DISAGREEMENT = osjoin(RAW_DIR, '20200610_gender_fields_intext_counts.csv')
 
 SELFCITE_DISAGREEMENT = osjoin(RAW_DIR, '20200610_self_citation.csv')
+QUERY_TEMPORAL = osjoin(RAW_DIR, '20200610_temporal_queries.csv')
 
 ###########################################################
 # FIGURES
@@ -55,6 +56,8 @@ GENDER_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'gender', 'gender_disagreement.pdf')
 SELFCITE_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'selfcite', "selfcite_disagreement.pdf")
 SELFCITE_BAR_DISAGREEMENT_FACET = osjoin(FIG_DIR, 'selfcite', 'selfcite_disagreement_faceted.pdf')
 
+QUERY_TERMPORAL_PLOT = osjoin(FIG_DIR, 'temporal', 'query_temporal.pdf')
+
 ###########################################################
 # PARAMETERS
 ###########################################################
@@ -84,7 +87,8 @@ rule all:
         expand(HEATMAP_MESO_SMALL, score = SCORES),
         GENDER_BAR_DISAGREEMENT,
         SELFCITE_BAR_DISAGREEMENT,
-        SELFCITE_BAR_DISAGREEMENT_FACET
+        SELFCITE_BAR_DISAGREEMENT_FACET,
+        QUERY_TERMPORAL_PLOT
 
 rule aggregate_coded_sentences:
     params: osjoin(DATA_DIR, 'coded'),
@@ -209,3 +213,10 @@ rule plot_selfcite_disagreement_faceted:
     shell:
         "Rscript scripts/figures/disagreement_selfcitation.R \
         --input {input} --output {output} --facet filter"
+
+rule plot_query_temporal:
+    input: QUERY_TEMPORAL
+    output: QUERY_TERMPORAL_PLOT
+    shell:
+        "Rscript scripts/figures/query_temporal.R \
+        --input {input} --output {output}"
