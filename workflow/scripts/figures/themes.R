@@ -57,33 +57,55 @@ gradient.mid <- function() {
   "white"
 }
 
+
+# DEFINE THE COLORS FOR FIELDS
+SOCHUM <- "#fdcb6e"
+BIOHEALTH <- "#d63031"
+LIFEEARTH <- "#00b894"
+PHYSENGR <- "#0984e3"
+MATHCOMP <- "#6c5ce7"
+ALL <- "darkgrey"
+
 # Colors of fields
 field_colors <- function() {
-  c("#fdcb6e",
-    "#d63031",
-    "#00b894",
-    "#0984e3",
-    "#6c5ce7")
+  c(SOCHUM,
+    BIOHEALTH,
+    LIFEEARTH,
+    PHYSENGR,
+    MATHCOMP)
 }
 
 # For the cases when the "All" field is included, such as
 # for many of the bar plots
 field_long_colors <- function() {
-  c("lightgrey",
-    "#fdcb6e",
-    "#d63031",
-    "#00b894",
-    "#0984e3",
-    "#6c5ce7")
+  c(ALL,
+    SOCHUM,
+    BIOHEALTH,
+    LIFEEARTH,
+    PHYSENGR,
+    MATHCOMP)
 }
 
+# For the cases when the "All" field is included and
+# should be inlucded in the middle
+field_mid_colors <- function() {
+  c(SOCHUM,
+    BIOHEALTH,
+    ALL,
+    LIFEEARTH,
+    PHYSENGR,
+    MATHCOMP)
+}
+
+# A simple function that can be used to go from a cluster ID
+# to a color
 cluster2color <- function(clu) {
   switch(as.character(clu),
-         "Soc & Hum" = "#fdcb6e",
-         "Bio & Health" = "#d63031",
-         "Phys & Engr" = "#0984e3",
-         "Life & Earth" = "#00b894",
-         "Math & Comp" = "#6c5ce7")
+         "Soc & Hum" = SOCHUM,
+         "Bio & Health" = BIOHEALTH,
+         "Phys & Engr" = PHYSENGR,
+         "Life & Earth" = LIFEEARTH,
+         "Math & Comp" = MATHCOMP)
 }
 
 # Color gradient to be used when plotting all field maps

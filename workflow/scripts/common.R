@@ -43,6 +43,26 @@ field_long_labels <- function() {
   )
 }
 
+# Get field labels and leels where the middle is "All"
+field_mid_labels <- function() {
+  c("Soc&Hum",
+    "Bio&Health",
+    "All",
+    "Life&Earth",
+    "Phys&Engr",
+    "Math&Comp"
+  )
+}
+
+field_mid_levels <- function() {
+  c("Social sciences and humanities",
+    "Biomedical and health sciences",
+    "All",
+    "Life and earth sciences",
+    "Physical sciences and engineering",
+    "Mathematics and computer science")
+}
+
 # Set the names of the columns to use
 query_columns <- function() {
    c("weight<Share results 56: no consensus + studies>",

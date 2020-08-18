@@ -26,6 +26,10 @@ GENDER_DISAGREEMENT = osjoin(RAW_DIR, '20200610_gender_fields_intext_counts.csv'
 SELFCITE_DISAGREEMENT = osjoin(RAW_DIR, '20200610_self_citation.csv')
 QUERY_TEMPORAL = osjoin(RAW_DIR, '20200610_temporal_queries.csv')
 
+FIELD_DISAGREEMENT_TEMPORAL = osjoin(RAW_DIR, '20200610_temporal_fields.csv')
+
+TEXT_PROGRESSION = osjoin(RAW_DIR, '20200610_text_progression.csv')
+
 ###########################################################
 # FIGURES
 ###########################################################
@@ -57,6 +61,8 @@ SELFCITE_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'selfcite', "selfcite_disagreement.p
 SELFCITE_BAR_DISAGREEMENT_FACET = osjoin(FIG_DIR, 'selfcite', 'selfcite_disagreement_faceted.pdf')
 
 QUERY_TERMPORAL_PLOT = osjoin(FIG_DIR, 'temporal', 'query_temporal.pdf')
+FIELD_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement.pdf')
+FIELD_DISAGREEMENT_TEMPORAL_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement_over_time.pdf')
 
 ###########################################################
 # PARAMETERS
@@ -88,7 +94,10 @@ rule all:
         GENDER_BAR_DISAGREEMENT,
         SELFCITE_BAR_DISAGREEMENT,
         SELFCITE_BAR_DISAGREEMENT_FACET,
-        QUERY_TERMPORAL_PLOT
+        QUERY_TERMPORAL_PLOT,
+        FIELD_DISAGREEMENT_PLOT,
+        FIELD_DISAGREEMENT_TEMPORAL_PLOT
+
 
 rule aggregate_coded_sentences:
     params: osjoin(DATA_DIR, 'coded'),
@@ -219,4 +228,18 @@ rule plot_query_temporal:
     output: QUERY_TERMPORAL_PLOT
     shell:
         "Rscript scripts/figures/query_temporal.R \
+        --input {input} --output {output}"
+
+
+rule plot_field_disagreement:
+    output: FIELD_DISAGREEMENT_PLOT
+    shell:
+        "Rscript scripts/figures/disagreement_field.R \
+        --output {output}"
+
+rule plot_field_disagreement_over_time:
+    input: FIELD_DISAGREEMENT_TEMPORAL
+    output: FIELD_DISAGREEMENT_TEMPORAL_PLOT
+    shell:
+        "Rscript scripts/figures/disagreement_field_temporal.R \
         --input {input} --output {output}"
