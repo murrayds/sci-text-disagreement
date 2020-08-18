@@ -35,6 +35,7 @@ CITANCE_BY_FIELD_PLOT = osjoin(FIG_DIR, 'representation', 'citances_by_field.pdf
 
 # VosViewer-style maps
 FIELDMAP_CONVEX_HULL_PLOT = osjoin(FIG_DIR, 'fieldmap', 'hull', '{cluster}_convex_hull.pdf')
+FIELDMAP_REFERENCE_PLOT = osjoin(FIG_DIR, 'fieldmap', 'reference_fieldmap.pdf')
 
 ###########################################################
 # PARAMETERS
@@ -55,6 +56,7 @@ rule all:
         QUERY_COUNT_BAR_PLOT,
         expand(QUERY_REPRESENTATION_PLOT, query = QUERY_TYPES),
         CITANCE_BY_FIELD_PLOT,
+        FIELDMAP_REFERENCE_PLOT,
         expand(FIELDMAP_CONVEX_HULL_PLOT, cluster = CLUSTERS)
 
 rule aggregate_coded_sentences:
@@ -99,6 +101,14 @@ rule plot_citance_count_by_field:
     shell:
         "Rscript scripts/figures/citance_count_by_field.R \
         --input {params} --output {output}"
+
+rule plot_fieldmap_reference:
+    params: FIELDMAP_DATA
+    output: FIELDMAP_REFERENCE_PLOT
+    shell:
+        "Rscript scripts/figures/fieldmap_reference.R \
+        --input {params} --output {output}"
+
 
 rule plot_fieldmap_convex_hull:
     params: FIELDMAP_DATA

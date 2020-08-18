@@ -10,7 +10,7 @@ source("scripts/figures/themes.R")
 
 FIG.HEIGHT = 5
 FIG.WIDTH = 7
-colors <- c("#fdcb6e", "#d63031", "#0984e3", "#00b894", "#6c5ce7")
+colors <- field_colors()
 
 library(dplyr)
 library(ggplot2)

@@ -26,3 +26,7 @@ theme_fieldmap <- function() {
     legend.key.width = unit(2, "cm")
   )
 }
+
+field_colors <- function() {
+  c("#fdcb6e", "#d63031", "#0984e3", "#00b894", "#6c5ce7")
+}
