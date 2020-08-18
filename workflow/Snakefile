@@ -30,6 +30,8 @@ FIELD_DISAGREEMENT_TEMPORAL = osjoin(RAW_DIR, '20200610_temporal_fields.csv')
 
 TEXT_PROGRESSION = osjoin(RAW_DIR, '20200610_text_progression.csv')
 
+AGE_DISAGREEMENT = osjoin(RAW_DIR, '20200610_citation_window_disagreement.csv')
+
 ###########################################################
 # FIGURES
 ###########################################################
@@ -66,6 +68,9 @@ FIELD_DISAGREEMENT_TEMPORAL_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement_
 
 TEXT_PROGRESSION_PLOT = osjoin(FIG_DIR, 'progression', 'field_text_progression.pdf')
 
+AGE_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'age', 'age_disagreement.pdf')
+AGE_DISAGREEMENT_FACETED_PLOT = osjoin(FIG_DIR, 'age', 'age_disagreement_faceted.pdf')
+
 ###########################################################
 # PARAMETERS
 ###########################################################
@@ -99,8 +104,9 @@ rule all:
         QUERY_TERMPORAL_PLOT,
         FIELD_DISAGREEMENT_PLOT,
         FIELD_DISAGREEMENT_TEMPORAL_PLOT,
-        TEXT_PROGRESSION_PLOT
-
+        TEXT_PROGRESSION_PLOT,
+        AGE_DISAGREEMENT_PLOT,
+        AGE_DISAGREEMENT_FACETED_PLOT
 
 rule aggregate_coded_sentences:
     params: osjoin(DATA_DIR, 'coded'),
@@ -233,7 +239,6 @@ rule plot_query_temporal:
         "Rscript scripts/figures/query_temporal.R \
         --input {input} --output {output}"
 
-
 rule plot_field_disagreement:
     output: FIELD_DISAGREEMENT_PLOT
     shell:
@@ -253,3 +258,17 @@ rule plot_disagreement_progression:
     shell:
         "Rscript scripts/figures/disagreement_text_progression.R \
         --input {input} --output {output}"
+
+rule plot_disagreement_age:
+    input: AGE_DISAGREEMENT
+    output: AGE_DISAGREEMENT_PLOT
+    shell:
+        "Rscript scripts/figures/disagreement_age.R \
+        --input {input} --output {output} --facet none"
+
+rule plot_disagreement_age_faceted:
+    input: AGE_DISAGREEMENT
+    output: AGE_DISAGREEMENT_FACETED_PLOT
+    shell:
+        "Rscript scripts/figures/disagreement_age.R \
+        --input {input} --output {output} --facet filter"
