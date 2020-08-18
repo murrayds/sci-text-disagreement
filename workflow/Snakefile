@@ -35,10 +35,11 @@ QUERY_REPRESENTATION_PLOT = osjoin(FIG_DIR, 'representation', '{query}_query_rep
 CITANCE_BY_FIELD_PLOT = osjoin(FIG_DIR, 'representation', 'citances_by_field.pdf')
 
 # VosViewer-style maps
-FIELDMAP_CONVEX_HULL_PLOT = osjoin(FIG_DIR, 'fieldmap', 'hull', '{cluster}_convex_hull.pdf')
+FIELDMAP_CONVEX_HULL_PLOT = osjoin(FIG_DIR, 'fieldmap', '{score}', 'hull', '{cluster}_{score}_convex_hull.pdf')
 FIELDMAP_REFERENCE_PLOT = osjoin(FIG_DIR, 'fieldmap', 'reference_fieldmap.pdf')
+FIELDMAP_MAIN = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_fieldmap.pdf')
 
-FIELDBAR_MESO_TOP = osjoin(FIG_DIR, 'fieldmap', "top_meso_fields.pdf")
+FIELDBAR_MESO_TOP = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_top_meso_fields.pdf')
 
 ###########################################################
 # PARAMETERS
@@ -46,7 +47,7 @@ FIELDBAR_MESO_TOP = osjoin(FIG_DIR, 'fieldmap', "top_meso_fields.pdf")
 MEASURE_TYPES = ['agreement', 'validity']
 QUERY_TYPES = ['all', 'signal_name', 'filter_name']
 CLUSTERS = ["Soc-Hum", "Bio-Health", "Phys-Engr", "Life-Earth", "Math-Comp"]
-
+SCORES = ['score.all', 'score.field']
 
 ###########################################################
 # TARGET RULE
@@ -61,8 +62,9 @@ rule all:
         CITANCE_BY_FIELD_PLOT,
         FIELDMAP_PROCESSED,
         FIELDMAP_REFERENCE_PLOT,
-        expand(FIELDMAP_CONVEX_HULL_PLOT, cluster = CLUSTERS),
-        FIELDBAR_MESO_TOP
+        expand(FIELDMAP_CONVEX_HULL_PLOT, cluster = CLUSTERS, score = SCORES),
+        expand(FIELDBAR_MESO_TOP, score = SCORES),
+        expand(FIELDMAP_MAIN, score = SCORES)
 
 
 rule aggregate_coded_sentences:
@@ -127,11 +129,21 @@ rule plot_fieldmap_convex_hull:
     output: FIELDMAP_CONVEX_HULL_PLOT
     shell:
         "Rscript scripts/figures/fieldmap_cluster_hull.R \
-        --input {input} --output {output} --cluster \'{wildcards.cluster}\'"
+        --input {input} --output {output} --cluster \'{wildcards.cluster}\' \
+        --score {wildcards.score}"
 
 rule plot_fieldbar_meso_top:
     input: rules.process_fieldmap_data.output
     output: FIELDBAR_MESO_TOP
     shell:
         "Rscript scripts/figures/fieldbar_meso_top.R \
-        --input {input} --output {output} --threshold 10000"
+        --input {input} --output {output} --threshold 100000 \
+        --score {wildcards.score}"
+
+rule plot_fieldmap:
+    input: rules.process_fieldmap_data.output
+    output: FIELDMAP_MAIN
+    shell:
+        "Rscript scripts/figures/fieldmap_main.R \
+        --input {input} --output {output} --threshold 100000 \
+        --score {wildcards.score}"

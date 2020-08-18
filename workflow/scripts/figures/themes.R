@@ -22,7 +22,7 @@ theme_fieldmap <- function() {
     axis.title = element_blank(),
     axis.text = element_blank(),
     legend.position = "bottom",
-    legend.title = element_blank(),
+    legend.title = element_text(size = 14, face = "bold"),
     legend.text = element_text(size = 12, face = "bold"),
     legend.key.width = unit(2, "cm")
   )
@@ -41,6 +41,15 @@ gradient.high <- function() {
 # The middle-color for the gradient
 gradient.mid <- function() {
   "white"
+}
+
+# Colors of fields
+field_colors <- function() {
+  c("#fdcb6e",
+    "#d63031",
+    "#00b894",
+    "#0984e3",
+    "#6c5ce7")
 }
 
 cluster2color <- function(clu) {
