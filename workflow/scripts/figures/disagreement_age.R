@@ -78,7 +78,7 @@ plot <- age %>%
   scale_fill_manual(values = field_long_colors()) +
   scale_alpha_manual(values = c(0.2, 0.4, 0.6, 0.8, 1.0)) +
   scale_y_continuous(limits = c(0, NA),
-                     expand = c(0.05, 0),
+                     expand = expand_scale(mult = c(0, .5)),
                      position = ifelse(opt$facet == "none", "left", "right")) +
   guides(alpha = F, fill = F) +
   theme_dakota() +
@@ -98,13 +98,13 @@ plot <- age %>%
 # faceting and themes
 if (opt$facet == "none") {
   plot <- plot +
-    facet_wrap(~field)
+    facet_wrap(~field, scales = "free_y")
 } else if (opt$facet == "filter") {
   plot <- plot +
-    facet_grid(filter_name~field, scale = "free_y", switch = "y")
+    facet_grid(field~filter_name, scale = "free_y", switch = "y")
 
-  FIG.HEIGHT <- 12
-  FIG.WIDTH = 16
+  FIG.HEIGHT <- 8
+  FIG.WIDTH = 14
 }
 
 
