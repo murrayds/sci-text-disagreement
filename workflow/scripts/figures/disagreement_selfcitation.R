@@ -9,8 +9,8 @@
 source("scripts/figures/themes.R")
 source("scripts/common.R")
 
-FIG.HEIGHT <- 5
-FIG.WIDTH <- 7
+FIG.HEIGHT <- 6
+FIG.WIDTH <- 8
 
 # Controls how far the "arrow" is from the top and bottom of
 # each bar
@@ -76,7 +76,7 @@ change <- selfcite %>%
 
 # Build the plot, use the code from `snippets.R`
 plot <- selfcite %>%
-  ggplot(aes(x = field, y = share_disagreement,
+  ggplot(aes(x = self_cit, y = share_disagreement,
              fill = field, alpha = self_cit, shape = self_cit)) +
   geom_bar(stat = "identity",
            color = "black",
@@ -88,29 +88,16 @@ plot <- selfcite %>%
                 group = self_cit),
             vjust = -0.5,
             alpha = 1,
-            size = 2.75
+            size = 3
   ) +
+  facet_wrap(~field, scales = "free") +
   scale_shape_manual(values = c(22, 0)) +
   scale_fill_manual(values = field_long_colors()) +
   scale_alpha_manual(values = c(0.9, 0.4)) +
-  # Add the "arrow" between the bars that helps to highlight
-  # the ratio difference
-  geom_segment(data = change,
-               aes(x = as.numeric(field) + 0.225, xend = as.numeric(field) + 0.225,
-                   y = `Not self citation` * upper.arrow.weight, yend = `Self citation` * lower.arrow.weight,
-                   group = NULL, shape = NULL, alpha = NULL),
-               size = 0.5,
-               color = "darkgrey",
-               arrow = arrow(length=unit(0.20, "cm"), ends="both", type = "closed")) +
-  # Add the labels that will show the ratio difference, positioned in the
-  # middle of the "arrow"
-  geom_label(data = change,
-              aes(x = as.numeric(field) + 0.225,
-                  y = `Self citation` * lower.arrow.weight + (0.5 * (`Not self citation` * upper.arrow.weight - `Self citation` * lower.arrow.weight)),
-                  group = NULL, shape = NULL, alpha = NULL, fill = NULL,
-                  label = paste0(round(ratio, 1), "x")),
-             size = 4,
-             label.size = 0
+  scale_y_continuous(
+    limits = c(0, NA),
+    expand = expand_scale(mult = c(0.05, .3)),
+    position = ifelse(opt$facet == "none", "left", "right")
   ) +
   guides(alpha = F, fill = F,
          shape = guide_legend(override.aes = list(fill = "darkgrey", size = 5))
@@ -121,26 +108,54 @@ plot <- selfcite %>%
     panel.grid.major.x = element_blank(),
     legend.background = element_rect(size = 0.5, fill = "white"),
     legend.title = element_blank(),
-    strip.text = element_text(size = 14),
     axis.title.x = element_blank(),
-    axis.text.x = element_text(face = "bold")
+    legend.position = "none",
+    axis.text.x = element_text(face = "bold"),
+    strip.text = element_text(size = 14),
+    strip.text.y.left = element_text(size = 14, angle = 0, hjust = 1)
   ) +
   ylab("% disagreement")
 
 # Check faceting again, if set, then add the facet_wrap
 if (opt$facet == "none") {
   plot <- plot +
-    theme(
-      legend.position = c(0.85, 0.84),
+    # Add the "arrow" between the bars that helps to highlight
+    # the ratio difference
+    geom_segment(data = change,
+                 aes(x = 2, xend = 2,
+                     y = `Not self citation` * upper.arrow.weight, yend = `Self citation` * lower.arrow.weight,
+                     group = NULL, shape = NULL, alpha = NULL),
+                 size = 0.5,
+                 color = "darkgrey",
+                 arrow = arrow(length=unit(0.20, "cm"), ends="both", type = "closed")) +
+    # Add the labels that will show the ratio difference, positioned in the
+    # middle of the "arrow"
+    geom_label(data = change,
+                aes(x = 2,
+                    y = `Self citation` * lower.arrow.weight + (0.5 * (`Not self citation` * upper.arrow.weight - `Self citation` * lower.arrow.weight)),
+                    group = NULL, shape = NULL, alpha = NULL, fill = NULL,
+                    label = paste0(round(ratio, 1), "x")),
+               size = 4,
+               label.size = 0
     )
 } else if (opt$facet == "filter") {
   plot <- plot +
-    facet_wrap(~filter_name, ncol = 2, scale = "free_y") +
+    geom_label(data = change,
+                aes(x = 2,
+                    y = `Self citation`,
+                    group = NULL, shape = NULL, alpha = NULL, fill = NULL,
+                    label = paste0(round(ratio, 1), "x")),
+                  size = 4,
+                  vjust = -0.8,
+                label.size = 0
+    ) +
+    facet_grid(filter_name~field, scale = "free", switch = "y") +
     theme(
-      legend.position = c(0.9, 0.95),
+      axis.text.x = element_text(face = "bold", angle = 45, hjust = 1),
     )
-    FIG.WIDTH <- 13
-    FIG.HEIGHT <- 10
+
+    FIG.WIDTH <- 12
+    FIG.HEIGHT <- 8
 }
 
 # Save the plot
