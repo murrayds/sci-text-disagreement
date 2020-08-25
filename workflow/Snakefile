@@ -37,39 +37,39 @@ AGE_DISAGREEMENT = osjoin(RAW_DIR, '20200610_citation_window_disagreement.csv')
 ###########################################################
 
 # Validity
-PERCENT_AGREEMENT_PLOT = osjoin(FIG_DIR, 'validity', 'percent_{measure}.pdf')
-OVERALL_VALIDITY_PLOT = osjoin(FIG_DIR, 'validity', 'overall_validity.pdf')
-QUERY_COUNT_BAR_PLOT = osjoin(FIG_DIR, 'validity', 'query_bar_plot.pdf')
+PERCENT_AGREEMENT_PLOT = osjoin(FIG_DIR, 'validity', 'percent_{measure}.png')
+OVERALL_VALIDITY_PLOT = osjoin(FIG_DIR, 'validity', 'overall_validity.png')
+QUERY_COUNT_BAR_PLOT = osjoin(FIG_DIR, 'validity', 'query_bar_plot.png')
 
 # Representation
-QUERY_REPRESENTATION_PLOT = osjoin(FIG_DIR, 'representation', '{query}_query_representation.pdf')
-CITANCE_BY_FIELD_PLOT = osjoin(FIG_DIR, 'representation', 'citances_by_field.pdf')
+QUERY_REPRESENTATION_PLOT = osjoin(FIG_DIR, 'representation', '{query}_query_representation.png')
+CITANCE_BY_FIELD_PLOT = osjoin(FIG_DIR, 'representation', 'citances_by_field.png')
 
 # VosViewer-style maps
-FIELDMAP_CONVEX_HULL_PLOT = osjoin(FIG_DIR, 'fieldmap', '{score}', 'hull', '{cluster}_{score}_convex_hull.pdf')
-FIELDMAP_REFERENCE_PLOT = osjoin(FIG_DIR, 'fieldmap', 'reference_fieldmap.pdf')
-FIELDMAP_MAIN = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_fieldmap.pdf')
-FIELDMAP_QUERIES = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_fieldmap_queries.pdf')
+FIELDMAP_CONVEX_HULL_PLOT = osjoin(FIG_DIR, 'fieldmap', '{score}', 'hull', '{cluster}_{score}_convex_hull.png')
+FIELDMAP_REFERENCE_PLOT = osjoin(FIG_DIR, 'fieldmap', 'reference_fieldmap.png')
+FIELDMAP_MAIN = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_fieldmap.png')
+FIELDMAP_QUERIES = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_fieldmap_queries.png')
 
-FIELDBAR_MESO_TOP = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_top_meso_fields.pdf')
+FIELDBAR_MESO_TOP = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_top_meso_fields.png')
 
-HEATMAP_MESO_BIG = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso_big.pdf')
-HEATMAP_MESO_SMALL = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso_small.pdf')
+HEATMAP_MESO_BIG = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso_big.png')
+HEATMAP_MESO_SMALL = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso_small.png')
 
 # Gender
-GENDER_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'gender', 'gender_disagreement.pdf')
+GENDER_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'gender', 'gender_disagreement.png')
 
-SELFCITE_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'selfcite', "selfcite_disagreement.pdf")
-SELFCITE_BAR_DISAGREEMENT_FACET = osjoin(FIG_DIR, 'selfcite', 'selfcite_disagreement_faceted.pdf')
+SELFCITE_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'selfcite', "selfcite_disagreement.png")
+SELFCITE_BAR_DISAGREEMENT_FACET = osjoin(FIG_DIR, 'selfcite', 'selfcite_disagreement_faceted.png')
 
-QUERY_TERMPORAL_PLOT = osjoin(FIG_DIR, 'temporal', 'query_temporal.pdf')
-FIELD_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement.pdf')
-FIELD_DISAGREEMENT_TEMPORAL_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement_over_time.pdf')
+QUERY_TERMPORAL_PLOT = osjoin(FIG_DIR, 'temporal', 'query_temporal.png')
+FIELD_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement.png')
+FIELD_DISAGREEMENT_TEMPORAL_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement_over_time.png')
 
-TEXT_PROGRESSION_PLOT = osjoin(FIG_DIR, 'progression', 'field_text_progression.pdf')
+TEXT_PROGRESSION_PLOT = osjoin(FIG_DIR, 'progression', 'field_text_progression.png')
 
-AGE_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'age', 'age_disagreement.pdf')
-AGE_DISAGREEMENT_FACETED_PLOT = osjoin(FIG_DIR, 'age', 'age_disagreement_faceted.pdf')
+AGE_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'age', 'age_disagreement.png')
+AGE_DISAGREEMENT_FACETED_PLOT = osjoin(FIG_DIR, 'age', 'age_disagreement_faceted.png')
 
 ###########################################################
 # PARAMETERS
@@ -137,7 +137,15 @@ rule plot_overall_validity:
         "Rscript scripts/figures/overall_validity.R \
         --input {input} --output {output} --counts {params}"
 
-rule plot_query_count:
+rule plot_query_count_bar:
+    input: rules.calculate_percent_agreement.output
+    params: QUERY_COUNTS
+    output: QUERY_COUNT_BAR_PLOT
+    shell:
+        "Rscript scripts/figures/query_count_bar.R \
+        --input {input} --output {output} --counts {params}"
+
+rule plot_query_representation:
     params: QUERY_COUNTS
     output: QUERY_REPRESENTATION_PLOT
     shell:

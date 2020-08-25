@@ -59,8 +59,7 @@ if (opt$facet == "none") {
   selfcite <- selfcite %>%
     filter(filter_name == "Overall")
 } else if (opt$facet == "filter") {
-  selfcite <- selfcite %>%
-    filter(filter_name != "Overall")
+  # Do nothing for now
 }
 
 # Calculate the ratio of change between the share of disagreement
@@ -119,6 +118,7 @@ plot <- selfcite %>%
   theme_dakota() +
   theme(
     panel.border = element_rect(size = 0.5, fill = NA),
+    panel.grid.major.x = element_blank(),
     legend.background = element_rect(size = 0.5, fill = "white"),
     legend.title = element_blank(),
     strip.text = element_text(size = 14),

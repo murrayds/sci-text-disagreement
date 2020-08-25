@@ -78,7 +78,7 @@ plot <- age %>%
   scale_fill_manual(values = field_long_colors()) +
   scale_alpha_manual(values = c(0.2, 0.4, 0.6, 0.8, 1.0)) +
   scale_y_continuous(limits = c(0, NA),
-                     expand = c(0.1, 0),
+                     expand = c(0.05, 0),
                      position = ifelse(opt$facet == "none", "left", "right")) +
   guides(alpha = F, fill = F) +
   theme_dakota() +
@@ -87,7 +87,9 @@ plot <- age %>%
     panel.border = element_rect(size = 0.5, fill = NA),
     legend.background = element_rect(size = 0.5, fill = "white"),
     legend.title = element_blank(),
-    axis.text.x = element_text(angle = 45, hjust = 1)
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    strip.text = element_text(size = 14),
+    strip.text.y.left = element_text(size = 14, angle = 0, hjust = 1)
   ) +
   xlab("Age of cited paper (years)") +
   ylab("% disagreement")
@@ -99,10 +101,7 @@ if (opt$facet == "none") {
     facet_wrap(~field)
 } else if (opt$facet == "filter") {
   plot <- plot +
-    facet_grid(filter_name~field, scale = "free_y", switch = "y") +
-    theme(
-      strip.text.y.left = element_text(angle = 0, hjust = 1)
-    )
+    facet_grid(filter_name~field, scale = "free_y", switch = "y")
 
   FIG.HEIGHT <- 12
   FIG.WIDTH = 16
