@@ -1,6 +1,9 @@
 # That pesky .DS_STORE file
 *.DS_STORE
 
+# Paper figures
+paper-figs/*
+
 # Derived data
 data/derived/*
 
