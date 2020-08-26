@@ -28,6 +28,8 @@ option_list = list(
   make_option(c("--threshold"), action="store", default=NA, type="integer",
               help="The integer threshold for number of citances a meso field
               must have to be selected"),
+  make_option(c("--labels"), action="store_true", default=FALSE,
+              help="If set, plot labels"),
   make_option(c("-o", "--output"), action="store", default=NA, type="character",
               help="Path to save output image")
 ) # end option_list
@@ -71,14 +73,6 @@ plot <- map %>%
   geom_point(shape = 21, alpha = 0.9) +
   scale_size_area(max_size = 15, breaks = c(0, 4000, 8000)) +
   fieldmap_gradient() +
-  ggrepel::geom_label_repel(
-    data = plotlabs,
-    aes(label = number),
-    color = "black",
-    size = 6,
-    fill =  sapply(plotlabs$cluster, cluster2color),
-    min.segment.length = 0.1
-  ) +
   guides(size = F, color = F) +
   theme_fieldmap() +
   theme(
@@ -86,5 +80,17 @@ plot <- map %>%
     legend.key.width = unit(0.4, "cm"),
     legend.key.height = unit(2, "cm")
   )
+
+# If the labels flag is set, then add the labels to the plot
+if (opt$labels) {
+  plot <- plot + ggrepel::geom_label_repel(
+    data = plotlabs,
+    aes(label = number),
+    color = "black",
+    size = 6,
+    fill =  sapply(plotlabs$cluster, cluster2color),
+    min.segment.length = 0.1
+  )
+}
 
 ggsave(opt$output, plot, height = FIG.HEIGHT, width = FIG.WIDTH)

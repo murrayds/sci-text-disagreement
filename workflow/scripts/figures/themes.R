@@ -32,7 +32,7 @@ theme_heatmap <- function() {
   require(ggplot2)
   theme_dakota() +
   theme(
-    axis.text.x = element_text(angle = 45, hjust = 0, vjust = 0.5, size = 12),
+    axis.text.x = element_text(angle = 45, hjust = 0, vjust = 0.5, size = 13),
     panel.grid = element_blank(),
     axis.title = element_blank(),
     axis.text.y = element_text(size = 16, face = "bold"),

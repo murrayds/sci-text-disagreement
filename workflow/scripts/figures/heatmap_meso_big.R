@@ -9,7 +9,7 @@
 source("scripts/figures/themes.R")
 source("scripts/common.R")
 
-FIG.HEIGHT = 16
+FIG.HEIGHT = 14
 FIG.WIDTH = 10
 SEP.SIZE = 1.2
 SEP.COLOR = "black"

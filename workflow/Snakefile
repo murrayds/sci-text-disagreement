@@ -49,6 +49,7 @@ CITANCE_BY_FIELD_PLOT = osjoin(FIG_DIR, 'representation', 'citances_by_field.png
 FIELDMAP_CONVEX_HULL_PLOT = osjoin(FIG_DIR, 'fieldmap', '{score}', 'hull', '{cluster}_{score}_convex_hull.png')
 FIELDMAP_REFERENCE_PLOT = osjoin(FIG_DIR, 'fieldmap', 'reference_fieldmap.png')
 FIELDMAP_MAIN = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_fieldmap.png')
+FIELDMAP_MAIN_NOLAB = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_nolabels_fieldmap.png')
 FIELDMAP_QUERIES = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_fieldmap_queries.png')
 
 FIELDBAR_MESO_TOP = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_top_meso_fields.png')
@@ -95,6 +96,7 @@ rule all:
         expand(FIELDMAP_CONVEX_HULL_PLOT, cluster = CLUSTERS, score = SCORES),
         expand(FIELDBAR_MESO_TOP, score = SCORES),
         expand(FIELDMAP_MAIN, score = SCORES),
+        expand(FIELDMAP_MAIN_NOLAB, score = SCORES),
         expand(FIELDMAP_QUERIES, score = SCORES),
         expand(HEATMAP_MESO_BIG, score = SCORES),
         expand(HEATMAP_MESO_SMALL, score = SCORES),
@@ -192,6 +194,14 @@ rule plot_fieldbar_meso_top:
 rule plot_fieldmap:
     input: rules.process_fieldmap_data.output
     output: FIELDMAP_MAIN
+    shell:
+        "Rscript scripts/figures/fieldmap_main.R \
+        --input {input} --output {output} --threshold 100000 \
+        --score {wildcards.score} --labels"
+
+rule plot_fieldmap_nolabels:
+    input: rules.process_fieldmap_data.output
+    output: FIELDMAP_MAIN_NOLAB
     shell:
         "Rscript scripts/figures/fieldmap_main.R \
         --input {input} --output {output} --threshold 100000 \
