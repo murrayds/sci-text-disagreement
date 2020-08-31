@@ -70,15 +70,15 @@ plot <- map %>%
              size = `weight<No. results 00: valid queries>`,
              fill = log2(score))
   ) +
-  geom_point(shape = 21, alpha = 0.9) +
+  geom_point(shape = 21, alpha = 0.9, color = "black") +
   scale_size_area(max_size = 15, breaks = c(0, 4000, 8000)) +
   fieldmap_gradient() +
   guides(size = F, color = F) +
   theme_fieldmap() +
   theme(
-    legend.position = "right",
+    legend.position = "left",
     legend.key.width = unit(0.4, "cm"),
-    legend.key.height = unit(2, "cm")
+    legend.key.height = unit(2.0, "cm")
   )
 
 # If the labels flag is set, then add the labels to the plot

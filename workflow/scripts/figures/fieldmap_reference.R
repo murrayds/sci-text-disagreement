@@ -8,14 +8,8 @@
 source("scripts/figures/themes.R")
 source("scripts/common.R")
 
-FIG.HEIGHT = 5
-FIG.WIDTH = 7
-
-# Sourced from themes.R
-colors <- field_colors()
-
-# Sourced from scripts.R
-labs <- field_labels()
+FIG.HEIGHT = 7
+FIG.WIDTH = 11
 
 library(dplyr)
 library(ggplot2)
@@ -38,10 +32,14 @@ option_list = list(
 opt = parse_args(OptionParser(option_list=option_list))
 
 # Load the map file
+print(tail(field_long_levels(), 5))
 map <- read_csv(opt$input, col_types = cols()) %>%
   mutate(
-    cluster = factor(cluster, labels = labs)
+    cluster = factor(cluster, labels = field_labels()),
+    cluster = factor(cluster, levels = field_levels())
   )
+
+print(map$cluster)
 
 # Select labels for the plots
 plotlabs <- map %>%
@@ -64,9 +62,10 @@ plot <- map %>%
     alpha = 0.9,
     min.segment.length = 0.1) +
   scale_size_area(max_size = 12) +
-  scale_fill_manual(values = colors) +
+  scale_fill_manual(values = field_colors()) +
   guides(size = F,
          fill = guide_legend(override.aes = list(size = 5))) +
-  theme_fieldmap()
+  theme_fieldmap() +
+  theme(legend.position = "bottom", legend.title = element_blank())
 
 ggsave(opt$output, plot, height = FIG.HEIGHT, width = FIG.WIDTH)
