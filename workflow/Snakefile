@@ -60,17 +60,17 @@ HEATMAP_MESO_SMALL = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso
 # Gender
 GENDER_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'gender', 'gender_disagreement.png')
 
-SELFCITE_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'selfcite', "selfcite_disagreement.png")
-SELFCITE_BAR_DISAGREEMENT_FACET = osjoin(FIG_DIR, 'selfcite', 'selfcite_disagreement_faceted.png')
+SELFCITE_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'selfcite', "{validity}_selfcite_disagreement.png")
+SELFCITE_BAR_DISAGREEMENT_FACET = osjoin(FIG_DIR, 'selfcite', '{validity}_selfcite_disagreement_faceted.png')
 
 QUERY_TERMPORAL_PLOT = osjoin(FIG_DIR, 'temporal', 'query_temporal.png')
 FIELD_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement.png')
-FIELD_DISAGREEMENT_TEMPORAL_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement_over_time.png')
+FIELD_DISAGREEMENT_TEMPORAL_PLOT = osjoin(FIG_DIR, 'field', '{validity}_field_disagreement_over_time.png')
 
 TEXT_PROGRESSION_PLOT = osjoin(FIG_DIR, 'progression', 'field_text_progression.png')
 
-AGE_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'age', 'age_disagreement.png')
-AGE_DISAGREEMENT_FACETED_PLOT = osjoin(FIG_DIR, 'age', 'age_disagreement_faceted.png')
+AGE_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'age', '{validity}_age_disagreement.png')
+AGE_DISAGREEMENT_FACETED_PLOT = osjoin(FIG_DIR, 'age', '{validity}_age_disagreement_faceted.png')
 
 ###########################################################
 # PARAMETERS
@@ -79,6 +79,7 @@ MEASURE_TYPES = ['agreement', 'validity']
 QUERY_TYPES = ['all', 'signal_name', 'filter_name']
 CLUSTERS = ["Soc-Hum", "Bio-Health", "Phys-Engr", "Life-Earth", "Math-Comp"]
 SCORES = ['score.all', 'score.field']
+VALIDITY = [70, 80]
 
 ###########################################################
 # TARGET RULE
@@ -101,14 +102,14 @@ rule all:
         expand(HEATMAP_MESO_BIG, score = SCORES),
         expand(HEATMAP_MESO_SMALL, score = SCORES),
         GENDER_BAR_DISAGREEMENT,
-        SELFCITE_BAR_DISAGREEMENT,
-        SELFCITE_BAR_DISAGREEMENT_FACET,
+        expand(SELFCITE_BAR_DISAGREEMENT, validity = VALIDITY),
+        expand(SELFCITE_BAR_DISAGREEMENT_FACET, validity = VALIDITY),
         QUERY_TERMPORAL_PLOT,
         FIELD_DISAGREEMENT_PLOT,
-        FIELD_DISAGREEMENT_TEMPORAL_PLOT,
+        expand(FIELD_DISAGREEMENT_TEMPORAL_PLOT, validity = VALIDITY),
         TEXT_PROGRESSION_PLOT,
-        AGE_DISAGREEMENT_PLOT,
-        AGE_DISAGREEMENT_FACETED_PLOT
+        expand(AGE_DISAGREEMENT_PLOT, validity = VALIDITY),
+        expand(AGE_DISAGREEMENT_FACETED_PLOT, validity = VALIDITY)
 
 rule aggregate_coded_sentences:
     params: osjoin(DATA_DIR, 'coded'),
@@ -241,14 +242,16 @@ rule plot_selfcite_disagreement:
     output: SELFCITE_BAR_DISAGREEMENT
     shell:
         "Rscript scripts/figures/disagreement_selfcitation.R \
-        --input {input} --output {output} --facet none"
+        --input {input} --output {output} --facet none \
+        --validity {wildcards.validity}"
 
 rule plot_selfcite_disagreement_faceted:
     input: SELFCITE_DISAGREEMENT
     output: SELFCITE_BAR_DISAGREEMENT_FACET
     shell:
         "Rscript scripts/figures/disagreement_selfcitation.R \
-        --input {input} --output {output} --facet filter"
+        --input {input} --output {output} --facet filter \
+        --validity {wildcards.validity}"
 
 rule plot_query_temporal:
     input: QUERY_TEMPORAL
@@ -268,7 +271,7 @@ rule plot_field_disagreement_over_time:
     output: FIELD_DISAGREEMENT_TEMPORAL_PLOT
     shell:
         "Rscript scripts/figures/disagreement_field_temporal.R \
-        --input {input} --output {output}"
+        --input {input} --output {output} --validity {wildcards.validity}"
 
 rule plot_disagreement_progression:
     input: TEXT_PROGRESSION,
@@ -282,11 +285,13 @@ rule plot_disagreement_age:
     output: AGE_DISAGREEMENT_PLOT
     shell:
         "Rscript scripts/figures/disagreement_age.R \
-        --input {input} --output {output} --facet none"
+        --input {input} --output {output} --facet none \
+        --validity {wildcards.validity}"
 
 rule plot_disagreement_age_faceted:
     input: AGE_DISAGREEMENT
     output: AGE_DISAGREEMENT_FACETED_PLOT
     shell:
         "Rscript scripts/figures/disagreement_age.R \
-        --input {input} --output {output} --facet filter"
+        --input {input} --output {output} --facet filter \
+        --validity {wildcards.validity}"

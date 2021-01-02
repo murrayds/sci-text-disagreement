@@ -30,6 +30,8 @@ option_list = list(
               help="Path to file containing disagreement by gender data"),
   make_option(c("--facet"), action="store", default=NA, type="character",
               help="Whether to facet data, 'none', or 'filter'"),
+  make_option(c("--validity"), action="store", default=NA, type="integer",
+              help="Validity threshold to use"),
   make_option(c("-o", "--output"), action="store", default=NA, type="character",
               help="Path to save output image")
 ) # end option_list
@@ -37,6 +39,7 @@ opt = parse_args(OptionParser(option_list=option_list))
 
 # Load the data on self-citation (sourced from separate SQL queries)
 selfcite <- read_csv(opt$input, col_types = cols()) %>%
+filter(threshold == opt$validity) %>%
   mutate(
     share_disagreement = share_disagreement * 100,
     field = factor(LR_main_field,
