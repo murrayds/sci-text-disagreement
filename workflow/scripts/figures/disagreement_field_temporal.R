@@ -24,6 +24,8 @@ suppressPackageStartupMessages(require(optparse))
 option_list = list(
   make_option(c("--input"), action="store", default=NA, type="character",
               help="Path to file containing disagreement by gender data"),
+  make_option(c("--validity"), action="store", default=NA, type="integer",
+              help="Validity threshold to use"),
   make_option(c("-o", "--output"), action="store", default=NA, type="character",
               help="Path to save output image")
 ) # end option_list
@@ -31,7 +33,7 @@ opt = parse_args(OptionParser(option_list=option_list))
 
 field <- read_csv(opt$input, col_types = cols()) %>%
   filter(type == "citances") %>%
-  filter(threshold == 80) %>%
+  filter(threshold == opt$validity) %>%
   mutate(
     pub_year = as.numeric(pub_year),
     perc_intext_citations = perc_intext_citations * 100,

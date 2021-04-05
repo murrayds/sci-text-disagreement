@@ -48,7 +48,7 @@ hull <- map %>%
   slice(chull(x, y))
 
 # Used to index the color list
-levels <- unique(hull$cluster)
+levels <- field_levels()
 
 # Build the plot
 plot <- map %>%

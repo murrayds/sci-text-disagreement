@@ -31,11 +31,16 @@ opt = parse_args(OptionParser(option_list=option_list))
 # Load the dataset
 agreement <- read_csv(opt$input, col_types = cols()) %>%
   filter(signal_name != "AVERAGE") %>%
-  filter(filter_name != "AVERAGE")
+  filter(filter_name != "AVERAGE") %>%
+  filter(type == "validity") # Limit to validity to order
 
 # Load the counts of citances returned by each query
 counts <- read_csv(opt$counts, col_types = cols())
 
+print(head(agreement))
+# Build the plotdata from the agreement data. While we don't
+# actually plot this information, we need to arrange the bars
+# to match the validity plot
 plotdata <- agreement %>%
   left_join(counts, by = c("signal_name", "filter_name")) %>%
   mutate(
@@ -53,22 +58,25 @@ plotdata <- agreement %>%
     cumulative = cumsum(All) / sum(All) * 100
   )
 
-# Label the plot
-labels <- plotdata %>%
-  filter(row_number() %in% c(10, 20, 30, 40,  50, 60)) %>%
-  mutate(text = paste0(round(cumulative, 1), "%"))
+#
+# labels <- plotdata %>%
+#   filter(row_number() %in% c(10, 20, 30, 40,  50, 60)) %>%
+#   mutate(text = paste0(round(cumulative, 1), "%"))
+
 
 plot <- plotdata %>%
-  ggplot(aes(x = query, y = cumulative, group = 1, fill = log10(All))) +
+  ggplot(aes(x = query, y = log10(All), group = 1, fill = log10(All))) +
   geom_bar(stat = "identity") +
   coord_flip() +
-  geom_text(data = labels,
-            aes(label = text, y = cumulative + 20)
-            ) +
+  # geom_text(data = labels,
+  #           aes(label = text, y = cumulative + 20)
+  #           ) +
   scale_x_discrete(breaks = c(5, 10)) +
   scale_y_continuous(
-    breaks = c(0, 100),
-    expand = c(0, 0)
+    limits = c(0, 7),
+    breaks = c(1, 7),
+    expand = c(0, 0),
+    labels = function(x) { parse(text=paste0("10^", x)) },
   ) +
   scale_fill_gradient(name = "# Citances ",
                        low = "#dfe6e9", high = "#2d3436",
@@ -76,7 +84,7 @@ plot <- plotdata %>%
                        labels = function(x) { parse(text=paste0("10^", x)) },
                        limits = c(1, 7)) +
   guides(fill = F) +
-  theme_minimal() +
+  theme_dakota() +
   theme(
     axis.title.y = element_blank(),
     panel.grid = element_blank(),
@@ -84,6 +92,7 @@ plot <- plotdata %>%
     axis.text.x = element_text(hjust = 1),
     axis.line = element_line(colour = "black", size = 0.25)
   ) +
-  ylab("%")
+  ylab("# Citances")
 
+# save the output
 ggsave(opt$output, plot, height = FIG.HEIGHT, width = FIG.WIDTH)

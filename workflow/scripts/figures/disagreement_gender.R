@@ -8,8 +8,8 @@
 source("scripts/figures/themes.R")
 source("scripts/common.R")
 
-FIG.HEIGHT <- 5
-FIG.WIDTH <- 8
+FIG.HEIGHT <- 6
+FIG.WIDTH <- 5
 
 library(dplyr)
 library(ggplot2)
@@ -63,6 +63,7 @@ disagreement <- gender %>%
     field = factor(field, labels = field_long_labels()),
     gender = factor(gender, levels = c("male", "female"), labels = c("men", "women"))
   ) %>%
+  filter(field != "All") %>%
   group_by(authorship, field) %>%
   mutate(
     # Calculate the ratio of the share of disagreement between
@@ -70,14 +71,13 @@ disagreement <- gender %>%
     ratio = lag(perc_intext) / (perc_intext)
   )
 
-print(head(disagreement))
 # Build the plot
 plot <- disagreement %>%
   ggplot(aes(x = gender, y = perc_intext, fill = field, group = interaction(authorship, field))) +
   geom_bar(stat = "identity", position = position_dodge(width = 0.9), color = "black", aes(alpha = gender)) +
   geom_text(aes(label = ifelse(is.na(ratio), NA, paste0(sprintf("%.2f", round(ratio, 2)), "x"))),
             position = position_dodge(width = 0.9),
-            vjust = -1, hjust = -0.1
+            vjust = -1.5, hjust = -0.5
   ) +
   # Add the number of disagreement citances
   geom_text(position = position_dodge(width = 0.9),
@@ -86,16 +86,17 @@ plot <- disagreement %>%
                 group = interaction(authorship, field)),
             vjust = -0.5,
             alpha = 1,
-            size = 2.75
+            size = 3
   ) +
-  facet_grid(authorship~field, scales = "free_y", switch = "y") +
-  scale_y_continuous(expand = c(0.17, 0), position = "right") +
+  facet_grid(field~authorship, switch = "y", scales = "free") +
+  scale_y_continuous(expand = expand_scale(mult = c(0, .5)), position = "right") +
   scale_alpha_manual(values = c(0.1, 1)) +
-  scale_fill_manual(values = field_long_colors()) +
+  scale_fill_manual(values = tail(field_long_colors(), 5)) +
   guides(fill = F, alpha = F) +
   theme_dakota() +
   theme(
     axis.title.x = element_blank(),
+    panel.border = element_rect(size = 0.5, fill = NA),
     axis.title.y = element_text(face = "bold"),
     legend.position = "bottom",
     panel.grid.major.x = element_blank(),

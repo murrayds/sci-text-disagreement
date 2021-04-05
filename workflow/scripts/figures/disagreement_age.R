@@ -22,6 +22,8 @@ option_list = list(
               help="Path to file containing disagreement by gender data"),
   make_option(c("--facet"), action="store", default=NA, type="character",
               help="Whether to facet data, 'none', or 'filter'"),
+  make_option(c("--validity"), action="store", default=NA, type="integer",
+              help="Validity threshold to use"),
   make_option(c("-o", "--output"), action="store", default=NA, type="character",
               help="Path to save output image")
 ) # end option_list
@@ -29,6 +31,7 @@ opt = parse_args(OptionParser(option_list=option_list))
 
 # Load the data, originally sourced from the SQL server
 age <- read_csv(opt$input, col_types = cols()) %>%
+  filter(threshold == opt$validity) %>%
   mutate(
     share_disagreement = share_disagreement * 100,
     field = factor(LR_main_field,
@@ -60,14 +63,23 @@ if (opt$facet == "none") {
 # The ratio change between each pair of age bins, but this proved not very useful.
 # Still, I think its a good idea to keep this code here should it become useful
 # in the future
-plot <- age %>%
+plotdata <- age %>%
   group_by(field, filter_name) %>%
   arrange(citation_window_bin) %>%
   mutate(
     change = share_disagreement - lag(share_disagreement),
     perc.change = (share_disagreement - lag(share_disagreement)) / share_disagreement,
     ratio = (share_disagreement) / lag(share_disagreement)
-  ) %>%
+  )
+
+
+mus = plotdata %>%
+  ungroup() %>%
+  group_by(field) %>%
+  summarize(mu = mean(change, na.rm = T))
+print(mus)
+
+plot <- plotdata %>%
   ggplot(aes(x = citation_window_bin, y = share_disagreement, group = field, fill = field, alpha = citation_window_bin)) +
   geom_bar(stat = "identity", color = "black") +
   geom_text(aes(y = 0, label = formatC(n_citations_disagreement, format = "d", big.mark = ",")),
@@ -78,7 +90,7 @@ plot <- age %>%
   scale_fill_manual(values = field_long_colors()) +
   scale_alpha_manual(values = c(0.2, 0.4, 0.6, 0.8, 1.0)) +
   scale_y_continuous(limits = c(0, NA),
-                     expand = c(0.1, 0),
+                     expand = expand_scale(mult = c(0, .5)),
                      position = ifelse(opt$facet == "none", "left", "right")) +
   guides(alpha = F, fill = F) +
   theme_dakota() +
@@ -87,7 +99,9 @@ plot <- age %>%
     panel.border = element_rect(size = 0.5, fill = NA),
     legend.background = element_rect(size = 0.5, fill = "white"),
     legend.title = element_blank(),
-    axis.text.x = element_text(angle = 45, hjust = 1)
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    strip.text = element_text(size = 14),
+    strip.text.y.left = element_text(size = 14, angle = 0, hjust = 1)
   ) +
   xlab("Age of cited paper (years)") +
   ylab("% disagreement")
@@ -96,16 +110,13 @@ plot <- age %>%
 # faceting and themes
 if (opt$facet == "none") {
   plot <- plot +
-    facet_wrap(~field)
+    facet_wrap(~field, scales = "free_y")
 } else if (opt$facet == "filter") {
   plot <- plot +
-    facet_grid(filter_name~field, scale = "free_y", switch = "y") +
-    theme(
-      strip.text.y.left = element_text(angle = 0, hjust = 1)
-    )
+    facet_grid(field~filter_name, scale = "free_y", switch = "y")
 
-  FIG.HEIGHT <- 12
-  FIG.WIDTH = 16
+  FIG.HEIGHT <- 8
+  FIG.WIDTH = 14
 }
 
 

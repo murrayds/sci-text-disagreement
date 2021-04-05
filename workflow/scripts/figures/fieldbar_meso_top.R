@@ -91,7 +91,8 @@ plot <- plotdata %>%
       axis.title = element_blank(),
       axis.text.x = element_text(face = "bold", size = 14),
       axis.text.y = element_blank(),
-      legend.key.width = unit(2, "cm")
+      legend.key.width = unit(2, "cm"),
+      strip.text = element_text(size = 14)
     )
 
 ggsave(opt$output, plot, height = FIG.HEIGHT, width = FIG.WIDTH)

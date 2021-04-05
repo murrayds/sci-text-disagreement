@@ -16,7 +16,7 @@ FIG_DIR = osjoin(PROJ_HOME, 'figs')
 ###########################################################
 AGG_CODED_SENTENCES = osjoin(DERIVED_DIR, 'coded_fulltext_sentences.csv')
 PERCENT_AGREEMENT = osjoin(DERIVED_DIR, 'percent_agreement.csv')
-QUERY_COUNTS = osjoin(RAW_DIR, '20200511_query_counts.csv')
+QUERY_COUNTS = osjoin(RAW_DIR, '20200610_query_counts.csv')
 
 FIELDMAP_DATA = osjoin(RAW_DIR, 'mapdata_fixed.txt')
 FIELDMAP_PROCESSED = osjoin(DERIVED_DIR, 'mapdata_processed.csv')
@@ -32,44 +32,49 @@ TEXT_PROGRESSION = osjoin(RAW_DIR, '20200610_text_progression.csv')
 
 AGE_DISAGREEMENT = osjoin(RAW_DIR, '20200610_citation_window_disagreement.csv')
 
+CITING_PAPERS_CITATIONS = osjoin(RAW_DIR, '20210102_citing_disagreement_citations.csv')
 ###########################################################
 # FIGURES
 ###########################################################
 
 # Validity
-PERCENT_AGREEMENT_PLOT = osjoin(FIG_DIR, 'validity', 'percent_{measure}.pdf')
-OVERALL_VALIDITY_PLOT = osjoin(FIG_DIR, 'validity', 'overall_validity.pdf')
-QUERY_COUNT_BAR_PLOT = osjoin(FIG_DIR, 'validity', 'query_bar_plot.pdf')
+PERCENT_AGREEMENT_PLOT = osjoin(FIG_DIR, 'validity', 'percent_{measure}.png')
+OVERALL_VALIDITY_PLOT = osjoin(FIG_DIR, 'validity', 'overall_validity.png')
+QUERY_COUNT_BAR_PLOT = osjoin(FIG_DIR, 'validity', 'query_bar_plot.png')
 
 # Representation
-QUERY_REPRESENTATION_PLOT = osjoin(FIG_DIR, 'representation', '{query}_query_representation.pdf')
-CITANCE_BY_FIELD_PLOT = osjoin(FIG_DIR, 'representation', 'citances_by_field.pdf')
+QUERY_REPRESENTATION_PLOT = osjoin(FIG_DIR, 'representation', '{query}_query_representation.png')
+CITANCE_BY_FIELD_PLOT = osjoin(FIG_DIR, 'representation', 'citances_by_field.png')
 
 # VosViewer-style maps
-FIELDMAP_CONVEX_HULL_PLOT = osjoin(FIG_DIR, 'fieldmap', '{score}', 'hull', '{cluster}_{score}_convex_hull.pdf')
-FIELDMAP_REFERENCE_PLOT = osjoin(FIG_DIR, 'fieldmap', 'reference_fieldmap.pdf')
-FIELDMAP_MAIN = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_fieldmap.pdf')
-FIELDMAP_QUERIES = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_fieldmap_queries.pdf')
+FIELDMAP_CONVEX_HULL_PLOT = osjoin(FIG_DIR, 'fieldmap', '{score}', 'hull', '{cluster}_{score}_convex_hull.png')
+FIELDMAP_REFERENCE_PLOT = osjoin(FIG_DIR, 'fieldmap', 'reference_fieldmap.png')
+FIELDMAP_MAIN = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_fieldmap.png')
+FIELDMAP_MAIN_NOLAB = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_nolabels_fieldmap.png')
+FIELDMAP_QUERIES = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_fieldmap_queries.png')
 
-FIELDBAR_MESO_TOP = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_top_meso_fields.pdf')
+FIELDBAR_MESO_TOP = osjoin(FIG_DIR, 'fieldmap', '{score}', '{score}_top_meso_fields.png')
 
-HEATMAP_MESO_BIG = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso_big.pdf')
-HEATMAP_MESO_SMALL = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso_small.pdf')
+HEATMAP_MESO_BIG = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso_big.png')
+HEATMAP_MESO_SMALL = osjoin(FIG_DIR, 'heatmap', '{score}', '{score}_heatmap_meso_small.png')
 
 # Gender
-GENDER_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'gender', 'gender_disagreement.pdf')
+GENDER_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'gender', 'gender_disagreement.png')
 
-SELFCITE_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'selfcite', "selfcite_disagreement.pdf")
-SELFCITE_BAR_DISAGREEMENT_FACET = osjoin(FIG_DIR, 'selfcite', 'selfcite_disagreement_faceted.pdf')
+SELFCITE_BAR_DISAGREEMENT = osjoin(FIG_DIR, 'selfcite', "{validity}_selfcite_disagreement.png")
+SELFCITE_BAR_DISAGREEMENT_FACET = osjoin(FIG_DIR, 'selfcite', '{validity}_selfcite_disagreement_faceted.png')
 
-QUERY_TERMPORAL_PLOT = osjoin(FIG_DIR, 'temporal', 'query_temporal.pdf')
-FIELD_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement.pdf')
-FIELD_DISAGREEMENT_TEMPORAL_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement_over_time.pdf')
+QUERY_TERMPORAL_PLOT = osjoin(FIG_DIR, 'temporal', 'query_temporal.png')
+FIELD_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'field', 'field_disagreement.png')
+FIELD_DISAGREEMENT_TEMPORAL_PLOT = osjoin(FIG_DIR, 'field', '{validity}_field_disagreement_over_time.png')
 
-TEXT_PROGRESSION_PLOT = osjoin(FIG_DIR, 'progression', 'field_text_progression.pdf')
+TEXT_PROGRESSION_PLOT = osjoin(FIG_DIR, 'progression', 'field_text_progression.png')
 
-AGE_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'age', 'age_disagreement.pdf')
-AGE_DISAGREEMENT_FACETED_PLOT = osjoin(FIG_DIR, 'age', 'age_disagreement_faceted.pdf')
+AGE_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'age', '{validity}_age_disagreement.png')
+AGE_DISAGREEMENT_FACETED_PLOT = osjoin(FIG_DIR, 'age', '{validity}_age_disagreement_faceted.png')
+
+# citations
+CITATIONS_DISAGREEMENT_CITING = osjoin(FIG_DIR, 'citations-citing', '{pubtype}_citations_disagreement_citing_papers.png')
 
 ###########################################################
 # PARAMETERS
@@ -78,6 +83,8 @@ MEASURE_TYPES = ['agreement', 'validity']
 QUERY_TYPES = ['all', 'signal_name', 'filter_name']
 CLUSTERS = ["Soc-Hum", "Bio-Health", "Phys-Engr", "Life-Earth", "Math-Comp"]
 SCORES = ['score.all', 'score.field']
+VALIDITY = [70, 80]
+PUBTYPE = ['all', 'full', 'review', 'short']
 
 ###########################################################
 # TARGET RULE
@@ -95,18 +102,20 @@ rule all:
         expand(FIELDMAP_CONVEX_HULL_PLOT, cluster = CLUSTERS, score = SCORES),
         expand(FIELDBAR_MESO_TOP, score = SCORES),
         expand(FIELDMAP_MAIN, score = SCORES),
+        expand(FIELDMAP_MAIN_NOLAB, score = SCORES),
         expand(FIELDMAP_QUERIES, score = SCORES),
         expand(HEATMAP_MESO_BIG, score = SCORES),
         expand(HEATMAP_MESO_SMALL, score = SCORES),
         GENDER_BAR_DISAGREEMENT,
-        SELFCITE_BAR_DISAGREEMENT,
-        SELFCITE_BAR_DISAGREEMENT_FACET,
+        expand(SELFCITE_BAR_DISAGREEMENT, validity = VALIDITY),
+        expand(SELFCITE_BAR_DISAGREEMENT_FACET, validity = VALIDITY),
         QUERY_TERMPORAL_PLOT,
         FIELD_DISAGREEMENT_PLOT,
-        FIELD_DISAGREEMENT_TEMPORAL_PLOT,
+        expand(FIELD_DISAGREEMENT_TEMPORAL_PLOT, validity = VALIDITY),
         TEXT_PROGRESSION_PLOT,
-        AGE_DISAGREEMENT_PLOT,
-        AGE_DISAGREEMENT_FACETED_PLOT
+        expand(AGE_DISAGREEMENT_PLOT, validity = VALIDITY),
+        expand(AGE_DISAGREEMENT_FACETED_PLOT, validity = VALIDITY),
+        expand(CITATIONS_DISAGREEMENT_CITING, pubtype = PUBTYPE)
 
 rule aggregate_coded_sentences:
     params: osjoin(DATA_DIR, 'coded'),
@@ -137,7 +146,15 @@ rule plot_overall_validity:
         "Rscript scripts/figures/overall_validity.R \
         --input {input} --output {output} --counts {params}"
 
-rule plot_query_count:
+rule plot_query_count_bar:
+    input: rules.calculate_percent_agreement.output
+    params: QUERY_COUNTS
+    output: QUERY_COUNT_BAR_PLOT
+    shell:
+        "Rscript scripts/figures/query_count_bar.R \
+        --input {input} --output {output} --counts {params}"
+
+rule plot_query_representation:
     params: QUERY_COUNTS
     output: QUERY_REPRESENTATION_PLOT
     shell:
@@ -187,6 +204,14 @@ rule plot_fieldmap:
     shell:
         "Rscript scripts/figures/fieldmap_main.R \
         --input {input} --output {output} --threshold 100000 \
+        --score {wildcards.score} --labels"
+
+rule plot_fieldmap_nolabels:
+    input: rules.process_fieldmap_data.output
+    output: FIELDMAP_MAIN_NOLAB
+    shell:
+        "Rscript scripts/figures/fieldmap_main.R \
+        --input {input} --output {output} --threshold 100000 \
         --score {wildcards.score}"
 
 rule plot_fieldmap_queries:
@@ -223,14 +248,16 @@ rule plot_selfcite_disagreement:
     output: SELFCITE_BAR_DISAGREEMENT
     shell:
         "Rscript scripts/figures/disagreement_selfcitation.R \
-        --input {input} --output {output} --facet none"
+        --input {input} --output {output} --facet none \
+        --validity {wildcards.validity}"
 
 rule plot_selfcite_disagreement_faceted:
     input: SELFCITE_DISAGREEMENT
     output: SELFCITE_BAR_DISAGREEMENT_FACET
     shell:
         "Rscript scripts/figures/disagreement_selfcitation.R \
-        --input {input} --output {output} --facet filter"
+        --input {input} --output {output} --facet filter \
+        --validity {wildcards.validity}"
 
 rule plot_query_temporal:
     input: QUERY_TEMPORAL
@@ -250,7 +277,7 @@ rule plot_field_disagreement_over_time:
     output: FIELD_DISAGREEMENT_TEMPORAL_PLOT
     shell:
         "Rscript scripts/figures/disagreement_field_temporal.R \
-        --input {input} --output {output}"
+        --input {input} --output {output} --validity {wildcards.validity}"
 
 rule plot_disagreement_progression:
     input: TEXT_PROGRESSION,
@@ -264,11 +291,20 @@ rule plot_disagreement_age:
     output: AGE_DISAGREEMENT_PLOT
     shell:
         "Rscript scripts/figures/disagreement_age.R \
-        --input {input} --output {output} --facet none"
+        --input {input} --output {output} --facet none \
+        --validity {wildcards.validity}"
 
 rule plot_disagreement_age_faceted:
     input: AGE_DISAGREEMENT
     output: AGE_DISAGREEMENT_FACETED_PLOT
     shell:
         "Rscript scripts/figures/disagreement_age.R \
-        --input {input} --output {output} --facet filter"
+        --input {input} --output {output} --facet filter \
+        --validity {wildcards.validity}"
+
+rule plot_citations_disagreement_citing:
+    input: CITING_PAPERS_CITATIONS
+    output: CITATIONS_DISAGREEMENT_CITING
+    shell:
+        "Rscript scripts/figures/citations_by_disagreement_citing.R \
+        --input {input} --output {output} --pubtype {wildcards.pubtype}"
