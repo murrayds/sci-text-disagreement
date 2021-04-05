@@ -35,6 +35,8 @@ map <- map %>%
   mutate(
     # Remove the tags separating items in the description
     journals = unlist(strsplit(cleanFun(description), ":"))[4],
+    # Get the terms associated with each meso-field
+    terms = unlist(strsplit(cleanFun(description), ":"))[[5]],
     # Get the first three journals represented in the data
     select.journal = paste0(unlist(strsplit(journals, ";")), collapse = ";"),
     # Abbreviate common terms in the journal

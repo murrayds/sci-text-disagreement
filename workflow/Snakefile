@@ -16,7 +16,7 @@ FIG_DIR = osjoin(PROJ_HOME, 'figs')
 ###########################################################
 AGG_CODED_SENTENCES = osjoin(DERIVED_DIR, 'coded_fulltext_sentences.csv')
 PERCENT_AGREEMENT = osjoin(DERIVED_DIR, 'percent_agreement.csv')
-QUERY_COUNTS = osjoin(RAW_DIR, '20200511_query_counts.csv')
+QUERY_COUNTS = osjoin(RAW_DIR, '20200610_query_counts.csv')
 
 FIELDMAP_DATA = osjoin(RAW_DIR, 'mapdata_fixed.txt')
 FIELDMAP_PROCESSED = osjoin(DERIVED_DIR, 'mapdata_processed.csv')
@@ -32,6 +32,7 @@ TEXT_PROGRESSION = osjoin(RAW_DIR, '20200610_text_progression.csv')
 
 AGE_DISAGREEMENT = osjoin(RAW_DIR, '20200610_citation_window_disagreement.csv')
 
+CITING_PAPERS_CITATIONS = osjoin(RAW_DIR, '20210102_citing_disagreement_citations.csv')
 ###########################################################
 # FIGURES
 ###########################################################
@@ -72,6 +73,9 @@ TEXT_PROGRESSION_PLOT = osjoin(FIG_DIR, 'progression', 'field_text_progression.p
 AGE_DISAGREEMENT_PLOT = osjoin(FIG_DIR, 'age', '{validity}_age_disagreement.png')
 AGE_DISAGREEMENT_FACETED_PLOT = osjoin(FIG_DIR, 'age', '{validity}_age_disagreement_faceted.png')
 
+# citations
+CITATIONS_DISAGREEMENT_CITING = osjoin(FIG_DIR, 'citations-citing', '{pubtype}_citations_disagreement_citing_papers.png')
+
 ###########################################################
 # PARAMETERS
 ###########################################################
@@ -80,6 +84,7 @@ QUERY_TYPES = ['all', 'signal_name', 'filter_name']
 CLUSTERS = ["Soc-Hum", "Bio-Health", "Phys-Engr", "Life-Earth", "Math-Comp"]
 SCORES = ['score.all', 'score.field']
 VALIDITY = [70, 80]
+PUBTYPE = ['all', 'full', 'review', 'short']
 
 ###########################################################
 # TARGET RULE
@@ -109,7 +114,8 @@ rule all:
         expand(FIELD_DISAGREEMENT_TEMPORAL_PLOT, validity = VALIDITY),
         TEXT_PROGRESSION_PLOT,
         expand(AGE_DISAGREEMENT_PLOT, validity = VALIDITY),
-        expand(AGE_DISAGREEMENT_FACETED_PLOT, validity = VALIDITY)
+        expand(AGE_DISAGREEMENT_FACETED_PLOT, validity = VALIDITY),
+        expand(CITATIONS_DISAGREEMENT_CITING, pubtype = PUBTYPE)
 
 rule aggregate_coded_sentences:
     params: osjoin(DATA_DIR, 'coded'),
@@ -295,3 +301,10 @@ rule plot_disagreement_age_faceted:
         "Rscript scripts/figures/disagreement_age.R \
         --input {input} --output {output} --facet filter \
         --validity {wildcards.validity}"
+
+rule plot_citations_disagreement_citing:
+    input: CITING_PAPERS_CITATIONS
+    output: CITATIONS_DISAGREEMENT_CITING
+    shell:
+        "Rscript scripts/figures/citations_by_disagreement_citing.R \
+        --input {input} --output {output} --pubtype {wildcards.pubtype}"
