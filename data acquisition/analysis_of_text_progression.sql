@@ -1,3 +1,7 @@
+/*****
+Analysis query for disagreement citances over text progression
+By Wout S. Lamers
+*****/
 
 declare @threshold_validity as int = 80
 declare @threshold_agreement as int = 80

@@ -1,3 +1,7 @@
+/*****
+Analysis query for interaction disagreement citations and received citations
+By Wout S. Lamers
+*****/
 
 use projectdb_tdm_elsevier
 go

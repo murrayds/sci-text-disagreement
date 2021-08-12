@@ -1,3 +1,7 @@
+/*****
+General data analysis query for Measuring Disagreement in Science
+By Nees Jan van Eck and Wout S. Lamers
+*****/
 
 declare @threshold_validity as int = 80
 declare @threshold_agreement as int = 80
