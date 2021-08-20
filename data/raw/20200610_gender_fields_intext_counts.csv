@@ -1,0 +1,181 @@
+﻿LR_main_field,measure,type,threshold,All,F1,F2,M1,M2
+Biomedical and health sciences,perc_citances_found,citances,70,0.034627163,0.035354581,0.035132829,0.034299098,0.034294454
+Life and earth sciences,perc_citances_found,citances,70,0.032074928,0.032776873,0.031776152,0.031847669,0.032015454
+Mathematics and computer science,perc_citances_found,citances,70,0.020538325,0.020948106,0.020692898,0.020342995,0.020589327
+Physical sciences and engineering,perc_citances_found,citances,70,0.020491195,0.020331887,0.019747397,0.020593157,0.020633592
+Social sciences and humanities,perc_citances_found,citances,70,0.054648334,0.057712295,0.057711706,0.052650538,0.053135223
+All,perc_citances_found,citances,70,0.031584948,0.033702184,0.033367297,0.030589858,0.030836229
+Biomedical and health sciences,n_citances_found,citances,70,1571533,327586,218564,453306,572077
+Life and earth sciences,n_citances_found,citances,70,695946,132615,86910,215582,260839
+Mathematics and computer science,n_citances_found,citances,70,126564,13495,11662,49863,51544
+Physical sciences and engineering,n_citances_found,citances,70,535300,72438,50453,193950,218459
+Social sciences and humanities,n_citances_found,citances,70,495647,106446,83705,147327,158169
+All,n_citances_found,citances,70,3424990,652580,451294,1060028,1261088
+Biomedical and health sciences,tot_n_citances,citances,70,45384399,9265730,6221076,13216266,16681327
+Life and earth sciences,tot_n_citances,citances,70,21697508,4045993,2735070,6769161,8147284
+Mathematics and computer science,tot_n_citances,citances,70,6162333,644211,563575,2451114,2503433
+Physical sciences and engineering,tot_n_citances,citances,70,26123415,3562778,2554919,9418177,10587541
+Social sciences and humanities,tot_n_citances,citances,70,9069755,1844425,1450399,2798205,2976726
+All,tot_n_citances,citances,70,108437410,19363137,13525039,34652923,40896311
+Biomedical and health sciences,perc_citances_valid,citances,70,0.00499859,0.005005542,0.004947215,0.005033721,0.004986054
+Life and earth sciences,perc_citances_valid,citances,70,0.003566354,0.003470594,0.003466456,0.003670765,0.003560696
+Mathematics and computer science,perc_citances_valid,citances,70,0.001430952,0.001477777,0.001556137,0.001434858,0.001386896
+Physical sciences and engineering,perc_citances_valid,citances,70,0.001677384,0.001684921,0.001660327,0.001696613,0.001661859
+Social sciences and humanities,perc_citances_valid,citances,70,0.007352349,0.007470079,0.007457948,0.007355787,0.007224716
+All,perc_citances_valid,citances,70,0.003906032,0.004191211,0.004154812,0.003793446,0.003784131
+Biomedical and health sciences,n_citances_valid,citances,70,226858,46380,30777,66527,83174
+Life and earth sciences,n_citances_valid,citances,70,77381,14042,9481,24848,29010
+Mathematics and computer science,n_citances_valid,citances,70,8818,952,877,3517,3472
+Physical sciences and engineering,n_citances_valid,citances,70,43819,6003,4242,15979,17595
+Social sciences and humanities,n_citances_valid,citances,70,66684,13778,10817,20583,21506
+All,n_citances_valid,citances,70,423560,81155,56194,131454,154757
+Biomedical and health sciences,perc_citances_found,citances,75,0.034627163,0.035354581,0.035132829,0.034299098,0.034294454
+Life and earth sciences,perc_citances_found,citances,75,0.032074928,0.032776873,0.031776152,0.031847669,0.032015454
+Mathematics and computer science,perc_citances_found,citances,75,0.020538325,0.020948106,0.020692898,0.020342995,0.020589327
+Physical sciences and engineering,perc_citances_found,citances,75,0.020491195,0.020331887,0.019747397,0.020593157,0.020633592
+Social sciences and humanities,perc_citances_found,citances,75,0.054648334,0.057712295,0.057711706,0.052650538,0.053135223
+All,perc_citances_found,citances,75,0.031584948,0.033702184,0.033367297,0.030589858,0.030836229
+Biomedical and health sciences,n_citances_found,citances,75,1571533,327586,218564,453306,572077
+Life and earth sciences,n_citances_found,citances,75,695946,132615,86910,215582,260839
+Mathematics and computer science,n_citances_found,citances,75,126564,13495,11662,49863,51544
+Physical sciences and engineering,n_citances_found,citances,75,535300,72438,50453,193950,218459
+Social sciences and humanities,n_citances_found,citances,75,495647,106446,83705,147327,158169
+All,n_citances_found,citances,75,3424990,652580,451294,1060028,1261088
+Biomedical and health sciences,tot_n_citances,citances,75,45384399,9265730,6221076,13216266,16681327
+Life and earth sciences,tot_n_citances,citances,75,21697508,4045993,2735070,6769161,8147284
+Mathematics and computer science,tot_n_citances,citances,75,6162333,644211,563575,2451114,2503433
+Physical sciences and engineering,tot_n_citances,citances,75,26123415,3562778,2554919,9418177,10587541
+Social sciences and humanities,tot_n_citances,citances,75,9069755,1844425,1450399,2798205,2976726
+All,tot_n_citances,citances,75,108437410,19363137,13525039,34652923,40896311
+Biomedical and health sciences,perc_citances_valid,citances,75,0.00472365,0.004716952,0.004651446,0.004765567,0.004721087
+Life and earth sciences,perc_citances_valid,citances,75,0.003178798,0.0031179,0.003082919,0.003254761,0.003178114
+Mathematics and computer science,perc_citances_valid,citances,75,0.000799697,0.000796323,0.000912035,0.000801676,0.000773338
+Physical sciences and engineering,perc_citances_valid,citances,75,0.001429981,0.001460939,0.001430965,0.001432549,0.001417043
+Social sciences and humanities,perc_citances_valid,citances,75,0.006350116,0.006435068,0.006376866,0.006347283,0.006287109
+All,perc_citances_valid,citances,75,0.003534112,0.003816944,0.003755109,0.00341192,0.003430652
+Biomedical and health sciences,n_citances_valid,citances,75,214380,43706,28937,62983,78754
+Life and earth sciences,n_citances_valid,citances,75,68972,12615,8432,22032,25893
+Mathematics and computer science,n_citances_valid,citances,75,4928,513,514,1965,1936
+Physical sciences and engineering,n_citances_valid,citances,75,37356,5205,3656,13492,15003
+Social sciences and humanities,n_citances_valid,citances,75,57594,11869,9249,17761,18715
+All,n_citances_valid,citances,75,383230,73908,50788,118233,140301
+Biomedical and health sciences,perc_citances_found,citances,80,0.034627163,0.035354581,0.035132829,0.034299098,0.034294454
+Life and earth sciences,perc_citances_found,citances,80,0.032074928,0.032776873,0.031776152,0.031847669,0.032015454
+Mathematics and computer science,perc_citances_found,citances,80,0.020538325,0.020948106,0.020692898,0.020342995,0.020589327
+Physical sciences and engineering,perc_citances_found,citances,80,0.020491195,0.020331887,0.019747397,0.020593157,0.020633592
+Social sciences and humanities,perc_citances_found,citances,80,0.054648334,0.057712295,0.057711706,0.052650538,0.053135223
+All,perc_citances_found,citances,80,0.031584948,0.033702184,0.033367297,0.030589858,0.030836229
+Biomedical and health sciences,n_citances_found,citances,80,1571533,327586,218564,453306,572077
+Life and earth sciences,n_citances_found,citances,80,695946,132615,86910,215582,260839
+Mathematics and computer science,n_citances_found,citances,80,126564,13495,11662,49863,51544
+Physical sciences and engineering,n_citances_found,citances,80,535300,72438,50453,193950,218459
+Social sciences and humanities,n_citances_found,citances,80,495647,106446,83705,147327,158169
+All,n_citances_found,citances,80,3424990,652580,451294,1060028,1261088
+Biomedical and health sciences,tot_n_citances,citances,80,45384399,9265730,6221076,13216266,16681327
+Life and earth sciences,tot_n_citances,citances,80,21697508,4045993,2735070,6769161,8147284
+Mathematics and computer science,tot_n_citances,citances,80,6162333,644211,563575,2451114,2503433
+Physical sciences and engineering,tot_n_citances,citances,80,26123415,3562778,2554919,9418177,10587541
+Social sciences and humanities,tot_n_citances,citances,80,9069755,1844425,1450399,2798205,2976726
+All,tot_n_citances,citances,80,108437410,19363137,13525039,34652923,40896311
+Biomedical and health sciences,perc_citances_valid,citances,80,0.004075828,0.004045013,0.003985806,0.004133997,0.004080431
+Life and earth sciences,perc_citances_valid,citances,80,0.0029019,0.002816367,0.002805047,0.002993724,0.002900599
+Mathematics and computer science,perc_citances_valid,citances,80,0.000608049,0.000592973,0.000702657,0.000614007,0.000584797
+Physical sciences and engineering,perc_citances_valid,citances,80,0.001280346,0.001302355,0.001289278,0.00128613,0.001265639
+Social sciences and humanities,perc_citances_valid,citances,80,0.005748226,0.005772531,0.005766,0.005792999,0.005682418
+All,perc_citances_valid,citances,80,0.003110292,0.003333344,0.003291747,0.003022227,0.003019294
+Biomedical and health sciences,n_citances_valid,citances,80,184979,37480,24796,54636,68067
+Life and earth sciences,n_citances_valid,citances,80,62964,11395,7672,20265,23632
+Mathematics and computer science,n_citances_valid,citances,80,3747,382,396,1505,1464
+Physical sciences and engineering,n_citances_valid,citances,80,33447,4640,3294,12113,13400
+Social sciences and humanities,n_citances_valid,citances,80,52135,10647,8363,16210,16915
+All,n_citances_valid,citances,80,337272,64544,44521,104729,123478
+Biomedical and health sciences,perc_intext_citations,citations,70,0.03707566,0.037891012,0.037711957,0.036703203,0.036686616
+Life and earth sciences,perc_intext_citations,citations,70,0.033705562,0.034198188,0.033082657,0.033640815,0.033723566
+Mathematics and computer science,perc_intext_citations,citations,70,0.021233082,0.021642684,0.02181754,0.021079984,0.02114473
+Physical sciences and engineering,perc_intext_citations,citations,70,0.019818306,0.019479125,0.018896108,0.019984082,0.020008014
+Social sciences and humanities,perc_intext_citations,citations,70,0.058339504,0.06128688,0.061349244,0.056423691,0.056755914
+All,perc_intext_citations,citations,70,0.03271108,0.035021727,0.034669056,0.031636078,0.031897512
+Biomedical and health sciences,n_intext_citations,citations,70,3172559,658636,439168,917744,1157011
+Life and earth sciences,n_intext_citations,citations,70,1336792,251277,163744,418400,503371
+Mathematics and computer science,n_intext_citations,citations,70,227019,24211,21498,89651,91659
+Physical sciences and engineering,n_intext_citations,citations,70,1063736,143237,99103,385619,435777
+Social sciences and humanities,n_intext_citations,citations,70,914672,199349,155908,268830,290585
+All,n_intext_citations,citations,70,6714778,1276710,879421,2080244,2478403
+Biomedical and health sciences,tot_n_intext_citations,citations,70,85569859,17382381,11645325,25004466,31537687
+Life and earth sciences,tot_n_intext_citations,citations,70,39660872,7347670,4949542,12437273,14926387
+Mathematics and computer science,tot_n_intext_citations,citations,70,10691759,1118669,985354,4252897,4334839
+Physical sciences and engineering,tot_n_intext_citations,citations,70,53674415,7353359,5244625,19296308,21780123
+Social sciences and humanities,tot_n_intext_citations,citations,70,15678433,3252719,2541319,4764488,5119907
+All,tot_n_intext_citations,citations,70,205275338,36454798,25366165,65755432,77698943
+Biomedical and health sciences,perc_intext_citations_valid,citations,70,0.00714456,0.007120659,0.006999805,0.007203153,0.00716473
+Life and earth sciences,perc_intext_citations_valid,citations,70,0.005422826,0.005083108,0.005105523,0.005699722,0.005464551
+Mathematics and computer science,perc_intext_citations_valid,citations,70,0.001418382,0.001384681,0.001573039,0.001436433,0.001374215
+Physical sciences and engineering,perc_intext_citations_valid,citations,70,0.002108826,0.002082314,0.002003384,0.002144555,0.002111512
+Social sciences and humanities,perc_intext_citations_valid,citations,70,0.0091763,0.009145272,0.009152334,0.009325451,0.00906911
+All,perc_intext_citations_valid,citations,70,0.005352119,0.005698317,0.00560199,0.005215113,0.005224061
+Biomedical and health sciences,n_intext_citations_valid,citations,70,611359,123774,81515,180111,225959
+Life and earth sciences,n_intext_citations_valid,citations,70,215074,37349,25270,70889,81566
+Mathematics and computer science,n_intext_citations_valid,citations,70,15165,1549,1550,6109,5957
+Physical sciences and engineering,n_intext_citations_valid,citations,70,113190,15312,10507,41382,45989
+Social sciences and humanities,n_intext_citations_valid,citations,70,143870,29747,23259,44431,46433
+All,n_intext_citations_valid,citations,70,1098658,207731,142101,342922,405904
+Biomedical and health sciences,perc_intext_citations,citations,75,0.03707566,0.037891012,0.037711957,0.036703203,0.036686616
+Life and earth sciences,perc_intext_citations,citations,75,0.033705562,0.034198188,0.033082657,0.033640815,0.033723566
+Mathematics and computer science,perc_intext_citations,citations,75,0.021233082,0.021642684,0.02181754,0.021079984,0.02114473
+Physical sciences and engineering,perc_intext_citations,citations,75,0.019818306,0.019479125,0.018896108,0.019984082,0.020008014
+Social sciences and humanities,perc_intext_citations,citations,75,0.058339504,0.06128688,0.061349244,0.056423691,0.056755914
+All,perc_intext_citations,citations,75,0.03271108,0.035021727,0.034669056,0.031636078,0.031897512
+Biomedical and health sciences,n_intext_citations,citations,75,3172559,658636,439168,917744,1157011
+Life and earth sciences,n_intext_citations,citations,75,1336792,251277,163744,418400,503371
+Mathematics and computer science,n_intext_citations,citations,75,227019,24211,21498,89651,91659
+Physical sciences and engineering,n_intext_citations,citations,75,1063736,143237,99103,385619,435777
+Social sciences and humanities,n_intext_citations,citations,75,914672,199349,155908,268830,290585
+All,n_intext_citations,citations,75,6714778,1276710,879421,2080244,2478403
+Biomedical and health sciences,tot_n_intext_citations,citations,75,85569859,17382381,11645325,25004466,31537687
+Life and earth sciences,tot_n_intext_citations,citations,75,39660872,7347670,4949542,12437273,14926387
+Mathematics and computer science,tot_n_intext_citations,citations,75,10691759,1118669,985354,4252897,4334839
+Physical sciences and engineering,tot_n_intext_citations,citations,75,53674415,7353359,5244625,19296308,21780123
+Social sciences and humanities,tot_n_intext_citations,citations,75,15678433,3252719,2541319,4764488,5119907
+All,tot_n_intext_citations,citations,75,205275338,36454798,25366165,65755432,77698943
+Biomedical and health sciences,perc_intext_citations_valid,citations,75,0.006816372,0.006771685,0.006639145,0.00688793,0.00684971
+Life and earth sciences,perc_intext_citations_valid,citations,75,0.00497102,0.004668419,0.00465336,0.005217864,0.005019634
+Mathematics and computer science,perc_intext_citations_valid,citations,75,0.000930623,0.000881405,0.001065607,0.000938889,0.000904532
+Physical sciences and engineering,perc_intext_citations_valid,citations,75,0.001851571,0.001854935,0.001767333,0.00186958,0.001854765
+Social sciences and humanities,perc_intext_citations_valid,citations,75,0.008174541,0.008126432,0.008102092,0.008311701,0.008113429
+All,perc_intext_citations_valid,citations,75,0.004958837,0.00529612,0.005174452,0.004817777,0.004849577
+Biomedical and health sciences,n_intext_citations_valid,citations,75,583276,117708,77315,172229,216024
+Life and earth sciences,n_intext_citations_valid,citations,75,197155,34302,23032,64896,74925
+Mathematics and computer science,n_intext_citations_valid,citations,75,9950,986,1050,3993,3921
+Physical sciences and engineering,n_intext_citations_valid,citations,75,99382,13640,9269,36076,40397
+Social sciences and humanities,n_intext_citations_valid,citations,75,128164,26433,20590,39601,41540
+All,n_intext_citations_valid,citations,75,1017927,193069,131256,316795,376807
+Biomedical and health sciences,perc_intext_citations,citations,80,0.03707566,0.037891012,0.037711957,0.036703203,0.036686616
+Life and earth sciences,perc_intext_citations,citations,80,0.033705562,0.034198188,0.033082657,0.033640815,0.033723566
+Mathematics and computer science,perc_intext_citations,citations,80,0.021233082,0.021642684,0.02181754,0.021079984,0.02114473
+Physical sciences and engineering,perc_intext_citations,citations,80,0.019818306,0.019479125,0.018896108,0.019984082,0.020008014
+Social sciences and humanities,perc_intext_citations,citations,80,0.058339504,0.06128688,0.061349244,0.056423691,0.056755914
+All,perc_intext_citations,citations,80,0.03271108,0.035021727,0.034669056,0.031636078,0.031897512
+Biomedical and health sciences,n_intext_citations,citations,80,3172559,658636,439168,917744,1157011
+Life and earth sciences,n_intext_citations,citations,80,1336792,251277,163744,418400,503371
+Mathematics and computer science,n_intext_citations,citations,80,227019,24211,21498,89651,91659
+Physical sciences and engineering,n_intext_citations,citations,80,1063736,143237,99103,385619,435777
+Social sciences and humanities,n_intext_citations,citations,80,914672,199349,155908,268830,290585
+All,n_intext_citations,citations,80,6714778,1276710,879421,2080244,2478403
+Biomedical and health sciences,tot_n_intext_citations,citations,80,85569859,17382381,11645325,25004466,31537687
+Life and earth sciences,tot_n_intext_citations,citations,80,39660872,7347670,4949542,12437273,14926387
+Mathematics and computer science,tot_n_intext_citations,citations,80,10691759,1118669,985354,4252897,4334839
+Physical sciences and engineering,tot_n_intext_citations,citations,80,53674415,7353359,5244625,19296308,21780123
+Social sciences and humanities,tot_n_intext_citations,citations,80,15678433,3252719,2541319,4764488,5119907
+All,tot_n_intext_citations,citations,80,205275338,36454798,25366165,65755432,77698943
+Biomedical and health sciences,perc_intext_citations_valid,citations,80,0.005792297,0.005728099,0.005596666,0.00587659,0.005833085
+Life and earth sciences,perc_intext_citations_valid,citations,80,0.004627004,0.00429034,0.004305247,0.004897054,0.004674406
+Mathematics and computer science,perc_intext_citations_valid,citations,80,0.000708396,0.000657925,0.00082001,0.000721391,0.000683301
+Physical sciences and engineering,perc_intext_citations_valid,citations,80,0.001681602,0.001669033,0.001605835,0.00170587,0.001682589
+Social sciences and humanities,perc_intext_citations_valid,citations,80,0.007443346,0.007331097,0.007404029,0.007633139,0.007357556
+All,perc_intext_citations_valid,citations,80,0.004353616,0.004606993,0.00451507,0.004261245,0.0042602
+Biomedical and health sciences,n_intext_citations_valid,citations,80,495646,99568,65175,146941,183962
+Life and earth sciences,n_intext_citations_valid,citations,80,183511,31524,21309,60906,69772
+Mathematics and computer science,n_intext_citations_valid,citations,80,7574,736,808,3068,2962
+Physical sciences and engineering,n_intext_citations_valid,citations,80,90259,12273,8422,32917,36647
+Social sciences and humanities,n_intext_citations_valid,citations,80,116700,23846,18816,36368,37670
+All,n_intext_citations_valid,citations,80,893690,167947,114530,280200,331013

@@ -1,0 +1,49 @@
+field,,Records,1,2,3,4,type
+All,No disagreement,2977987,1.943587061,4.303633293,6.878718409,9.531839125,full
+Biomedical and health sciences,No disagreement,992021,2.59945102,5.552891521,8.622046307,11.6603832,full
+Life and earth sciences,No disagreement,449700,1.735174561,3.986982433,6.586975762,9.375292417,full
+Mathematics and computer science,No disagreement,207003,1.306125998,2.974314382,4.897730951,6.907180089,full
+Physical sciences and engineering,No disagreement,1179748,1.65728698,3.738475505,6.026648064,8.412020194,full
+Social sciences and humanities,No disagreement,149515,1.360438752,3.267110323,5.655278735,8.34971742,full
+All,Disagreement,234117,2.479649064,5.452871855,8.693157695,12.02657218,full
+Biomedical and health sciences,Disagreement,116162,2.969275667,6.361400458,9.89032558,13.3759405,full
+Life and earth sciences,Disagreement,44463,2.228414637,5.006319861,8.186964442,11.56399703,full
+Mathematics and computer science,Disagreement,3174,1.952741021,4.451480781,7.360428481,10.47826087,full
+Physical sciences and engineering,Disagreement,36907,2.052970981,4.592570515,7.379060883,10.29446988,full
+Social sciences and humanities,Disagreement,33411,1.633054982,3.93385412,6.782736225,10.01116399,full
+All,No disagreement,156272,6.201833982,13.50398664,21.19862163,29.01578018,review
+Biomedical and health sciences,No disagreement,106719,6.114843655,13.02820491,20.01205034,26.83867915,review
+Life and earth sciences,No disagreement,18760,5.834541578,13.20906183,21.51663113,30.45900853,review
+Mathematics and computer science,No disagreement,1987,4.644690488,10.73980876,17.82586814,25.80070458,review
+Physical sciences and engineering,No disagreement,24911,7.361326322,16.7421621,27.32387299,38.68800931,review
+Social sciences and humanities,No disagreement,3895,3.732991014,8.660333761,14.72349166,21.49499358,review
+All,Disagreement,38349,7.437377767,16.16975671,25.40595583,34.84210801,review
+Biomedical and health sciences,Disagreement,29059,7.403420627,15.86826801,24.5283389,33.14074813,review
+Life and earth sciences,Disagreement,4338,6.984555095,15.84900876,25.92646381,36.90779161,review
+Mathematics and computer science,Disagreement,120,5.716666667,13.65833333,23.64166667,34.34166667,review
+Physical sciences and engineering,Disagreement,3132,10.11047254,22.70051086,37.13122605,52.69316731,review
+Social sciences and humanities,Disagreement,1700,4.37,10.28705882,17.60176471,25.80058824,review
+All,No disagreement,3491580,2.108553721,4.640251405,7.379057905,10.18839752,all
+Biomedical and health sciences,No disagreement,1252953,2.780050808,5.929030059,9.17779358,12.38251235,all
+Life and earth sciences,No disagreement,501003,1.882964773,4.309672796,7.096248925,10.08153245,all
+Mathematics and computer science,No disagreement,226595,1.318784616,3.019603257,4.989095082,7.055014453,all
+Physical sciences and engineering,No disagreement,1345678,1.789688915,3.999767403,6.415699744,8.9279419,all
+Social sciences and humanities,No disagreement,165351,1.381092343,3.309493139,5.721253576,8.438140683,all
+All,Disagreement,287846,3.124986972,6.835154909,10.83391814,14.93472204,all
+Biomedical and health sciences,Disagreement,153726,3.75623512,8.043597049,12.47187203,16.85412357,all
+Life and earth sciences,Disagreement,51475,2.663506557,5.981466731,9.765109276,13.80145702,all
+Mathematics and computer science,Disagreement,3392,2.077535377,4.750884434,7.897700472,11.26444575,all
+Physical sciences and engineering,Disagreement,43041,2.659417764,5.911990892,9.5106294,13.30138705,all
+Social sciences and humanities,Disagreement,36212,1.752706285,4.211117861,7.247707942,10.68261902,all
+All,No disagreement,357321,1.693250607,3.569199683,5.505094859,7.426258182,short
+Biomedical and health sciences,No disagreement,154213,1.634058088,3.435858196,5.25524437,7.023817707,short
+Life and earth sciences,No disagreement,32543,1.647266693,3.638601235,5.820821682,8.093845067,short
+Mathematics and computer science,No disagreement,17605,1.092246521,2.680772508,4.614541323,6.677534791,short
+Physical sciences and engineering,No disagreement,141019,1.91311809,3.934760564,5.977031464,7.986966295,short
+Social sciences and humanities,No disagreement,11941,0.872539988,2.094799431,3.610920358,5.286324428,short
+All,Disagreement,15380,2.195773732,4.60130039,7.086540962,9.565344603,short
+Biomedical and health sciences,Disagreement,8505,2.043268665,4.284656085,6.537566138,8.712992357,short
+Life and earth sciences,Disagreement,2674,2.888182498,6.188107704,9.787958115,13.52056844,short
+Mathematics and computer science,Disagreement,98,1.663265306,3.540816327,6.020408163,8.469387755,short
+Physical sciences and engineering,Disagreement,3002,2.341439041,4.617588274,6.899733511,9.171219187,short
+Social sciences and humanities,Disagreement,1101,1.342415985,3.243415077,5.370572207,7.715712988,short
