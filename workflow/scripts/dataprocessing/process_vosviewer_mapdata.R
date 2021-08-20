@@ -53,14 +53,14 @@ map <- map %>%
   mutate(
     # Ratio of the share of disagreement in each meso-field given
     # average across all fields
-    score.all = `weight<Share results 00: valid queries>` /
-                  mean(`weight<Share results 00: valid queries>`, na.rm = T),
+    score.all = `weight<Share results 00: all valid queries>` /
+                  mean(`weight<Share results 00: all valid queries>`, na.rm = T),
   ) %>%
   group_by(cluster) %>%
   mutate(
     # Same ratio, but comparing only within the main field
-    score.field = `weight<Share results 00: valid queries>` /
-                    mean(`weight<Share results 00: valid queries>`, na.rm = T),
+    score.field = `weight<Share results 00: all valid queries>` /
+                    mean(`weight<Share results 00: all valid queries>`, na.rm = T),
   )
 
 # Save the data

@@ -67,7 +67,7 @@ plot <- map %>%
     score = ifelse(score < 0.25, 0.25, score),
     ) %>%
   ggplot(aes(x = x, y = y,
-             size = `weight<No. results 00: valid queries>`,
+             size = `weight<No. results 00: all valid queries>`,
              fill = log2(score))
   ) +
   geom_point(shape = 21, alpha = 0.9, color = "black") +
