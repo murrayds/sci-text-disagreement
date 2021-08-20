@@ -7,9 +7,6 @@ paper-figs/*
 # Derived data
 data/derived/*
 
-# Other data, maybe update in future
-data/*
-
 # Figures
 figs/*
 

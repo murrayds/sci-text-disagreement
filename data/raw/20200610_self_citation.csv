@@ -1,0 +1,145 @@
+﻿filter_name,filter_id,LR_main_field,self_cit,n_citations,n_citations_disagreement,share_disagreement,threshold
+overall,0,All publications,0,142412930,725603,0.005095064,80
+overall,0,All publications,1,32299209,69680,0.002157328,80
+overall,0,Biomedical and health sciences,0,57948230,383594,0.006619598,80
+overall,0,Biomedical and health sciences,1,11931754,31043,0.002601713,80
+overall,0,Life and earth sciences,0,20834393,107773,0.005172841,80
+overall,0,Life and earth sciences,1,5313759,14817,0.002788422,80
+overall,0,Mathematics and computer science,0,3956271,3615,0.000913739,80
+overall,0,Mathematics and computer science,1,880880,366,0.000415494,80
+overall,0,Physical sciences and engineering,0,34228625,83818,0.002448769,80
+overall,0,Physical sciences and engineering,1,9167207,10336,0.001127497,80
+overall,0,Social sciences and humanities,0,6621761,54552,0.008238292,80
+overall,0,Social sciences and humanities,1,832805,4225,0.005073216,80
+studies,1,All publications,0,142412930,132435,0.000929937,80
+studies,1,All publications,1,32299209,10312,0.000319265,80
+results,2,All publications,0,142412930,162546,0.001141371,80
+results,2,All publications,1,32299209,17283,0.000535091,80
+methods,3,All publications,0,142412930,11830,8.31E-05,80
+methods,3,All publications,1,32299209,1148,3.55E-05,80
+ideas,4,All publications,0,142412930,10452,7.34E-05,80
+ideas,4,All publications,1,32299209,1589,4.92E-05,80
+standalone,5,All publications,0,142412930,526979,0.003700359,80
+standalone,5,All publications,1,32299209,48563,0.001503535,80
+studies,1,Biomedical and health sciences,0,57948230,83339,0.001438163,80
+studies,1,Biomedical and health sciences,1,11931754,5654,0.000473862,80
+results,2,Biomedical and health sciences,0,57948230,85007,0.001466947,80
+results,2,Biomedical and health sciences,1,11931754,7243,0.000607036,80
+methods,3,Biomedical and health sciences,0,57948230,5400,9.32E-05,80
+methods,3,Biomedical and health sciences,1,11931754,466,3.91E-05,80
+ideas,4,Biomedical and health sciences,0,57948230,3733,6.44E-05,80
+ideas,4,Biomedical and health sciences,1,11931754,504,4.22E-05,80
+standalone,5,Biomedical and health sciences,0,57948230,278285,0.004802304,80
+standalone,5,Biomedical and health sciences,1,11931754,22108,0.001852871,80
+studies,1,Life and earth sciences,0,20834393,12301,0.000590418,80
+studies,1,Life and earth sciences,1,5313759,1512,0.000284544,80
+results,2,Life and earth sciences,0,20834393,21270,0.001020908,80
+results,2,Life and earth sciences,1,5313759,3243,0.000610302,80
+methods,3,Life and earth sciences,0,20834393,2244,0.000107707,80
+methods,3,Life and earth sciences,1,5313759,278,5.23E-05,80
+ideas,4,Life and earth sciences,0,20834393,1838,8.82E-05,80
+ideas,4,Life and earth sciences,1,5313759,314,5.91E-05,80
+standalone,5,Life and earth sciences,0,20834393,82429,0.003956391,80
+standalone,5,Life and earth sciences,1,5313759,10988,0.002067839,80
+studies,1,Mathematics and computer science,0,3956271,614,0.000155197,80
+studies,1,Mathematics and computer science,1,880880,73,8.29E-05,80
+results,2,Mathematics and computer science,0,3956271,770,0.000194628,80
+results,2,Mathematics and computer science,1,880880,110,0.000124875,80
+methods,3,Mathematics and computer science,0,3956271,167,4.22E-05,80
+methods,3,Mathematics and computer science,1,880880,10,1.14E-05,80
+ideas,4,Mathematics and computer science,0,3956271,170,4.30E-05,80
+ideas,4,Mathematics and computer science,1,880880,47,5.34E-05,80
+standalone,5,Mathematics and computer science,0,3956271,2365,0.000597785,80
+standalone,5,Mathematics and computer science,1,880880,167,0.000189583,80
+studies,1,Physical sciences and engineering,0,34228625,11424,0.000333756,80
+studies,1,Physical sciences and engineering,1,9167207,1163,0.000126865,80
+results,2,Physical sciences and engineering,0,34228625,23377,0.000682966,80
+results,2,Physical sciences and engineering,1,9167207,3615,0.00039434,80
+methods,3,Physical sciences and engineering,0,34228625,1606,4.69E-05,80
+methods,3,Physical sciences and engineering,1,9167207,200,2.18E-05,80
+ideas,4,Physical sciences and engineering,0,34228625,1549,4.53E-05,80
+ideas,4,Physical sciences and engineering,1,9167207,344,3.75E-05,80
+standalone,5,Physical sciences and engineering,0,34228625,57373,0.00167617,80
+standalone,5,Physical sciences and engineering,1,9167207,6174,0.000673488,80
+studies,1,Social sciences and humanities,0,6621761,8449,0.001275945,80
+studies,1,Social sciences and humanities,1,832805,670,0.00080451,80
+results,2,Social sciences and humanities,0,6621761,11329,0.001710874,80
+results,2,Social sciences and humanities,1,832805,890,0.001068678,80
+methods,3,Social sciences and humanities,0,6621761,834,0.000125948,80
+methods,3,Social sciences and humanities,1,832805,50,6.00E-05,80
+ideas,4,Social sciences and humanities,0,6621761,1866,0.000281798,80
+ideas,4,Social sciences and humanities,1,832805,194,0.000232948,80
+standalone,5,Social sciences and humanities,0,6621761,39108,0.005905982,80
+standalone,5,Social sciences and humanities,1,832805,2893,0.003473802,80
+overall,0,All publications,0,142412930,888442,0.006238493,70
+overall,0,All publications,1,32299209,88671,0.002745299,70
+overall,0,Biomedical and health sciences,0,57948230,472151,0.008147807,70
+overall,0,Biomedical and health sciences,1,11931754,38700,0.003243446,70
+overall,0,Life and earth sciences,0,20834393,127206,0.006105577,70
+overall,0,Life and earth sciences,1,5313759,18062,0.0033991,70
+overall,0,Mathematics and computer science,0,3956271,6305,0.001593672,70
+overall,0,Mathematics and computer science,1,880880,1090,0.001237399,70
+overall,0,Physical sciences and engineering,0,34228625,103087,0.003011719,70
+overall,0,Physical sciences and engineering,1,9167207,14052,0.001532855,70
+overall,0,Social sciences and humanities,0,6621761,66837,0.010093539,70
+overall,0,Social sciences and humanities,1,832805,5452,0.006546551,70
+studies,1,All publications,0,142412930,158125,0.001110328,70
+studies,1,All publications,1,32299209,13450,0.000416419,70
+results,2,All publications,0,142412930,266913,0.001874219,70
+results,2,All publications,1,32299209,25322,0.000783982,70
+methods,3,All publications,0,142412930,18474,0.000129721,70
+methods,3,All publications,1,32299209,2426,7.51E-05,70
+ideas,4,All publications,0,142412930,16754,0.000117644,70
+ideas,4,All publications,1,32299209,2537,7.85E-05,70
+standalone,5,All publications,0,142412930,672990,0.004725624,70
+standalone,5,All publications,1,32299209,65878,0.002039617,70
+studies,1,Biomedical and health sciences,0,57948230,97411,0.001681,70
+studies,1,Biomedical and health sciences,1,11931754,6979,0.00058491,70
+results,2,Biomedical and health sciences,0,57948230,160220,0.002764882,70
+results,2,Biomedical and health sciences,1,11931754,12478,0.001045781,70
+methods,3,Biomedical and health sciences,0,57948230,6842,0.000118071,70
+methods,3,Biomedical and health sciences,1,11931754,742,6.22E-05,70
+ideas,4,Biomedical and health sciences,0,57948230,5977,0.000103144,70
+ideas,4,Biomedical and health sciences,1,11931754,819,6.86E-05,70
+standalone,5,Biomedical and health sciences,0,57948230,345219,0.005957369,70
+standalone,5,Biomedical and health sciences,1,11931754,28078,0.002353216,70
+studies,1,Life and earth sciences,0,20834393,15910,0.000763641,70
+studies,1,Life and earth sciences,1,5313759,2127,0.000400282,70
+results,2,Life and earth sciences,0,20834393,28201,0.001353579,70
+results,2,Life and earth sciences,1,5313759,4111,0.000773652,70
+methods,3,Life and earth sciences,0,20834393,3432,0.000164728,70
+methods,3,Life and earth sciences,1,5313759,477,8.98E-05,70
+ideas,4,Life and earth sciences,0,20834393,3233,0.000155176,70
+ideas,4,Life and earth sciences,1,5313759,548,0.000103129,70
+standalone,5,Life and earth sciences,0,20834393,104037,0.004993522,70
+standalone,5,Life and earth sciences,1,5313759,14410,0.002711828,70
+studies,1,Mathematics and computer science,0,3956271,736,0.000186034,70
+studies,1,Mathematics and computer science,1,880880,94,0.000106711,70
+results,2,Mathematics and computer science,0,3956271,1210,0.000305844,70
+results,2,Mathematics and computer science,1,880880,174,0.00019753,70
+methods,3,Mathematics and computer science,0,3956271,599,0.000151405,70
+methods,3,Mathematics and computer science,1,880880,111,0.00012601,70
+ideas,4,Mathematics and computer science,0,3956271,274,6.93E-05,70
+ideas,4,Mathematics and computer science,1,880880,55,6.24E-05,70
+standalone,5,Mathematics and computer science,0,3956271,4599,0.001162458,70
+standalone,5,Mathematics and computer science,1,880880,772,0.000876396,70
+studies,1,Physical sciences and engineering,0,34228625,14291,0.000417516,70
+studies,1,Physical sciences and engineering,1,9167207,1769,0.00019297,70
+results,2,Physical sciences and engineering,0,34228625,27263,0.000796497,70
+results,2,Physical sciences and engineering,1,9167207,4057,0.000442556,70
+methods,3,Physical sciences and engineering,0,34228625,3865,0.000112917,70
+methods,3,Physical sciences and engineering,1,9167207,716,7.81E-05,70
+ideas,4,Physical sciences and engineering,0,34228625,2559,7.48E-05,70
+ideas,4,Physical sciences and engineering,1,9167207,557,6.08E-05,70
+standalone,5,Physical sciences and engineering,0,34228625,81230,0.00237316,70
+standalone,5,Physical sciences and engineering,1,9167207,10052,0.001096517,70
+studies,1,Social sciences and humanities,0,6621761,10117,0.001527841,70
+studies,1,Social sciences and humanities,1,832805,839,0.001007439,70
+results,2,Social sciences and humanities,0,6621761,16589,0.002505225,70
+results,2,Social sciences and humanities,1,832805,1387,0.001665456,70
+methods,3,Social sciences and humanities,0,6621761,1293,0.000195265,70
+methods,3,Social sciences and humanities,1,832805,111,0.000133285,70
+ideas,4,Social sciences and humanities,0,6621761,2652,0.000400498,70
+ideas,4,Social sciences and humanities,1,832805,265,0.000318202,70
+standalone,5,Social sciences and humanities,0,6621761,51758,0.00781635,70
+standalone,5,Social sciences and humanities,1,832805,3969,0.004765822,70

@@ -1,0 +1,721 @@
+pub_year,type,threshold,field,perc_intext_citations
+1998,citances,70,All,0.003948082
+1999,citances,70,All,0.003945942
+2000,citances,70,All,0.003855975
+2001,citances,70,All,0.003987642
+2002,citances,70,All,0.003983668
+2003,citances,70,All,0.004078181
+2004,citances,70,All,0.004003753
+2005,citances,70,All,0.004048042
+2006,citances,70,All,0.004045476
+2007,citances,70,All,0.004033222
+2008,citances,70,All,0.003991757
+2009,citances,70,All,0.004048919
+2010,citances,70,All,0.004063812
+2011,citances,70,All,0.003983581
+2012,citances,70,All,0.00398131
+2013,citances,70,All,0.003983748
+2014,citances,70,All,0.003892665
+2015,citances,70,All,0.003787554
+2016,citances,70,All,0.003766998
+All,citances,70,All,0.003949173
+1998,citances,75,All,0.003532171
+1999,citances,75,All,0.003549862
+2000,citances,75,All,0.003436374
+2001,citances,75,All,0.003560248
+2002,citances,75,All,0.003552247
+2003,citances,75,All,0.003645782
+2004,citances,75,All,0.00359349
+2005,citances,75,All,0.003640156
+2006,citances,75,All,0.003640853
+2007,citances,75,All,0.003640036
+2008,citances,75,All,0.003590592
+2009,citances,75,All,0.003643892
+2010,citances,75,All,0.003659505
+2011,citances,75,All,0.003591827
+2012,citances,75,All,0.003595511
+2013,citances,75,All,0.003583413
+2014,citances,75,All,0.003468259
+2015,citances,75,All,0.003375178
+2016,citances,75,All,0.003356702
+All,citances,75,All,0.003541604
+1998,citances,80,All,0.00312355
+1999,citances,80,All,0.003145564
+2000,citances,80,All,0.003062203
+2001,citances,80,All,0.003171661
+2002,citances,80,All,0.003152027
+2003,citances,80,All,0.003224673
+2004,citances,80,All,0.003177359
+2005,citances,80,All,0.003224951
+2006,citances,80,All,0.00323367
+2007,citances,80,All,0.003223076
+2008,citances,80,All,0.003189162
+2009,citances,80,All,0.003229774
+2010,citances,80,All,0.003248363
+2011,citances,80,All,0.00318586
+2012,citances,80,All,0.003169133
+2013,citances,80,All,0.003166934
+2014,citances,80,All,0.003058586
+2015,citances,80,All,0.002983971
+2016,citances,80,All,0.002961173
+All,citances,80,All,0.003134633
+1998,citations,70,All,0.005573943
+1999,citations,70,All,0.005600859
+2000,citations,70,All,0.005434082
+2001,citations,70,All,0.005508804
+2002,citations,70,All,0.005474776
+2003,citations,70,All,0.00556116
+2004,citations,70,All,0.005553497
+2005,citations,70,All,0.005543176
+2006,citations,70,All,0.005602241
+2007,citations,70,All,0.00554349
+2008,citations,70,All,0.005397508
+2009,citations,70,All,0.005493278
+2010,citations,70,All,0.005549728
+2011,citations,70,All,0.005410612
+2012,citations,70,All,0.005415199
+2013,citations,70,All,0.005422103
+2014,citations,70,All,0.005252964
+2015,citations,70,All,0.005141
+2016,citations,70,All,0.005102373
+All,citations,70,All,0.005394443
+1998,citations,75,All,0.005129955
+1999,citations,75,All,0.005150815
+2000,citations,75,All,0.004978103
+2001,citations,75,All,0.005051338
+2002,citations,75,All,0.005006101
+2003,citations,75,All,0.005109727
+2004,citations,75,All,0.005097325
+2005,citations,75,All,0.005102352
+2006,citations,75,All,0.005166556
+2007,citations,75,All,0.005123061
+2008,citations,75,All,0.004973375
+2009,citations,75,All,0.005062154
+2010,citations,75,All,0.005120343
+2011,citations,75,All,0.004996372
+2012,citations,75,All,0.004999153
+2013,citations,75,All,0.004998492
+2014,citations,75,All,0.00482291
+2015,citations,75,All,0.004717378
+2016,citations,75,All,0.004676417
+All,citations,75,All,0.004963098
+1998,citations,80,All,0.004539569
+1999,citations,80,All,0.004572064
+2000,citations,80,All,0.004437385
+2001,citations,80,All,0.004484582
+2002,citations,80,All,0.004441231
+2003,citations,80,All,0.004500904
+2004,citations,80,All,0.004508636
+2005,citations,80,All,0.004508229
+2006,citations,80,All,0.004591115
+2007,citations,80,All,0.004544923
+2008,citations,80,All,0.004414749
+2009,citations,80,All,0.004471719
+2010,citations,80,All,0.00453438
+2011,citations,80,All,0.004425429
+2012,citations,80,All,0.004403112
+2013,citations,80,All,0.004408662
+2014,citations,80,All,0.004235441
+2015,citations,80,All,0.004165601
+2016,citations,80,All,0.004128636
+All,citations,80,All,0.004387556
+1998,citances,70,Biomedical and health sciences,NA
+1999,citances,70,Biomedical and health sciences,NA
+2000,citances,70,Biomedical and health sciences,0.004727419
+2001,citances,70,Biomedical and health sciences,0.004806682
+2002,citances,70,Biomedical and health sciences,0.0048037
+2003,citances,70,Biomedical and health sciences,0.004955525
+2004,citances,70,Biomedical and health sciences,0.004798203
+2005,citances,70,Biomedical and health sciences,0.004883517
+2006,citances,70,Biomedical and health sciences,0.004968535
+2007,citances,70,Biomedical and health sciences,0.005035835
+2008,citances,70,Biomedical and health sciences,0.004950339
+2009,citances,70,Biomedical and health sciences,0.005152285
+2010,citances,70,Biomedical and health sciences,0.005118946
+2011,citances,70,Biomedical and health sciences,0.005080803
+2012,citances,70,Biomedical and health sciences,0.005082988
+2013,citances,70,Biomedical and health sciences,0.005138561
+2014,citances,70,Biomedical and health sciences,0.005094838
+2015,citances,70,Biomedical and health sciences,0.004910884
+2016,citances,70,Biomedical and health sciences,NA
+All,citances,70,Biomedical and health sciences,0.005000625
+1998,citances,75,Biomedical and health sciences,NA
+1999,citances,75,Biomedical and health sciences,NA
+2000,citances,75,Biomedical and health sciences,0.004443175
+2001,citances,75,Biomedical and health sciences,0.004517123
+2002,citances,75,Biomedical and health sciences,0.004509291
+2003,citances,75,Biomedical and health sciences,0.00467092
+2004,citances,75,Biomedical and health sciences,0.004506891
+2005,citances,75,Biomedical and health sciences,0.004604807
+2006,citances,75,Biomedical and health sciences,0.004670275
+2007,citances,75,Biomedical and health sciences,0.004753548
+2008,citances,75,Biomedical and health sciences,0.004670762
+2009,citances,75,Biomedical and health sciences,0.004858469
+2010,citances,75,Biomedical and health sciences,0.004823582
+2011,citances,75,Biomedical and health sciences,0.004788138
+2012,citances,75,Biomedical and health sciences,0.004796581
+2013,citances,75,Biomedical and health sciences,0.004861209
+2014,citances,75,Biomedical and health sciences,0.004816796
+2015,citances,75,Biomedical and health sciences,0.00465058
+2016,citances,75,Biomedical and health sciences,NA
+All,citances,75,Biomedical and health sciences,0.004716568
+1998,citances,80,Biomedical and health sciences,NA
+1999,citances,80,Biomedical and health sciences,NA
+2000,citances,80,Biomedical and health sciences,0.003894408
+2001,citances,80,Biomedical and health sciences,0.003931497
+2002,citances,80,Biomedical and health sciences,0.003938873
+2003,citances,80,Biomedical and health sciences,0.004039778
+2004,citances,80,Biomedical and health sciences,0.003899358
+2005,citances,80,Biomedical and health sciences,0.003982788
+2006,citances,80,Biomedical and health sciences,0.004064897
+2007,citances,80,Biomedical and health sciences,0.004124157
+2008,citances,80,Biomedical and health sciences,0.004059
+2009,citances,80,Biomedical and health sciences,0.004212644
+2010,citances,80,Biomedical and health sciences,0.00417498
+2011,citances,80,Biomedical and health sciences,0.004167454
+2012,citances,80,Biomedical and health sciences,0.004136395
+2013,citances,80,Biomedical and health sciences,0.004198099
+2014,citances,80,Biomedical and health sciences,0.004142393
+2015,citances,80,Biomedical and health sciences,0.00401145
+2016,citances,80,Biomedical and health sciences,NA
+All,citances,80,Biomedical and health sciences,0.004084958
+1998,citations,70,Biomedical and health sciences,NA
+1999,citations,70,Biomedical and health sciences,NA
+2000,citations,70,Biomedical and health sciences,0.0070143
+2001,citations,70,Biomedical and health sciences,0.007134757
+2002,citations,70,Biomedical and health sciences,0.007048756
+2003,citations,70,Biomedical and health sciences,0.007212899
+2004,citations,70,Biomedical and health sciences,0.006966949
+2005,citations,70,Biomedical and health sciences,0.007123121
+2006,citations,70,Biomedical and health sciences,0.007148851
+2007,citations,70,Biomedical and health sciences,0.007271453
+2008,citations,70,Biomedical and health sciences,0.007064205
+2009,citations,70,Biomedical and health sciences,0.007331344
+2010,citations,70,Biomedical and health sciences,0.007276446
+2011,citations,70,Biomedical and health sciences,0.00729529
+2012,citations,70,Biomedical and health sciences,0.007252107
+2013,citations,70,Biomedical and health sciences,0.00730664
+2014,citations,70,Biomedical and health sciences,0.007168286
+2015,citations,70,Biomedical and health sciences,0.006932283
+2016,citations,70,Biomedical and health sciences,NA
+All,citations,70,Biomedical and health sciences,0.007170673
+1998,citations,75,Biomedical and health sciences,NA
+1999,citations,75,Biomedical and health sciences,NA
+2000,citations,75,Biomedical and health sciences,0.006663209
+2001,citations,75,Biomedical and health sciences,0.006799306
+2002,citations,75,Biomedical and health sciences,0.006667841
+2003,citations,75,Biomedical and health sciences,0.006853152
+2004,citations,75,Biomedical and health sciences,0.006625386
+2005,citations,75,Biomedical and health sciences,0.006792432
+2006,citations,75,Biomedical and health sciences,0.006793133
+2007,citations,75,Biomedical and health sciences,0.006921501
+2008,citations,75,Biomedical and health sciences,0.006712151
+2009,citations,75,Biomedical and health sciences,0.006982529
+2010,citations,75,Biomedical and health sciences,0.006933614
+2011,citations,75,Biomedical and health sciences,0.006962112
+2012,citations,75,Biomedical and health sciences,0.006911828
+2013,citations,75,Biomedical and health sciences,0.006978912
+2014,citations,75,Biomedical and health sciences,0.006845769
+2015,citations,75,Biomedical and health sciences,0.006614693
+2016,citations,75,Biomedical and health sciences,NA
+All,citations,75,Biomedical and health sciences,0.006830676
+1998,citations,80,Biomedical and health sciences,NA
+1999,citations,80,Biomedical and health sciences,NA
+2000,citations,80,Biomedical and health sciences,0.006476033
+2001,citations,80,Biomedical and health sciences,0.006613212
+2002,citations,80,Biomedical and health sciences,0.006480436
+2003,citations,80,Biomedical and health sciences,0.006660938
+2004,citations,80,Biomedical and health sciences,0.006415694
+2005,citations,80,Biomedical and health sciences,0.006605641
+2006,citations,80,Biomedical and health sciences,0.006596075
+2007,citations,80,Biomedical and health sciences,0.006711605
+2008,citations,80,Biomedical and health sciences,0.006489709
+2009,citations,80,Biomedical and health sciences,0.006756271
+2010,citations,80,Biomedical and health sciences,0.006705536
+2011,citations,80,Biomedical and health sciences,0.006755845
+2012,citations,80,Biomedical and health sciences,0.006684976
+2013,citations,80,Biomedical and health sciences,0.006743069
+2014,citations,80,Biomedical and health sciences,0.006607332
+2015,citations,80,Biomedical and health sciences,0.006373611
+2016,citations,80,Biomedical and health sciences,NA
+All,citations,80,Biomedical and health sciences,0.005844072
+1998,citances,70,Life and earth sciences,NA
+1999,citances,70,Life and earth sciences,NA
+2000,citances,70,Life and earth sciences,0.003065872
+2001,citances,70,Life and earth sciences,0.00345658
+2002,citances,70,Life and earth sciences,0.003505571
+2003,citances,70,Life and earth sciences,0.003424343
+2004,citances,70,Life and earth sciences,0.00356027
+2005,citances,70,Life and earth sciences,0.003619332
+2006,citances,70,Life and earth sciences,0.003589499
+2007,citances,70,Life and earth sciences,0.003572378
+2008,citances,70,Life and earth sciences,0.003652986
+2009,citances,70,Life and earth sciences,0.0036427
+2010,citances,70,Life and earth sciences,0.003576995
+2011,citances,70,Life and earth sciences,0.003602453
+2012,citances,70,Life and earth sciences,0.003641658
+2013,citances,70,Life and earth sciences,0.003647913
+2014,citances,70,Life and earth sciences,0.003580547
+2015,citances,70,Life and earth sciences,0.003552837
+2016,citances,70,Life and earth sciences,NA
+All,citances,70,Life and earth sciences,0.003576761
+1998,citances,75,Life and earth sciences,NA
+1999,citances,75,Life and earth sciences,NA
+2000,citances,75,Life and earth sciences,0.00269868
+2001,citances,75,Life and earth sciences,0.003073988
+2002,citances,75,Life and earth sciences,0.003105262
+2003,citances,75,Life and earth sciences,0.003015502
+2004,citances,75,Life and earth sciences,0.003142157
+2005,citances,75,Life and earth sciences,0.003180269
+2006,citances,75,Life and earth sciences,0.003191826
+2007,citances,75,Life and earth sciences,0.003162433
+2008,citances,75,Life and earth sciences,0.003259165
+2009,citances,75,Life and earth sciences,0.00327305
+2010,citances,75,Life and earth sciences,0.003162778
+2011,citances,75,Life and earth sciences,0.003213807
+2012,citances,75,Life and earth sciences,0.003233984
+2013,citances,75,Life and earth sciences,0.003249402
+2014,citances,75,Life and earth sciences,0.003176986
+2015,citances,75,Life and earth sciences,0.003151259
+2016,citances,75,Life and earth sciences,NA
+All,citances,75,Life and earth sciences,0.003176059
+1998,citances,80,Life and earth sciences,NA
+1999,citances,80,Life and earth sciences,NA
+2000,citances,80,Life and earth sciences,0.002445567
+2001,citances,80,Life and earth sciences,0.002808989
+2002,citances,80,Life and earth sciences,0.002795021
+2003,citances,80,Life and earth sciences,0.002765117
+2004,citances,80,Life and earth sciences,0.002860613
+2005,citances,80,Life and earth sciences,0.002894094
+2006,citances,80,Life and earth sciences,0.002892969
+2007,citances,80,Life and earth sciences,0.002868113
+2008,citances,80,Life and earth sciences,0.002978747
+2009,citances,80,Life and earth sciences,0.002980621
+2010,citances,80,Life and earth sciences,0.002901975
+2011,citances,80,Life and earth sciences,0.002931457
+2012,citances,80,Life and earth sciences,0.002947139
+2013,citances,80,Life and earth sciences,0.00294863
+2014,citances,80,Life and earth sciences,0.002901332
+2015,citances,80,Life and earth sciences,0.002882505
+2016,citances,80,Life and earth sciences,NA
+All,citances,80,Life and earth sciences,0.002894441
+1998,citations,70,Life and earth sciences,NA
+1999,citations,70,Life and earth sciences,NA
+2000,citations,70,Life and earth sciences,0.004397522
+2001,citations,70,Life and earth sciences,0.004958075
+2002,citations,70,Life and earth sciences,0.004923976
+2003,citations,70,Life and earth sciences,0.00486713
+2004,citations,70,Life and earth sciences,0.005156351
+2005,citations,70,Life and earth sciences,0.005120623
+2006,citations,70,Life and earth sciences,0.005285635
+2007,citations,70,Life and earth sciences,0.005275505
+2008,citations,70,Life and earth sciences,0.005261372
+2009,citations,70,Life and earth sciences,0.005393236
+2010,citations,70,Life and earth sciences,0.005357543
+2011,citations,70,Life and earth sciences,0.005382103
+2012,citations,70,Life and earth sciences,0.005439457
+2013,citations,70,Life and earth sciences,0.005600297
+2014,citations,70,Life and earth sciences,0.005531072
+2015,citations,70,Life and earth sciences,0.005481076
+2016,citations,70,Life and earth sciences,NA
+All,citations,70,Life and earth sciences,0.005329196
+1998,citations,75,Life and earth sciences,NA
+1999,citations,75,Life and earth sciences,NA
+2000,citations,75,Life and earth sciences,0.003981086
+2001,citations,75,Life and earth sciences,0.004519782
+2002,citations,75,Life and earth sciences,0.004483794
+2003,citations,75,Life and earth sciences,0.004438729
+2004,citations,75,Life and earth sciences,0.004622504
+2005,citations,75,Life and earth sciences,0.004596452
+2006,citations,75,Life and earth sciences,0.004821375
+2007,citations,75,Life and earth sciences,0.004800944
+2008,citations,75,Life and earth sciences,0.00482149
+2009,citations,75,Life and earth sciences,0.004946057
+2010,citations,75,Life and earth sciences,0.004886397
+2011,citations,75,Life and earth sciences,0.004896653
+2012,citations,75,Life and earth sciences,0.004947316
+2013,citations,75,Life and earth sciences,0.005145133
+2014,citations,75,Life and earth sciences,0.00506274
+2015,citations,75,Life and earth sciences,0.005016976
+2016,citations,75,Life and earth sciences,NA
+All,citations,75,Life and earth sciences,0.004861268
+1998,citations,80,Life and earth sciences,NA
+1999,citations,80,Life and earth sciences,NA
+2000,citations,80,Life and earth sciences,0.003816141
+2001,citations,80,Life and earth sciences,0.00435901
+2002,citations,80,Life and earth sciences,0.004305098
+2003,citations,80,Life and earth sciences,0.004242751
+2004,citations,80,Life and earth sciences,0.004431462
+2005,citations,80,Life and earth sciences,0.004421728
+2006,citations,80,Life and earth sciences,0.004607481
+2007,citations,80,Life and earth sciences,0.00459846
+2008,citations,80,Life and earth sciences,0.004623352
+2009,citations,80,Life and earth sciences,0.004728273
+2010,citations,80,Life and earth sciences,0.004683604
+2011,citations,80,Life and earth sciences,0.004691048
+2012,citations,80,Life and earth sciences,0.004736477
+2013,citations,80,Life and earth sciences,0.00490647
+2014,citations,80,Life and earth sciences,0.004874991
+2015,citations,80,Life and earth sciences,0.004804732
+2016,citations,80,Life and earth sciences,NA
+All,citations,80,Life and earth sciences,0.004508823
+1998,citances,70,Mathematics and computer science,NA
+1999,citances,70,Mathematics and computer science,NA
+2000,citances,70,Mathematics and computer science,0.001593965
+2001,citances,70,Mathematics and computer science,0.001772237
+2002,citances,70,Mathematics and computer science,0.001955644
+2003,citances,70,Mathematics and computer science,0.001815262
+2004,citances,70,Mathematics and computer science,0.001584113
+2005,citances,70,Mathematics and computer science,0.001665801
+2006,citances,70,Mathematics and computer science,0.001613163
+2007,citances,70,Mathematics and computer science,0.001633633
+2008,citances,70,Mathematics and computer science,0.001624636
+2009,citances,70,Mathematics and computer science,0.00149242
+2010,citances,70,Mathematics and computer science,0.001303452
+2011,citances,70,Mathematics and computer science,0.001306604
+2012,citances,70,Mathematics and computer science,0.001293818
+2013,citances,70,Mathematics and computer science,0.001404469
+2014,citances,70,Mathematics and computer science,0.001512846
+2015,citances,70,Mathematics and computer science,0.001541178
+2016,citances,70,Mathematics and computer science,NA
+All,citances,70,Mathematics and computer science,0.001505727
+1998,citances,75,Mathematics and computer science,NA
+1999,citances,75,Mathematics and computer science,NA
+2000,citances,75,Mathematics and computer science,9.76408e-4
+2001,citances,75,Mathematics and computer science,0.001080442
+2002,citances,75,Mathematics and computer science,9.84908e-4
+2003,citances,75,Mathematics and computer science,7.87943e-4
+2004,citances,75,Mathematics and computer science,8.90417e-4
+2005,citances,75,Mathematics and computer science,9.51223e-4
+2006,citances,75,Mathematics and computer science,0.001042929
+2007,citances,75,Mathematics and computer science,9.47873e-4
+2008,citances,75,Mathematics and computer science,8.86165e-4
+2009,citances,75,Mathematics and computer science,8.57635e-4
+2010,citances,75,Mathematics and computer science,7.75531e-4
+2011,citances,75,Mathematics and computer science,7.56137e-4
+2012,citances,75,Mathematics and computer science,7.90874e-4
+2013,citances,75,Mathematics and computer science,7.59132e-4
+2014,citances,75,Mathematics and computer science,7.09414e-4
+2015,citances,75,Mathematics and computer science,7.3282e-4
+2016,citances,75,Mathematics and computer science,NA
+All,citances,75,Mathematics and computer science,8.16617e-4
+1998,citances,80,Mathematics and computer science,NA
+1999,citances,80,Mathematics and computer science,NA
+2000,citances,80,Mathematics and computer science,7.51083e-4
+2001,citances,80,Mathematics and computer science,9.40529e-4
+2002,citances,80,Mathematics and computer science,7.65252e-4
+2003,citances,80,Mathematics and computer science,6.43321e-4
+2004,citances,80,Mathematics and computer science,7.0405e-4
+2005,citances,80,Mathematics and computer science,8.1202e-4
+2006,citances,80,Mathematics and computer science,8.17836e-4
+2007,citances,80,Mathematics and computer science,7.34525e-4
+2008,citances,80,Mathematics and computer science,7.14303e-4
+2009,citances,80,Mathematics and computer science,6.9106e-4
+2010,citances,80,Mathematics and computer science,6.16687e-4
+2011,citances,80,Mathematics and computer science,5.22238e-4
+2012,citances,80,Mathematics and computer science,6.07646e-4
+2013,citances,80,Mathematics and computer science,5.89937e-4
+2014,citances,80,Mathematics and computer science,5.50681e-4
+2015,citances,80,Mathematics and computer science,5.68218e-4
+2016,citances,80,Mathematics and computer science,NA
+All,citances,80,Mathematics and computer science,6.38813e-4
+1998,citations,70,Mathematics and computer science,NA
+1999,citations,70,Mathematics and computer science,NA
+2000,citations,70,Mathematics and computer science,0.001779019
+2001,citations,70,Mathematics and computer science,0.00208342
+2002,citations,70,Mathematics and computer science,0.001926774
+2003,citations,70,Mathematics and computer science,0.00180589
+2004,citations,70,Mathematics and computer science,0.001569305
+2005,citations,70,Mathematics and computer science,0.001695684
+2006,citations,70,Mathematics and computer science,0.001856496
+2007,citations,70,Mathematics and computer science,0.001724363
+2008,citations,70,Mathematics and computer science,0.001489267
+2009,citations,70,Mathematics and computer science,0.001491016
+2010,citations,70,Mathematics and computer science,0.001326955
+2011,citations,70,Mathematics and computer science,0.001260005
+2012,citations,70,Mathematics and computer science,0.001295612
+2013,citations,70,Mathematics and computer science,0.001374179
+2014,citations,70,Mathematics and computer science,0.00149431
+2015,citations,70,Mathematics and computer science,0.001479691
+2016,citations,70,Mathematics and computer science,NA
+All,citations,70,Mathematics and computer science,0.001503626
+1998,citations,75,Mathematics and computer science,NA
+1999,citations,75,Mathematics and computer science,NA
+2000,citations,75,Mathematics and computer science,0.00122465
+2001,citations,75,Mathematics and computer science,0.001473639
+2002,citations,75,Mathematics and computer science,0.001183107
+2003,citations,75,Mathematics and computer science,0.00100428
+2004,citations,75,Mathematics and computer science,9.62426e-4
+2005,citations,75,Mathematics and computer science,0.001091064
+2006,citations,75,Mathematics and computer science,0.001360249
+2007,citations,75,Mathematics and computer science,0.001128417
+2008,citations,75,Mathematics and computer science,9.5394e-4
+2009,citations,75,Mathematics and computer science,0.001018066
+2010,citations,75,Mathematics and computer science,8.58223e-4
+2011,citations,75,Mathematics and computer science,8.43456e-4
+2012,citations,75,Mathematics and computer science,9.2988e-4
+2013,citations,75,Mathematics and computer science,8.68357e-4
+2014,citations,75,Mathematics and computer science,8.72389e-4
+2015,citations,75,Mathematics and computer science,8.16246e-4
+2016,citations,75,Mathematics and computer science,NA
+All,citations,75,Mathematics and computer science,9.5458e-4
+1998,citations,80,Mathematics and computer science,NA
+1999,citations,80,Mathematics and computer science,NA
+2000,citations,80,Mathematics and computer science,9.87784e-4
+2001,citations,80,Mathematics and computer science,0.001279617
+2002,citations,80,Mathematics and computer science,9.9719e-4
+2003,citations,80,Mathematics and computer science,8.40933e-4
+2004,citations,80,Mathematics and computer science,8.27563e-4
+2005,citations,80,Mathematics and computer science,9.48154e-4
+2006,citations,80,Mathematics and computer science,0.001178587
+2007,citations,80,Mathematics and computer science,9.59155e-4
+2008,citations,80,Mathematics and computer science,8.18552e-4
+2009,citations,80,Mathematics and computer science,8.82754e-4
+2010,citations,80,Mathematics and computer science,7.11828e-4
+2011,citations,80,Mathematics and computer science,6.90414e-4
+2012,citations,80,Mathematics and computer science,7.88307e-4
+2013,citations,80,Mathematics and computer science,7.23343e-4
+2014,citations,80,Mathematics and computer science,6.73572e-4
+2015,citations,80,Mathematics and computer science,6.93483e-4
+2016,citations,80,Mathematics and computer science,NA
+All,citations,80,Mathematics and computer science,7.60876e-4
+1998,citances,70,Physical sciences and engineering,NA
+1999,citances,70,Physical sciences and engineering,NA
+2000,citances,70,Physical sciences and engineering,0.002506584
+2001,citances,70,Physical sciences and engineering,0.002580336
+2002,citances,70,Physical sciences and engineering,0.002419969
+2003,citances,70,Physical sciences and engineering,0.002332736
+2004,citances,70,Physical sciences and engineering,0.002293667
+2005,citances,70,Physical sciences and engineering,0.002259969
+2006,citances,70,Physical sciences and engineering,0.002129428
+2007,citances,70,Physical sciences and engineering,0.002072909
+2008,citances,70,Physical sciences and engineering,0.001972922
+2009,citances,70,Physical sciences and engineering,0.001968561
+2010,citances,70,Physical sciences and engineering,0.001993605
+2011,citances,70,Physical sciences and engineering,0.001883702
+2012,citances,70,Physical sciences and engineering,0.001787612
+2013,citances,70,Physical sciences and engineering,0.001739759
+2014,citances,70,Physical sciences and engineering,0.001683952
+2015,citances,70,Physical sciences and engineering,0.001651916
+2016,citances,70,Physical sciences and engineering,NA
+All,citances,70,Physical sciences and engineering,0.001978494
+1998,citances,75,Physical sciences and engineering,NA
+1999,citances,75,Physical sciences and engineering,NA
+2000,citances,75,Physical sciences and engineering,0.002084105
+2001,citances,75,Physical sciences and engineering,0.00214167
+2002,citances,75,Physical sciences and engineering,0.002000676
+2003,citances,75,Physical sciences and engineering,0.001933335
+2004,citances,75,Physical sciences and engineering,0.001926964
+2005,citances,75,Physical sciences and engineering,0.001893962
+2006,citances,75,Physical sciences and engineering,0.00178024
+2007,citances,75,Physical sciences and engineering,0.001754577
+2008,citances,75,Physical sciences and engineering,0.0016647
+2009,citances,75,Physical sciences and engineering,0.001644262
+2010,citances,75,Physical sciences and engineering,0.001677074
+2011,citances,75,Physical sciences and engineering,0.001601648
+2012,citances,75,Physical sciences and engineering,0.001521469
+2013,citances,75,Physical sciences and engineering,0.00148143
+2014,citances,75,Physical sciences and engineering,0.001424518
+2015,citances,75,Physical sciences and engineering,0.00139072
+2016,citances,75,Physical sciences and engineering,NA
+All,citances,75,Physical sciences and engineering,0.001664418
+1998,citances,80,Physical sciences and engineering,NA
+1999,citances,80,Physical sciences and engineering,NA
+2000,citances,80,Physical sciences and engineering,0.001889747
+2001,citances,80,Physical sciences and engineering,0.001952824
+2002,citances,80,Physical sciences and engineering,0.001811616
+2003,citances,80,Physical sciences and engineering,0.001741593
+2004,citances,80,Physical sciences and engineering,0.001728467
+2005,citances,80,Physical sciences and engineering,0.001710332
+2006,citances,80,Physical sciences and engineering,0.001617173
+2007,citances,80,Physical sciences and engineering,0.001583621
+2008,citances,80,Physical sciences and engineering,0.001511346
+2009,citances,80,Physical sciences and engineering,0.001478395
+2010,citances,80,Physical sciences and engineering,0.001503072
+2011,citances,80,Physical sciences and engineering,0.001449186
+2012,citances,80,Physical sciences and engineering,0.001356986
+2013,citances,80,Physical sciences and engineering,0.001328502
+2014,citances,80,Physical sciences and engineering,0.001278809
+2015,citances,80,Physical sciences and engineering,0.001235719
+2016,citances,80,Physical sciences and engineering,NA
+All,citances,80,Physical sciences and engineering,0.001498165
+1998,citations,70,Physical sciences and engineering,NA
+1999,citations,70,Physical sciences and engineering,NA
+2000,citations,70,Physical sciences and engineering,0.003410131
+2001,citations,70,Physical sciences and engineering,0.003335677
+2002,citations,70,Physical sciences and engineering,0.003206107
+2003,citations,70,Physical sciences and engineering,0.003004787
+2004,citations,70,Physical sciences and engineering,0.003111845
+2005,citations,70,Physical sciences and engineering,0.002860671
+2006,citations,70,Physical sciences and engineering,0.002875903
+2007,citations,70,Physical sciences and engineering,0.002677381
+2008,citations,70,Physical sciences and engineering,0.002551269
+2009,citations,70,Physical sciences and engineering,0.002550108
+2010,citations,70,Physical sciences and engineering,0.002574781
+2011,citations,70,Physical sciences and engineering,0.002388071
+2012,citations,70,Physical sciences and engineering,0.002283416
+2013,citations,70,Physical sciences and engineering,0.002273679
+2014,citations,70,Physical sciences and engineering,0.002148604
+2015,citations,70,Physical sciences and engineering,0.002102364
+2016,citations,70,Physical sciences and engineering,NA
+All,citations,70,Physical sciences and engineering,0.002565012
+1998,citations,75,Physical sciences and engineering,NA
+1999,citations,75,Physical sciences and engineering,NA
+2000,citations,75,Physical sciences and engineering,0.002954125
+2001,citations,75,Physical sciences and engineering,0.002859831
+2002,citations,75,Physical sciences and engineering,0.002757352
+2003,citations,75,Physical sciences and engineering,0.002588546
+2004,citations,75,Physical sciences and engineering,0.002674354
+2005,citations,75,Physical sciences and engineering,0.002476262
+2006,citations,75,Physical sciences and engineering,0.002507923
+2007,citations,75,Physical sciences and engineering,0.002354126
+2008,citations,75,Physical sciences and engineering,0.002204672
+2009,citations,75,Physical sciences and engineering,0.002205369
+2010,citations,75,Physical sciences and engineering,0.002234277
+2011,citations,75,Physical sciences and engineering,0.002096504
+2012,citations,75,Physical sciences and engineering,0.001996352
+2013,citations,75,Physical sciences and engineering,0.001984236
+2014,citations,75,Physical sciences and engineering,0.001878298
+2015,citations,75,Physical sciences and engineering,0.001831484
+2016,citations,75,Physical sciences and engineering,NA
+All,citations,75,Physical sciences and engineering,0.002228882
+1998,citations,80,Physical sciences and engineering,NA
+1999,citations,80,Physical sciences and engineering,NA
+2000,citations,80,Physical sciences and engineering,0.002794063
+2001,citations,80,Physical sciences and engineering,0.00269069
+2002,citations,80,Physical sciences and engineering,0.002583371
+2003,citations,80,Physical sciences and engineering,0.002425074
+2004,citations,80,Physical sciences and engineering,0.002515414
+2005,citations,80,Physical sciences and engineering,0.002319616
+2006,citations,80,Physical sciences and engineering,0.002356238
+2007,citations,80,Physical sciences and engineering,0.002209609
+2008,citations,80,Physical sciences and engineering,0.002077603
+2009,citations,80,Physical sciences and engineering,0.002054717
+2010,citations,80,Physical sciences and engineering,0.002071764
+2011,citations,80,Physical sciences and engineering,0.001963613
+2012,citations,80,Physical sciences and engineering,0.001845795
+2013,citations,80,Physical sciences and engineering,0.001830105
+2014,citations,80,Physical sciences and engineering,0.001734809
+2015,citations,80,Physical sciences and engineering,0.001708518
+2016,citations,80,Physical sciences and engineering,NA
+All,citations,80,Physical sciences and engineering,0.002036286
+1998,citances,70,Social sciences and humanities,NA
+1999,citances,70,Social sciences and humanities,NA
+2000,citances,70,Social sciences and humanities,0.008231128
+2001,citances,70,Social sciences and humanities,0.00846683
+2002,citances,70,Social sciences and humanities,0.007903172
+2003,citances,70,Social sciences and humanities,0.008442997
+2004,citances,70,Social sciences and humanities,0.007867259
+2005,citances,70,Social sciences and humanities,0.008131925
+2006,citances,70,Social sciences and humanities,0.008049785
+2007,citances,70,Social sciences and humanities,0.007980125
+2008,citances,70,Social sciences and humanities,0.007715307
+2009,citances,70,Social sciences and humanities,0.007942527
+2010,citances,70,Social sciences and humanities,0.007967455
+2011,citances,70,Social sciences and humanities,0.007678276
+2012,citances,70,Social sciences and humanities,0.007535805
+2013,citances,70,Social sciences and humanities,0.007918815
+2014,citances,70,Social sciences and humanities,0.007736436
+2015,citances,70,Social sciences and humanities,0.007661551
+2016,citances,70,Social sciences and humanities,NA
+All,citances,70,Social sciences and humanities,0.007844058
+1998,citances,75,Social sciences and humanities,NA
+1999,citances,75,Social sciences and humanities,NA
+2000,citances,75,Social sciences and humanities,0.006842441
+2001,citances,75,Social sciences and humanities,0.007288209
+2002,citances,75,Social sciences and humanities,0.006719529
+2003,citances,75,Social sciences and humanities,0.007174786
+2004,citances,75,Social sciences and humanities,0.006608216
+2005,citances,75,Social sciences and humanities,0.006919039
+2006,citances,75,Social sciences and humanities,0.006886121
+2007,citances,75,Social sciences and humanities,0.006942781
+2008,citances,75,Social sciences and humanities,0.006580415
+2009,citances,75,Social sciences and humanities,0.006808387
+2010,citances,75,Social sciences and humanities,0.006894301
+2011,citances,75,Social sciences and humanities,0.00658994
+2012,citances,75,Social sciences and humanities,0.006506165
+2013,citances,75,Social sciences and humanities,0.006759964
+2014,citances,75,Social sciences and humanities,0.006476733
+2015,citances,75,Social sciences and humanities,0.006515809
+2016,citances,75,Social sciences and humanities,NA
+All,citances,75,Social sciences and humanities,0.006694136
+1998,citances,80,Social sciences and humanities,NA
+1999,citances,80,Social sciences and humanities,NA
+2000,citances,80,Social sciences and humanities,0.006293278
+2001,citances,80,Social sciences and humanities,0.006698898
+2002,citances,80,Social sciences and humanities,0.00612247
+2003,citances,80,Social sciences and humanities,0.006532852
+2004,citances,80,Social sciences and humanities,0.006041999
+2005,citances,80,Social sciences and humanities,0.006386552
+2006,citances,80,Social sciences and humanities,0.006334912
+2007,citances,80,Social sciences and humanities,0.006329478
+2008,citances,80,Social sciences and humanities,0.006009056
+2009,citances,80,Social sciences and humanities,0.006234228
+2010,citances,80,Social sciences and humanities,0.006367277
+2011,citances,80,Social sciences and humanities,0.006003269
+2012,citances,80,Social sciences and humanities,0.005906246
+2013,citances,80,Social sciences and humanities,0.006177489
+2014,citances,80,Social sciences and humanities,0.005861419
+2015,citances,80,Social sciences and humanities,0.005941629
+2016,citances,80,Social sciences and humanities,NA
+All,citances,80,Social sciences and humanities,0.006112487
+1998,citations,70,Social sciences and humanities,NA
+1999,citations,70,Social sciences and humanities,NA
+2000,citations,70,Social sciences and humanities,0.010241751
+2001,citations,70,Social sciences and humanities,0.010219616
+2002,citations,70,Social sciences and humanities,0.009812291
+2003,citations,70,Social sciences and humanities,0.010365733
+2004,citations,70,Social sciences and humanities,0.009827481
+2005,citations,70,Social sciences and humanities,0.010357936
+2006,citations,70,Social sciences and humanities,0.010328804
+2007,citations,70,Social sciences and humanities,0.010100953
+2008,citations,70,Social sciences and humanities,0.009570465
+2009,citations,70,Social sciences and humanities,0.009757511
+2010,citations,70,Social sciences and humanities,0.010304698
+2011,citations,70,Social sciences and humanities,0.009488388
+2012,citations,70,Social sciences and humanities,0.009328982
+2013,citations,70,Social sciences and humanities,0.009661658
+2014,citations,70,Social sciences and humanities,0.009532519
+2015,citations,70,Social sciences and humanities,0.009604765
+2016,citations,70,Social sciences and humanities,NA
+All,citations,70,Social sciences and humanities,0.009762723
+1998,citations,75,Social sciences and humanities,NA
+1999,citations,75,Social sciences and humanities,NA
+2000,citations,75,Social sciences and humanities,0.009025567
+2001,citations,75,Social sciences and humanities,0.009082457
+2002,citations,75,Social sciences and humanities,0.0085683
+2003,citations,75,Social sciences and humanities,0.009131606
+2004,citations,75,Social sciences and humanities,0.00863966
+2005,citations,75,Social sciences and humanities,0.009045458
+2006,citations,75,Social sciences and humanities,0.009157561
+2007,citations,75,Social sciences and humanities,0.009099264
+2008,citations,75,Social sciences and humanities,0.008539924
+2009,citations,75,Social sciences and humanities,0.008600801
+2010,citations,75,Social sciences and humanities,0.00925836
+2011,citations,75,Social sciences and humanities,0.008426573
+2012,citations,75,Social sciences and humanities,0.008276481
+2013,citations,75,Social sciences and humanities,0.00849668
+2014,citations,75,Social sciences and humanities,0.008315172
+2015,citations,75,Social sciences and humanities,0.008493717
+2016,citations,75,Social sciences and humanities,NA
+All,citations,75,Social sciences and humanities,0.008632831
+1998,citations,80,Social sciences and humanities,NA
+1999,citations,80,Social sciences and humanities,NA
+2000,citations,80,Social sciences and humanities,0.008509374
+2001,citations,80,Social sciences and humanities,0.008549066
+2002,citations,80,Social sciences and humanities,0.0081621
+2003,citations,80,Social sciences and humanities,0.008664702
+2004,citations,80,Social sciences and humanities,0.008251455
+2005,citations,80,Social sciences and humanities,0.008732118
+2006,citations,80,Social sciences and humanities,0.008666242
+2007,citations,80,Social sciences and humanities,0.008658977
+2008,citations,80,Social sciences and humanities,0.008066965
+2009,citations,80,Social sciences and humanities,0.008220829
+2010,citations,80,Social sciences and humanities,0.008823398
+2011,citations,80,Social sciences and humanities,0.007977942
+2012,citations,80,Social sciences and humanities,0.00785928
+2013,citations,80,Social sciences and humanities,0.008051579
+2014,citations,80,Social sciences and humanities,0.007879743
+2015,citations,80,Social sciences and humanities,0.008043319
+2016,citations,80,Social sciences and humanities,NA
+All,citations,80,Social sciences and humanities,0.007926777

@@ -54,7 +54,7 @@ levels <- field_levels()
 plot <- map %>%
   ungroup() %>%
   ggplot(aes(x = x, y = y,
-             size = `weight<No. results 00: valid queries>`,
+             size = `weight<No. results 00: all valid queries>`,
              fill = log2(score))
   ) +
   geom_polygon(data = hull %>% filter(cluster == clu), alpha = 0.3,

@@ -77,7 +77,7 @@ query_columns <- function() {
      "weight<Share results 07: contradict* + results>",
      "weight<Share results 06: contradict* + studies>",
      "weight<Share results 21: conflict* + studies>",
-     "weight<Share results 22: conflict* + results>",
+     "weight<Share results 14: contrast* + ideas>",
      "weight<Share results 36: controvers* + studies>",
      "weight<Share results 37: controvers* + results>",
      "weight<Share results 38: controvers* + methods>",
@@ -93,7 +93,7 @@ query_columns <- function() {
 
 # And the levels of the final, formatted columns
 query_levels <- function() {
-  c("conflict* + studies", "conflict* + results",
+  c("conflict* + studies", "contrast* + ideas",
     "contradict* + studies", "contradict* + results",
     "contrary + results",
     "controvers*", "controvers* + studies", "controvers* + ideas", "controvers* + methods", "controvers* + results",

@@ -18,7 +18,7 @@ AGG_CODED_SENTENCES = osjoin(DERIVED_DIR, 'coded_fulltext_sentences.csv')
 PERCENT_AGREEMENT = osjoin(DERIVED_DIR, 'percent_agreement.csv')
 QUERY_COUNTS = osjoin(RAW_DIR, '20200610_query_counts.csv')
 
-FIELDMAP_DATA = osjoin(RAW_DIR, 'mapdata_fixed.txt')
+FIELDMAP_DATA = osjoin(RAW_DIR, '2016_mapdata.txt')
 FIELDMAP_PROCESSED = osjoin(DERIVED_DIR, 'mapdata_processed.csv')
 
 GENDER_DISAGREEMENT = osjoin(RAW_DIR, '20200610_gender_fields_intext_counts.csv')
@@ -28,7 +28,7 @@ QUERY_TEMPORAL = osjoin(RAW_DIR, '20200610_temporal_queries.csv')
 
 FIELD_DISAGREEMENT_TEMPORAL = osjoin(RAW_DIR, '20200610_temporal_fields.csv')
 
-TEXT_PROGRESSION = osjoin(RAW_DIR, '20200610_text_progression.csv')
+TEXT_PROGRESSION = osjoin(RAW_DIR, 'text_progression_overall.csv')
 
 AGE_DISAGREEMENT = osjoin(RAW_DIR, '20200610_citation_window_disagreement.csv')
 
